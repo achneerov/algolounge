@@ -1,0 +1,37 @@
+{
+  "index": 248,
+  "filename": "plus-one",
+  "title": "Plus One",
+  "difficulty": "Easy",
+  "tags": ["Arrays and Hashing"],
+  "keywords": [
+    "plus",
+    "one",
+    "array",
+    "digits",
+    "increment",
+    "carry",
+    "math",
+    "leetcode",
+    "66"
+  ],
+  "description": "<h2>Plus One</h2><p>You are given a <strong>large integer</strong> represented as an integer array <code>digits</code>, where each <code>digits[i]</code> is the <code>i<sup>th</sup></code> digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading zeros.</p><p>Increment the large integer by one and return the resulting array of digits.</p><h3>Examples:</h3><ul><li><strong>Input:</strong> digits = [1,2,3]<br><strong>Output:</strong> [1,2,4]<br><strong>Explanation:</strong> The array represents the integer 123. Incrementing by one gives 124.</li><li><strong>Input:</strong> digits = [4,3,2,1]<br><strong>Output:</strong> [4,3,2,2]</li><li><strong>Input:</strong> digits = [9]<br><strong>Output:</strong> [1,0]<br><strong>Explanation:</strong> The array represents 9. Incrementing gives 10.</li><li><strong>Input:</strong> digits = [9,9,9]<br><strong>Output:</strong> [1,0,0,0]</li></ul><h3>Constraints:</h3><ul><li><code>1 <= digits.length <= 100</code></li><li><code>0 <= digits[i] <= 9</code></li><li><code>digits</code> does not contain any leading zeros</li></ul>",
+  "entry_function": "plusOne",
+  "template": "def plusOne(digits):\n    ",
+  "solution_text": "<h3>Plus One</h3><p><strong>Algorithm:</strong></p><ol><li>Iterate from the last digit to the first</li><li>If the current digit is less than 9, increment it and return immediately — no carry needed</li><li>If the current digit is 9, set it to 0 and continue (carry propagates left)</li><li>If the loop finishes without returning, every digit was 9 — prepend a 1</li></ol><p><strong>Time Complexity:</strong> O(n) in the worst case (all nines)</p><p><strong>Space Complexity:</strong> O(n) only in the all-nines case (new array needed); O(1) otherwise</p><p><strong>Key Insights:</strong></p><ul><li>A carry only propagates when the digit is exactly 9</li><li>Most numbers end before the loop finishes — early return keeps it fast in practice</li><li>The only case requiring a larger array is 9, 99, 999, … — a single prepend handles all of them</li></ul>",
+  "solution_code": "def plusOne(digits):\n    for i in range(len(digits) - 1, -1, -1):\n        if digits[i] < 9:\n            digits[i] += 1\n            return digits\n        digits[i] = 0\n    return [1] + digits",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['digits'],)",
+  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {"id": 1, "input": {"digits": [1,2,3]}, "output": [1,2,4]},
+    {"id": 2, "input": {"digits": [4,3,2,1]}, "output": [4,3,2,2]},
+    {"id": 3, "input": {"digits": [9]}, "output": [1,0]},
+    {"id": 4, "input": {"digits": [9,9,9]}, "output": [1,0,0,0]},
+    {"id": 5, "input": {"digits": [0]}, "output": [1]},
+    {"id": 6, "input": {"digits": [1,0,0]}, "output": [1,0,1]},
+    {"id": 7, "input": {"digits": [8,9,9]}, "output": [9,0,0]},
+    {"id": 8, "input": {"digits": [1,9,9]}, "output": [2,0,0]},
+    {"id": 9, "input": {"digits": [9,9,9,9,9]}, "output": [1,0,0,0,0,0]},
+    {"id": 10, "input": {"digits": [5,6,7,8,9]}, "output": [5,6,7,9,0]}
+  ]
+}

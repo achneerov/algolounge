@@ -1,0 +1,38 @@
+{
+  "index": 249,
+  "filename": "interleaving-string",
+  "title": "Interleaving String",
+  "difficulty": "Hard",
+  "tags": ["Dynamic Programming"],
+  "keywords": [
+    "interleaving",
+    "string",
+    "dynamic",
+    "programming",
+    "2d",
+    "dp",
+    "subsequence",
+    "merge",
+    "leetcode",
+    "97"
+  ],
+  "description": "<h2>Interleaving String</h2><p>Given strings <code>s1</code>, <code>s2</code>, and <code>s3</code>, find whether <code>s3</code> is formed by an <strong>interleaving</strong> of <code>s1</code> and <code>s2</code>.</p><p>An <strong>interleaving</strong> of two strings <code>s</code> and <code>t</code> is a configuration where <code>s</code> and <code>t</code> are divided into <code>n</code> and <code>m</code> substrings respectively, such that:</p><ul><li><code>s = s1 + s2 + ... + sn</code></li><li><code>t = t1 + t2 + ... + tm</code></li><li><code>|n - m| <= 1</code></li><li>The <strong>interleaving</strong> is <code>s1 + t1 + s2 + t2 + s3 + t3 + ...</code> or <code>t1 + s1 + t2 + s2 + t3 + s3 + ...</code></li></ul><p>Note: <code>a + b</code> is the concatenation of strings <code>a</code> and <code>b</code>.</p><h3>Examples:</h3><ul><li><strong>Input:</strong> s1 = \"aabcc\", s2 = \"dbbca\", s3 = \"aadbbcbcac\"<br><strong>Output:</strong> true</li><li><strong>Input:</strong> s1 = \"aabcc\", s2 = \"dbbca\", s3 = \"aadbbbaccc\"<br><strong>Output:</strong> false</li><li><strong>Input:</strong> s1 = \"\", s2 = \"\", s3 = \"\"<br><strong>Output:</strong> true</li></ul><h3>Constraints:</h3><ul><li><code>0 <= s1.length, s2.length <= 100</code></li><li><code>0 <= s3.length <= 200</code></li><li><code>s1</code>, <code>s2</code>, and <code>s3</code> consist of lowercase English letters</li></ul>",
+  "entry_function": "isInterleave",
+  "template": "def isInterleave(s1, s2, s3):\n    ",
+  "solution_text": "<h3>Interleaving String</h3><p><strong>Algorithm (2D Dynamic Programming):</strong></p><ol><li>If <code>len(s1) + len(s2) != len(s3)</code>, return <code>False</code> immediately</li><li>Build a DP table where <code>dp[i][j]</code> means the first <code>i</code> characters of <code>s1</code> and first <code>j</code> characters of <code>s2</code> can form the first <code>i+j</code> characters of <code>s3</code></li><li>Base case: <code>dp[0][0] = True</code></li><li>Fill first row (using only s2) and first column (using only s1)</li><li>Transition: <code>dp[i][j]</code> is true if we can come from above (<code>dp[i-1][j]</code> and <code>s1[i-1] == s3[i+j-1]</code>) or from the left (<code>dp[i][j-1]</code> and <code>s2[j-1] == s3[i+j-1]</code>)</li></ol><p><strong>Time Complexity:</strong> O(m × n) where m and n are the lengths of s1 and s2</p><p><strong>Space Complexity:</strong> O(m × n) for the DP table</p><p><strong>Key Insights:</strong></p><ul><li>Each cell represents a choice: the next character in s3 comes from s1 or s2</li><li>The length check eliminates trivially invalid cases before building the table</li><li>Characters from s1 and s2 must appear in their original relative order, which the DP structure enforces naturally</li></ul>",
+  "solution_code": "def isInterleave(s1, s2, s3):\n    m, n = len(s1), len(s2)\n    if m + n != len(s3):\n        return False\n    dp = [[False] * (n + 1) for _ in range(m + 1)]\n    dp[0][0] = True\n    for i in range(1, m + 1):\n        dp[i][0] = dp[i - 1][0] and s1[i - 1] == s3[i - 1]\n    for j in range(1, n + 1):\n        dp[0][j] = dp[0][j - 1] and s2[j - 1] == s3[j - 1]\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            dp[i][j] = (dp[i - 1][j] and s1[i - 1] == s3[i + j - 1]) or \\\n                       (dp[i][j - 1] and s2[j - 1] == s3[i + j - 1])\n    return dp[m][n]",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['s1'], test_case_input['s2'], test_case_input['s3'])",
+  "verify": "def verify(actual_output, expected_output):\n    if isinstance(expected_output, str):\n        expected_output = expected_output.lower() == 'true'\n    passed = bool(actual_output) == bool(expected_output)\n    return [passed, 'true' if actual_output else 'false']",
+  "test_cases": [
+    {"id": 1, "input": {"s1": "aabcc", "s2": "dbbca", "s3": "aadbbcbcac"}, "output": "true"},
+    {"id": 2, "input": {"s1": "aabcc", "s2": "dbbca", "s3": "aadbbbaccc"}, "output": "false"},
+    {"id": 3, "input": {"s1": "", "s2": "", "s3": ""}, "output": "true"},
+    {"id": 4, "input": {"s1": "a", "s2": "b", "s3": "ab"}, "output": "true"},
+    {"id": 5, "input": {"s1": "a", "s2": "b", "s3": "ba"}, "output": "true"},
+    {"id": 6, "input": {"s1": "a", "s2": "b", "s3": "c"}, "output": "false"},
+    {"id": 7, "input": {"s1": "abc", "s2": "def", "s3": "adbecf"}, "output": "true"},
+    {"id": 8, "input": {"s1": "abc", "s2": "def", "s3": "abcdef"}, "output": "true"},
+    {"id": 9, "input": {"s1": "abc", "s2": "def", "s3": "defabc"}, "output": "true"},
+    {"id": 10, "input": {"s1": "abc", "s2": "def", "s3": "abdecf"}, "output": "true"}
+  ]
+}
