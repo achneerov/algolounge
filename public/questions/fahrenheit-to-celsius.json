@@ -1,0 +1,83 @@
+{
+  "index": 250,
+  "filename": "fahrenheit-to-celsius",
+  "title": "Fahrenheit to Celsius",
+  "difficulty": "Easy",
+  "tags": [
+    "Math"
+  ],
+  "keywords": [
+    "fahrenheit",
+    "celsius",
+    "temperature",
+    "conversion",
+    "formula",
+    "math",
+    "floating point"
+  ],
+  "description": "<h2>Fahrenheit to Celsius</h2><p>Given a temperature in Fahrenheit, convert it to Celsius.</p><p>Use the formula:</p><p><code>C = (F - 32) &times; (5 / 9)</code></p><p>Return a floating-point result (Python's normal division is fine).</p><h3>Examples:</h3><ul><li><strong>Input:</strong> fahrenheit = 32<br><strong>Output:</strong> 0.0<br><strong>Explanation:</strong> Water freezes at 32&deg;F and 0&deg;C.</li><li><strong>Input:</strong> fahrenheit = 212<br><strong>Output:</strong> 100.0</li><li><strong>Input:</strong> fahrenheit = -40<br><strong>Output:</strong> -40.0<br><strong>Explanation:</strong> -40 is the same on both scales.</li></ul><h3>Constraints:</h3><ul><li><code>-459.67 &lt;= fahrenheit &lt;= 1000</code> (inputs are within ordinary physical / practice ranges)</li></ul>",
+  "entry_function": "fahrenheitToCelsius",
+  "template": "def fahrenheitToCelsius(fahrenheit):\n    ",
+  "solution_text": "<h3>Fahrenheit to Celsius</h3><p><strong>Approach:</strong></p><ol><li>Subtract 32 from the Fahrenheit value</li><li>Multiply by <code>5 / 9</code> (use true division so the result is a float)</li></ol><p><strong>Time Complexity:</strong> O(1)</p><p><strong>Space Complexity:</strong> O(1)</p><p><strong>Key Insights:</strong></p><ul><li>In Python 3, <code>/</code> always produces a float; <code>//</code> would truncate and break answers</li><li>Floating-point answers are checked with a small tolerance in the grader</li></ul>",
+  "solution_code": "def fahrenheitToCelsius(fahrenheit):\n    return (fahrenheit - 32) * 5 / 9",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['fahrenheit'],)",
+  "verify": "def verify(actual_output, expected_output):\n    if not isinstance(actual_output, (int, float)):\n        return [False, str(actual_output)]\n    tolerance = 1e-5\n    passed = abs(actual_output - expected_output) < tolerance\n    output_str = '{:.6f}'.format(actual_output)\n    return [passed, output_str]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "fahrenheit": 32
+      },
+      "output": 0
+    },
+    {
+      "id": 2,
+      "input": {
+        "fahrenheit": 212
+      },
+      "output": 100
+    },
+    {
+      "id": 3,
+      "input": {
+        "fahrenheit": -40
+      },
+      "output": -40
+    },
+    {
+      "id": 4,
+      "input": {
+        "fahrenheit": 98.6
+      },
+      "output": 37
+    },
+    {
+      "id": 5,
+      "input": {
+        "fahrenheit": 77
+      },
+      "output": 25
+    },
+    {
+      "id": 6,
+      "input": {
+        "fahrenheit": 0
+      },
+      "output": -17.77777777777778
+    },
+    {
+      "id": 7,
+      "input": {
+        "fahrenheit": 100
+      },
+      "output": 37.77777777777778
+    },
+    {
+      "id": 8,
+      "input": {
+        "fahrenheit": -459.67
+      },
+      "output": -273.15
+    }
+  ]
+}

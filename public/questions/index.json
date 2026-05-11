@@ -3821,8 +3821,26 @@
         "leetcode",
         "97"
       ]
+    },
+    {
+      "index": 250,
+      "filename": "fahrenheit-to-celsius",
+      "title": "Fahrenheit to Celsius",
+      "difficulty": "Easy",
+      "tags": [
+        "Math"
+      ],
+      "keywords": [
+        "fahrenheit",
+        "celsius",
+        "temperature",
+        "conversion",
+        "formula",
+        "math",
+        "floating point"
+      ]
     }
   ],
-  "lastUpdated": "2026-05-05T18:51:50.574Z",
-  "totalQuestions": 193
+  "lastUpdated": "2026-05-11T22:28:08.723Z",
+  "totalQuestions": 194
 }
