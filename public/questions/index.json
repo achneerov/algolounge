@@ -3821,8 +3821,70 @@
         "leetcode",
         "97"
       ]
+    },
+    {
+      "index": 250,
+      "filename": "min-stack",
+      "title": "Min Stack",
+      "difficulty": "Easy",
+      "tags": [
+        "Stack"
+      ],
+      "keywords": [
+        "min",
+        "stack",
+        "minimum",
+        "design",
+        "getmin",
+        "push",
+        "pop",
+        "constant",
+        "time",
+        "leetcode",
+        "155"
+      ]
+    },
+    {
+      "index": 251,
+      "filename": "online-stock-span",
+      "title": "Online Stock Span",
+      "difficulty": "Medium",
+      "tags": [
+        "Stack"
+      ],
+      "keywords": [
+        "online",
+        "stock",
+        "span",
+        "monotonic",
+        "stack",
+        "design",
+        "greedy",
+        "leetcode",
+        "901"
+      ]
+    },
+    {
+      "index": 252,
+      "filename": "number-of-visible-people-in-a-queue",
+      "title": "Number of Visible People in a Queue",
+      "difficulty": "Hard",
+      "tags": [
+        "Stack"
+      ],
+      "keywords": [
+        "visible",
+        "people",
+        "queue",
+        "monotonic",
+        "stack",
+        "heights",
+        "count",
+        "leetcode",
+        "1944"
+      ]
     }
   ],
-  "lastUpdated": "2026-05-05T18:51:50.574Z",
-  "totalQuestions": 193
+  "lastUpdated": "2026-05-18T19:06:59.320Z",
+  "totalQuestions": 196
 }

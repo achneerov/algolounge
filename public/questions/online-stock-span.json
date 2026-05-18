@@ -1,0 +1,37 @@
+{
+  "index": 251,
+  "filename": "online-stock-span",
+  "title": "Online Stock Span",
+  "difficulty": "Medium",
+  "tags": ["Stack"],
+  "keywords": [
+    "online",
+    "stock",
+    "span",
+    "monotonic",
+    "stack",
+    "design",
+    "greedy",
+    "leetcode",
+    "901"
+  ],
+  "description": "<h2>Online Stock Span</h2><p>Design an algorithm that collects daily price quotes for some stock and returns the <strong>span</strong> of that stock's price for the current day.</p><p>The <strong>span</strong> of the stock's price today is defined as the maximum number of consecutive days (starting from today and going backward) for which the stock price was less than or equal to today's price.</p><ul><li>For example, if the price of a stock over the next 7 days were <code>[100, 80, 60, 70, 60, 75, 85]</code>, then the stock spans would be <code>[1, 1, 1, 2, 1, 4, 6]</code>.</li></ul><p>Implement the <code>StockSpanner</code> class:</p><ul><li><code>StockSpanner()</code> initializes the object of the class</li><li><code>int next(int price)</code> returns the span of the stock's price given that today's price is <code>price</code></li></ul><h3>Example:</h3><pre>StockSpanner s = new StockSpanner();\ns.next(100); // return 1\ns.next(80);  // return 1\ns.next(60);  // return 1\ns.next(70);  // return 2 (70 >= 60)\ns.next(60);  // return 1\ns.next(75);  // return 4 (75 >= 60, 70, 60)\ns.next(85);  // return 6 (85 >= all previous)</pre><h3>Constraints:</h3><ul><li><code>1 <= price <= 10<sup>5</sup></code></li><li>At most <code>10<sup>4</sup></code> calls will be made to <code>next</code></li></ul>",
+  "entry_function": "stockSpanner",
+  "template": "class StockSpanner:\n\n    def __init__(self):\n        pass\n\n    def next(self, price: int) -> int:\n        pass\n\ndef stockSpanner(prices):\n    spanner = StockSpanner()\n    return [spanner.next(p) for p in prices]",
+  "solution_text": "<h3>Online Stock Span</h3><p><strong>Algorithm (Monotonic Decreasing Stack):</strong></p><ol><li>Maintain a stack of <code>(price, span)</code> pairs in decreasing order of price</li><li>For each new price, start with <code>span = 1</code></li><li>While the stack's top price is less than or equal to the current price, pop it and add its span to the current span</li><li>Push <code>(price, span)</code> and return the accumulated span</li></ol><p><strong>Time Complexity:</strong> O(1) amortized per call — each element is pushed and popped at most once</p><p><strong>Space Complexity:</strong> O(n) — in the worst case (strictly decreasing prices) the stack holds all prices</p><p><strong>Key Insights:</strong></p><ul><li>Once a price is blocked by a higher-or-equal price, it can never contribute to a future span on its own — but its accumulated span still matters, which is why we store spans instead of raw indices</li><li>Collapsing previous spans into the current one avoids rescanning days that were already counted</li><li>The stack is always in strictly decreasing order of price after each operation</li></ul>",
+  "solution_code": "class StockSpanner:\n\n    def __init__(self):\n        self.stack = []\n\n    def next(self, price: int) -> int:\n        span = 1\n        while self.stack and self.stack[-1][0] <= price:\n            span += self.stack.pop()[1]\n        self.stack.append((price, span))\n        return span\n\ndef stockSpanner(prices):\n    spanner = StockSpanner()\n    return [spanner.next(p) for p in prices]",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['prices'],)",
+  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {"id": 1, "input": {"prices": [100, 80, 60, 70, 60, 75, 85]}, "output": [1, 1, 1, 2, 1, 4, 6]},
+    {"id": 2, "input": {"prices": [10]}, "output": [1]},
+    {"id": 3, "input": {"prices": [10, 10]}, "output": [1, 2]},
+    {"id": 4, "input": {"prices": [5, 4, 3, 2, 1]}, "output": [1, 1, 1, 1, 1]},
+    {"id": 5, "input": {"prices": [1, 2, 3, 4, 5]}, "output": [1, 2, 3, 4, 5]},
+    {"id": 6, "input": {"prices": [3, 3, 3]}, "output": [1, 2, 3]},
+    {"id": 7, "input": {"prices": [100, 1, 2, 3, 4]}, "output": [1, 1, 2, 3, 4]},
+    {"id": 8, "input": {"prices": [5, 10, 8, 12, 3]}, "output": [1, 2, 1, 4, 1]},
+    {"id": 9, "input": {"prices": [30, 40, 40, 30, 40, 50]}, "output": [1, 2, 3, 1, 5, 6]},
+    {"id": 10, "input": {"prices": [28, 14, 28, 35, 46, 53, 66, 80, 87, 88]}, "output": [1, 1, 3, 4, 5, 6, 7, 8, 9, 10]}
+  ]
+}

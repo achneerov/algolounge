@@ -1,0 +1,39 @@
+{
+  "index": 250,
+  "filename": "min-stack",
+  "title": "Min Stack",
+  "difficulty": "Easy",
+  "tags": ["Stack"],
+  "keywords": [
+    "min",
+    "stack",
+    "minimum",
+    "design",
+    "getmin",
+    "push",
+    "pop",
+    "constant",
+    "time",
+    "leetcode",
+    "155"
+  ],
+  "description": "<h2>Min Stack</h2><p>Design a stack that supports push, pop, top, and retrieving the minimum element in <strong>constant time</strong>.</p><p>Implement the <code>MinStack</code> class:</p><ul><li><code>MinStack()</code> initializes the stack object</li><li><code>void push(int val)</code> pushes the element <code>val</code> onto the stack</li><li><code>void pop()</code> removes the element on the top of the stack</li><li><code>int top()</code> gets the top element of the stack</li><li><code>int getMin()</code> retrieves the minimum element in the stack</li></ul><p>You must implement a solution with <code>O(1)</code> time complexity for each function.</p><h3>Example:</h3><pre>MinStack minStack = new MinStack();\nminStack.push(-2);\nminStack.push(0);\nminStack.push(-3);\nminStack.getMin(); // return -3\nminStack.pop();\nminStack.top();    // return 0\nminStack.getMin(); // return -2</pre><h3>Constraints:</h3><ul><li><code>-2<sup>31</sup> <= val <= 2<sup>31</sup> - 1</code></li><li>Methods <code>pop</code>, <code>top</code> and <code>getMin</code> operations will always be called on non-empty stacks</li><li>At most <code>3 * 10<sup>4</sup></code> calls will be made to <code>push</code>, <code>pop</code>, <code>top</code>, and <code>getMin</code></li></ul>",
+  "entry_function": "minStack",
+  "template": "class MinStack:\n\n    def __init__(self):\n        pass\n\n    def push(self, val: int) -> None:\n        pass\n\n    def pop(self) -> None:\n        pass\n\n    def top(self) -> int:\n        pass\n\n    def getMin(self) -> int:\n        pass\n\ndef minStack(operations, arguments):\n    obj = MinStack()\n    results = []\n    for op, args in zip(operations[1:], arguments[1:]):\n        if op == 'push':\n            obj.push(args[0])\n        elif op == 'pop':\n            obj.pop()\n        elif op == 'top':\n            results.append(obj.top())\n        elif op == 'getMin':\n            results.append(obj.getMin())\n    return results",
+  "solution_text": "<h3>Min Stack</h3><p><strong>Algorithm (Auxiliary Min Stack):</strong></p><ol><li>Maintain two stacks in parallel: the main stack and a <code>min_stack</code></li><li>On each push, compute the running minimum and push it onto <code>min_stack</code></li><li>On each pop, pop both stacks together to keep them in sync</li><li><code>getMin()</code> simply reads the top of <code>min_stack</code></li></ol><p><strong>Time Complexity:</strong> O(1) for all operations</p><p><strong>Space Complexity:</strong> O(n) — the auxiliary stack mirrors the main stack</p><p><strong>Key Insights:</strong></p><ul><li>The minimum at any point depends on which elements are currently in the stack — it changes as elements are pushed and popped</li><li>By shadowing every push with the running minimum, the current minimum is always available in O(1) at the top of <code>min_stack</code></li><li>Popping both stacks together ensures <code>min_stack</code> always reflects the minimum of the current main stack contents</li></ul>",
+  "solution_code": "class MinStack:\n\n    def __init__(self):\n        self.stack = []\n        self.min_stack = []\n\n    def push(self, val: int) -> None:\n        self.stack.append(val)\n        min_val = min(val, self.min_stack[-1] if self.min_stack else val)\n        self.min_stack.append(min_val)\n\n    def pop(self) -> None:\n        self.stack.pop()\n        self.min_stack.pop()\n\n    def top(self) -> int:\n        return self.stack[-1]\n\n    def getMin(self) -> int:\n        return self.min_stack[-1]\n\ndef minStack(operations, arguments):\n    obj = MinStack()\n    results = []\n    for op, args in zip(operations[1:], arguments[1:]):\n        if op == 'push':\n            obj.push(args[0])\n        elif op == 'pop':\n            obj.pop()\n        elif op == 'top':\n            results.append(obj.top())\n        elif op == 'getMin':\n            results.append(obj.getMin())\n    return results",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['operations'], test_case_input['arguments'])",
+  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {"id": 1, "input": {"operations": ["MinStack","push","push","push","getMin","pop","top","getMin"], "arguments": [[],[-2],[0],[-3],[],[],[],[]]}, "output": [-3, 0, -2]},
+    {"id": 2, "input": {"operations": ["MinStack","push","push","push","getMin","getMin"], "arguments": [[],[5],[3],[7],[],[]]}, "output": [3, 3]},
+    {"id": 3, "input": {"operations": ["MinStack","push","getMin","push","getMin","pop","getMin"], "arguments": [[],[2],[],[1],[],[],[]]}, "output": [2, 1, 2]},
+    {"id": 4, "input": {"operations": ["MinStack","push","push","push","pop","getMin"], "arguments": [[],[1],[2],[3],[],[]]}, "output": [1]},
+    {"id": 5, "input": {"operations": ["MinStack","push","push","top","pop","top","getMin"], "arguments": [[],[1],[2],[],[],[],[]]}, "output": [2, 1, 1]},
+    {"id": 6, "input": {"operations": ["MinStack","push","push","push","getMin","pop","getMin","pop","getMin"], "arguments": [[],[-1],[-2],[-3],[],[],[],[],[]]}, "output": [-3, -2, -1]},
+    {"id": 7, "input": {"operations": ["MinStack","push","push","getMin","push","getMin","pop","getMin"], "arguments": [[],[5],[3],[],[1],[],[],[]]}, "output": [3, 1, 3]},
+    {"id": 8, "input": {"operations": ["MinStack","push","getMin","push","getMin","push","getMin","push","getMin"], "arguments": [[],[4],[],[2],[],[5],[],[1],[]]}, "output": [4, 2, 2, 1]},
+    {"id": 9, "input": {"operations": ["MinStack","push","push","push","push","getMin","pop","getMin","pop","getMin","pop","getMin"], "arguments": [[],[3],[5],[2],[4],[],[],[],[],[],[],[]]}, "output": [2, 2, 3, 3]},
+    {"id": 10, "input": {"operations": ["MinStack","push","push","push","top","getMin"], "arguments": [[],[-3],[2],[-1],[],[]]}, "output": [-1, -3]}
+  ]
+}

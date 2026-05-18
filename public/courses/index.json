@@ -35,7 +35,7 @@
       ],
       "description": "Welcome to Algotime Summer 2026! Practice these key algorithm problems to sharpen your skills.",
       "badge": "Summer 2026",
-      "stats": "12 questions • 2 stages"
+      "stats": "18 questions • 3 stages"
     },
     {
       "filename": "algotimewinter2026",
@@ -104,6 +104,6 @@
       "stats": "23 questions • 5 stages"
     }
   ],
-  "lastUpdated": "2026-05-05T18:51:50.588Z",
+  "lastUpdated": "2026-05-18T19:06:59.332Z",
   "totalCourses": 5
 }

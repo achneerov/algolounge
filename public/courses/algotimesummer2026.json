@@ -17,6 +17,114 @@
   ],
   "badge": "Summer 2026",
   "units": {
+    "week3": {
+      "title": "Week 3",
+      "description": "Dive into the stack data structure with six problems spanning all difficulty levels. Design a stack that retrieves its minimum in constant time, tackle string simulation with backspace compare, master the stock span with monotonic stacks, revisit the classic daily temperatures problem, then challenge yourself with two hard problems: counting visible people in a queue and finding the largest rectangle in a histogram.",
+      "questions": [
+        {
+          "filename": "min-stack",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/min-stack/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            },
+            {
+              "url": "https://neetcode.io/solutions/min-stack",
+              "tooltip": "Solution",
+              "color": "#16a34a",
+              "visibleString": "Answer"
+            }
+          ],
+          "tags": ["Easy", "Stack"]
+        },
+        {
+          "filename": "backspace-string-compare",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/backspace-string-compare/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            },
+            {
+              "url": "https://neetcode.io/solutions/backspace-string-compare",
+              "tooltip": "Solution",
+              "color": "#16a34a",
+              "visibleString": "Answer"
+            }
+          ],
+          "tags": ["Easy", "Stack"]
+        },
+        {
+          "filename": "online-stock-span",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/online-stock-span/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            },
+            {
+              "url": "https://neetcode.io/solutions/online-stock-span",
+              "tooltip": "Solution",
+              "color": "#16a34a",
+              "visibleString": "Answer"
+            }
+          ],
+          "tags": ["Medium", "Stack"]
+        },
+        {
+          "filename": "daily-temperatures",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/daily-temperatures/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            },
+            {
+              "url": "https://neetcode.io/solutions/daily-temperatures",
+              "tooltip": "Solution",
+              "color": "#16a34a",
+              "visibleString": "Answer"
+            }
+          ],
+          "tags": ["Medium", "Stack"]
+        },
+        {
+          "filename": "number-of-visible-people-in-a-queue",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/number-of-visible-people-in-a-queue/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": ["Hard", "Stack"]
+        },
+        {
+          "filename": "largest-rectangle-in-histogram",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            },
+            {
+              "url": "https://neetcode.io/solutions/largest-rectangle-in-histogram",
+              "tooltip": "Solution",
+              "color": "#16a34a",
+              "visibleString": "Answer"
+            }
+          ],
+          "tags": ["Hard", "Stack"]
+        }
+      ]
+    },
     "week2": {
       "title": "Week 2",
       "description": "Build on Week 1 with classic array manipulation, backtracking, and tree traversal. Warm up with in-place array problems, generate all valid combinations with backtracking, read a tree from the right side, and finish with two hard challenges in string interleaving and tree serialization.",
