@@ -1,0 +1,212 @@
+{
+  "index": 253,
+  "filename": "lru-cache",
+  "title": "LRU Cache",
+  "difficulty": "Hard",
+  "tags": [
+    "Arrays and Hashing"
+  ],
+  "keywords": [
+    "hashmap",
+    "doubly linked list",
+    "LRU",
+    "cache",
+    "design",
+    "map"
+  ],
+  "description": "<h2>LRU Cache</h2><p>Design a data structure that follows the constraints of a <strong>Least Recently Used (LRU) cache</strong>.</p><p>Implement the <code>LRUCache</code> class:</p><ul><li><code>LRUCache(int capacity)</code> — Initialize the LRU cache with positive size <code>capacity</code>.</li><li><code>int get(int key)</code> — Return the value of the <code>key</code> if it exists, otherwise return <code>-1</code>.</li><li><code>void put(int key, int value)</code> — Update the value of the <code>key</code> if it exists. Otherwise, add the key-value pair to the cache. If the number of keys exceeds the <code>capacity</code> from this operation, <strong>evict the least recently used key</strong>.</li></ul><p>The functions <code>get</code> and <code>put</code> must each run in <strong>O(1)</strong> average time complexity.</p><h3>Example</h3><pre>Input:\n[\"LRUCache\", \"put\", \"put\", \"get\", \"put\", \"get\", \"put\", \"get\", \"get\", \"get\"]\n[[2], [1,1], [2,2], [1], [3,3], [2], [4,4], [1], [3], [4]]\nOutput: [null, null, null, 1, null, -1, null, -1, 3, 4]</pre><h3>Constraints</h3><ul><li><code>1 &lt;= capacity &lt;= 3000</code></li><li><code>0 &lt;= key &lt;= 10<sup>4</sup></code></li><li><code>0 &lt;= value &lt;= 10<sup>5</sup></code></li><li>At most <code>2 * 10<sup>5</sup></code> calls will be made to <code>get</code> and <code>put</code>.</li></ul>",
+  "entry_function": "lru_cache_simulate",
+  "template": "class LRUCache:\n    def __init__(self, capacity):\n        pass\n\n    def get(self, key):\n        pass\n\n    def put(self, key, value):\n        pass\n\ndef lru_cache_simulate(operations, arguments):\n    cache = None\n    results = []\n    for op, args in zip(operations, arguments):\n        if op == \"LRUCache\":\n            cache = LRUCache(args[0])\n            results.append(None)\n        elif op == \"get\":\n            results.append(cache.get(args[0]))\n        elif op == \"put\":\n            cache.put(args[0], args[1])\n            results.append(None)\n    return results\n",
+  "solution_code": "class Node:\n    def __init__(self, key=0, val=0):\n        self.key = key\n        self.val = val\n        self.prev = None\n        self.next = None\n\nclass LRUCache:\n    def __init__(self, capacity):\n        self.cap = capacity\n        self.cache = {}\n        self.head = Node()\n        self.tail = Node()\n        self.head.next = self.tail\n        self.tail.prev = self.head\n\n    def _remove(self, node):\n        node.prev.next = node.next\n        node.next.prev = node.prev\n\n    def _insert_front(self, node):\n        node.next = self.head.next\n        node.prev = self.head\n        self.head.next.prev = node\n        self.head.next = node\n\n    def get(self, key):\n        if key not in self.cache:\n            return -1\n        node = self.cache[key]\n        self._remove(node)\n        self._insert_front(node)\n        return node.val\n\n    def put(self, key, value):\n        if key in self.cache:\n            self._remove(self.cache[key])\n        node = Node(key, value)\n        self.cache[key] = node\n        self._insert_front(node)\n        if len(self.cache) > self.cap:\n            lru = self.tail.prev\n            self._remove(lru)\n            del self.cache[lru.key]\n\ndef lru_cache_simulate(operations, arguments):\n    cache = None\n    results = []\n    for op, args in zip(operations, arguments):\n        if op == \"LRUCache\":\n            cache = LRUCache(args[0])\n            results.append(None)\n        elif op == \"get\":\n            results.append(cache.get(args[0]))\n        elif op == \"put\":\n            cache.put(args[0], args[1])\n            results.append(None)\n    return results",
+  "solution_text": "<h3>Approach: HashMap + Doubly Linked List</h3><p>O(1) get and put requires two data structures working together:</p><ul><li><strong>HashMap</strong> (<code>key → node</code>): gives O(1) lookup of any cached entry.</li><li><strong>Doubly Linked List</strong>: maintains recency order. The front is most recently used; the back is least recently used. Dummy <code>head</code> and <code>tail</code> nodes eliminate edge-case checks.</li></ul><p><strong>get:</strong> Look up the node, move it to the front, return its value.</p><p><strong>put:</strong> If the key exists, remove the old node first. Insert a new node at the front. If over capacity, evict the node just before <code>tail</code> and remove its key from the map.</p><p><strong>Time:</strong> O(1) per operation &nbsp; <strong>Space:</strong> O(capacity)</p>",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['operations'], test_case_input['arguments'])",
+  "verify": "def verify(actual_output, expected_output, input=None):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "operations": [
+          "LRUCache",
+          "put",
+          "put",
+          "get",
+          "put",
+          "get",
+          "put",
+          "get",
+          "get",
+          "get"
+        ],
+        "arguments": [
+          [
+            2
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            1
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ]
+      },
+      "output": [
+        null,
+        null,
+        null,
+        1,
+        null,
+        -1,
+        null,
+        -1,
+        3,
+        4
+      ]
+    },
+    {
+      "id": 2,
+      "input": {
+        "operations": [
+          "LRUCache",
+          "put",
+          "get"
+        ],
+        "arguments": [
+          [
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2
+          ]
+        ]
+      },
+      "output": [
+        null,
+        null,
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "input": {
+        "operations": [
+          "LRUCache",
+          "put",
+          "put",
+          "put",
+          "get",
+          "get"
+        ],
+        "arguments": [
+          [
+            2
+          ],
+          [
+            1,
+            10
+          ],
+          [
+            2,
+            20
+          ],
+          [
+            3,
+            30
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ]
+      },
+      "output": [
+        null,
+        null,
+        null,
+        null,
+        -1,
+        20
+      ]
+    },
+    {
+      "id": 4,
+      "input": {
+        "operations": [
+          "LRUCache",
+          "put",
+          "put",
+          "get",
+          "put",
+          "put",
+          "get"
+        ],
+        "arguments": [
+          [
+            2
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            2
+          ]
+        ]
+      },
+      "output": [
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        -1
+      ]
+    }
+  ]
+}

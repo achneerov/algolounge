@@ -1,0 +1,112 @@
+{
+  "index": 254,
+  "filename": "top-k-frequent-elements",
+  "title": "Top K Frequent Elements",
+  "difficulty": "Medium",
+  "tags": [
+    "Arrays and Hashing"
+  ],
+  "keywords": [
+    "hashmap",
+    "frequency",
+    "bucket sort",
+    "heap",
+    "top-k",
+    "map"
+  ],
+  "description": "<h2>Top K Frequent Elements</h2><p>Given an integer array <code>nums</code> and an integer <code>k</code>, return the <code>k</code> most frequent elements. You may return the answer in <strong>any order</strong>.</p><h3>Example 1</h3><pre>Input: nums = [1,1,1,2,2,3], k = 2\nOutput: [1,2]</pre><h3>Example 2</h3><pre>Input: nums = [1], k = 1\nOutput: [1]</pre><h3>Constraints</h3><ul><li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li><li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li><li><code>k</code> is in the range <code>[1, number of unique elements in the array]</code>.</li><li>It is <strong>guaranteed</strong> that the answer is unique.</li></ul><p><em>Follow-up:</em> Your algorithm's time complexity must be better than <code>O(n log n)</code>, where <code>n</code> is the array's size.</p>",
+  "entry_function": "topKFrequent",
+  "template": "def topKFrequent(nums, k):\n    ",
+  "solution_code": "def topKFrequent(nums, k):\n    count = {}\n    for n in nums:\n        count[n] = count.get(n, 0) + 1\n    freq = [[] for _ in range(len(nums) + 1)]\n    for n, c in count.items():\n        freq[c].append(n)\n    res = []\n    for i in range(len(freq) - 1, 0, -1):\n        for n in freq[i]:\n            res.append(n)\n            if len(res) == k:\n                return res\n    return res",
+  "solution_text": "<h3>Approach: Bucket Sort</h3><p>First build a frequency map counting how often each number appears. Then use <em>bucket sort</em>: create an array of buckets indexed by frequency (index <code>i</code> holds all numbers that appear exactly <code>i</code> times). The bucket array has at most <code>n+1</code> slots.</p><p>Finally iterate the buckets from highest frequency down, collecting elements until we have <code>k</code> results. This runs in O(n) time — better than the O(n log n) heap approach.</p><p><strong>Time:</strong> O(n) &nbsp; <strong>Space:</strong> O(n)</p>",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['nums'], test_case_input['k'])",
+  "verify": "def verify(actual_output, expected_output, input=None):\n    passed = sorted(actual_output) == sorted(expected_output)\n    return [passed, str(sorted(actual_output))]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "nums": [
+          1,
+          1,
+          1,
+          2,
+          2,
+          3
+        ],
+        "k": 2
+      },
+      "output": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "input": {
+        "nums": [
+          1
+        ],
+        "k": 1
+      },
+      "output": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "input": {
+        "nums": [
+          4,
+          4,
+          4,
+          6,
+          6,
+          1,
+          1,
+          1,
+          1
+        ],
+        "k": 2
+      },
+      "output": [
+        1,
+        4
+      ]
+    },
+    {
+      "id": 4,
+      "input": {
+        "nums": [
+          5,
+          5,
+          4,
+          4,
+          3,
+          3,
+          2,
+          1
+        ],
+        "k": 3
+      },
+      "output": [
+        5,
+        4,
+        3
+      ]
+    },
+    {
+      "id": 5,
+      "input": {
+        "nums": [
+          1,
+          2
+        ],
+        "k": 2
+      },
+      "output": [
+        1,
+        2
+      ]
+    }
+  ]
+}

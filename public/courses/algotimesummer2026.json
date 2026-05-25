@@ -17,6 +17,120 @@
   ],
   "badge": "Summer 2026",
   "units": {
+    "week4": {
+      "title": "Week 4",
+      "description": "Master the map — this week is dedicated entirely to hash map patterns. Start with two classic easy problems that show the core lookup and bijection ideas, move into medium challenges that use frequency maps and sliding windows, then tackle two hard problems: the minimum window substring and designing an LRU cache from scratch.",
+      "questions": [
+        {
+          "filename": "two-sum",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/two-sum/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            },
+            {
+              "url": "https://neetcode.io/solutions/two-sum",
+              "tooltip": "Solution",
+              "color": "#16a34a",
+              "visibleString": "Answer"
+            }
+          ],
+          "tags": ["Easy", "Arrays and Hashing"]
+        },
+        {
+          "filename": "word-pattern",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/word-pattern/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            },
+            {
+              "url": "https://neetcode.io/solutions/word-pattern",
+              "tooltip": "Solution",
+              "color": "#16a34a",
+              "visibleString": "Answer"
+            }
+          ],
+          "tags": ["Easy", "Arrays and Hashing"]
+        },
+        {
+          "filename": "longest-substring-without-repeating-characters",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            },
+            {
+              "url": "https://neetcode.io/solutions/longest-substring-without-repeating-characters",
+              "tooltip": "Solution",
+              "color": "#16a34a",
+              "visibleString": "Answer"
+            }
+          ],
+          "tags": ["Medium", "Arrays and Hashing"]
+        },
+        {
+          "filename": "top-k-frequent-elements",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/top-k-frequent-elements/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            },
+            {
+              "url": "https://neetcode.io/solutions/top-k-frequent-elements",
+              "tooltip": "Solution",
+              "color": "#16a34a",
+              "visibleString": "Answer"
+            }
+          ],
+          "tags": ["Medium", "Arrays and Hashing"]
+        },
+        {
+          "filename": "minimum-window-substring",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/minimum-window-substring/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            },
+            {
+              "url": "https://neetcode.io/solutions/minimum-window-substring",
+              "tooltip": "Solution",
+              "color": "#16a34a",
+              "visibleString": "Answer"
+            }
+          ],
+          "tags": ["Hard", "Arrays and Hashing"]
+        },
+        {
+          "filename": "lru-cache",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/lru-cache/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            },
+            {
+              "url": "https://neetcode.io/solutions/lru-cache",
+              "tooltip": "Solution",
+              "color": "#16a34a",
+              "visibleString": "Answer"
+            }
+          ],
+          "tags": ["Hard", "Arrays and Hashing"]
+        }
+      ]
+    },
     "week3": {
       "title": "Week 3",
       "description": "Dive into the stack data structure with six problems spanning all difficulty levels. Design a stack that retrieves its minimum in constant time, tackle string simulation with backspace compare, master the stock span with monotonic stacks, revisit the classic daily temperatures problem, then challenge yourself with two hard problems: counting visible people in a queue and finding the largest rectangle in a histogram.",

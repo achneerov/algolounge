@@ -3824,6 +3824,24 @@
     },
     {
       "index": 250,
+      "filename": "fahrenheit-to-celsius",
+      "title": "Fahrenheit to Celsius",
+      "difficulty": "Easy",
+      "tags": [
+        "Math"
+      ],
+      "keywords": [
+        "fahrenheit",
+        "celsius",
+        "temperature",
+        "conversion",
+        "formula",
+        "math",
+        "floating point"
+      ]
+    },
+    {
+      "index": 250,
       "filename": "min-stack",
       "title": "Min Stack",
       "difficulty": "Easy",
@@ -3883,8 +3901,58 @@
         "leetcode",
         "1944"
       ]
+    },
+    {
+      "index": 253,
+      "filename": "lru-cache",
+      "title": "LRU Cache",
+      "difficulty": "Hard",
+      "tags": [
+        "Arrays and Hashing"
+      ],
+      "keywords": [
+        "hashmap",
+        "doubly linked list",
+        "LRU",
+        "cache",
+        "design",
+        "map"
+      ]
+    },
+    {
+      "index": 254,
+      "filename": "top-k-frequent-elements",
+      "title": "Top K Frequent Elements",
+      "difficulty": "Medium",
+      "tags": [
+        "Arrays and Hashing"
+      ],
+      "keywords": [
+        "hashmap",
+        "frequency",
+        "bucket sort",
+        "heap",
+        "top-k",
+        "map"
+      ]
+    },
+    {
+      "index": 255,
+      "filename": "word-pattern",
+      "title": "Word Pattern",
+      "difficulty": "Easy",
+      "tags": [
+        "Arrays and Hashing"
+      ],
+      "keywords": [
+        "hashmap",
+        "pattern",
+        "bijection",
+        "string",
+        "map"
+      ]
     }
   ],
-  "lastUpdated": "2026-05-18T19:06:59.320Z",
-  "totalQuestions": 196
+  "lastUpdated": "2026-05-25T20:37:04.010Z",
+  "totalQuestions": 200
 }

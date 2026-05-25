@@ -1,0 +1,73 @@
+{
+  "index": 255,
+  "filename": "word-pattern",
+  "title": "Word Pattern",
+  "difficulty": "Easy",
+  "tags": [
+    "Arrays and Hashing"
+  ],
+  "keywords": [
+    "hashmap",
+    "pattern",
+    "bijection",
+    "string",
+    "map"
+  ],
+  "description": "<h2>Word Pattern</h2><p>Given a <code>pattern</code> and a string <code>s</code>, find if <code>s</code> follows the same pattern.</p><p>Here <em>follow</em> means a full match, such that there is a bijection between a letter in <code>pattern</code> and a <em>non-empty</em> word in <code>s</code>.</p><h3>Example 1</h3><pre>Input: pattern = \"abba\", s = \"dog cat cat dog\"\nOutput: true</pre><h3>Example 2</h3><pre>Input: pattern = \"abba\", s = \"dog cat cat fish\"\nOutput: false</pre><h3>Example 3</h3><pre>Input: pattern = \"aaaa\", s = \"dog cat cat dog\"\nOutput: false</pre><h3>Constraints</h3><ul><li><code>1 &lt;= pattern.length &lt;= 300</code></li><li><code>pattern</code> contains only lower-case English letters.</li><li><code>1 &lt;= s.length &lt;= 3000</code></li><li><code>s</code> contains only lowercase English letters and spaces.</li><li><code>s</code> does not contain any leading or trailing spaces.</li><li>All the words in <code>s</code> are separated by a single space.</li></ul>",
+  "entry_function": "wordPattern",
+  "template": "def wordPattern(pattern, s):\n    ",
+  "solution_code": "def wordPattern(pattern, s):\n    words = s.split()\n    if len(pattern) != len(words):\n        return False\n    char_to_word = {}\n    word_to_char = {}\n    for c, w in zip(pattern, words):\n        if c in char_to_word:\n            if char_to_word[c] != w:\n                return False\n        else:\n            if w in word_to_char:\n                return False\n            char_to_word[c] = w\n            word_to_char[w] = c\n    return True",
+  "solution_text": "<h3>Approach: Bijection with Two Hash Maps</h3><p>A valid pattern requires a one-to-one mapping (bijection) between each character in <code>pattern</code> and each word in <code>s</code>. We need two maps to enforce both directions:</p><ul><li><code>char_to_word</code>: ensures each pattern character always maps to the same word.</li><li><code>word_to_char</code>: ensures each word always maps back to the same character (prevents two characters mapping to the same word).</li></ul><p>If the lengths differ, return <code>False</code> immediately. Otherwise iterate both together — any contradiction in either map fails the check.</p><p><strong>Time:</strong> O(n) &nbsp; <strong>Space:</strong> O(n)</p>",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['pattern'], test_case_input['s'])",
+  "verify": "def verify(actual_output, expected_output, input=None):\n    if isinstance(expected_output, str):\n        expected_output = expected_output.lower() == 'true'\n    passed = bool(actual_output) == bool(expected_output)\n    return [passed, 'true' if actual_output else 'false']",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "pattern": "abba",
+        "s": "dog cat cat dog"
+      },
+      "output": "true"
+    },
+    {
+      "id": 2,
+      "input": {
+        "pattern": "abba",
+        "s": "dog cat cat fish"
+      },
+      "output": "false"
+    },
+    {
+      "id": 3,
+      "input": {
+        "pattern": "aaaa",
+        "s": "dog cat cat dog"
+      },
+      "output": "false"
+    },
+    {
+      "id": 4,
+      "input": {
+        "pattern": "abba",
+        "s": "dog dog dog dog"
+      },
+      "output": "false"
+    },
+    {
+      "id": 5,
+      "input": {
+        "pattern": "a",
+        "s": "dog"
+      },
+      "output": "true"
+    },
+    {
+      "id": 6,
+      "input": {
+        "pattern": "ab",
+        "s": "dog dog"
+      },
+      "output": "false"
+    }
+  ]
+}
