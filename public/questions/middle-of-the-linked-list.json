@@ -1,0 +1,96 @@
+{
+  "index": 256,
+  "filename": "middle-of-the-linked-list",
+  "title": "Middle of the Linked List",
+  "difficulty": "Easy",
+  "tags": [
+    "Linked List"
+  ],
+  "keywords": [
+    "linked list",
+    "two pointers",
+    "slow fast pointer",
+    "middle"
+  ],
+  "description": "<h2>Middle of the Linked List</h2><p>Given the <code>head</code> of a singly linked list, return <em>the middle node of the linked list</em>.</p><p>If there are two middle nodes, return <strong>the second middle</strong> node.</p><h3>Example 1</h3><pre>Input: head = [1,2,3,4,5]\nOutput: [3,4,5]\nExplanation: The middle node of the list is node 3.</pre><h3>Example 2</h3><pre>Input: head = [1,2,3,4,5,6]\nOutput: [4,5,6]\nExplanation: Since the list has two middle nodes with values 3 and 4, we return the second one.</pre><h3>Constraints</h3><ul><li>The number of nodes in the list is in the range <code>[1, 100]</code>.</li><li><code>1 &lt;= Node.val &lt;= 100</code></li></ul>",
+  "entry_function": "middleNode",
+  "template": "# class ListNode:\n#     def __init__(self, val, next):\n#         self.val = val\n#         self.next = next\n\ndef middleNode(head):\n    ",
+  "solution_code": "def middleNode(head):\n    slow = head\n    fast = head\n    while fast and fast.next:\n        slow = slow.next\n        fast = fast.next.next\n    return slow",
+  "solution_text": "<h3>Approach: Fast and Slow Pointers</h3><p>Use two pointers starting at the head. The <em>slow</em> pointer advances one node at a time; the <em>fast</em> pointer advances two nodes at a time. When <code>fast</code> reaches the end of the list, <code>slow</code> is exactly at the middle.</p><p>For an even-length list, this naturally lands <code>slow</code> on the <em>second</em> middle node because <code>fast</code> advances two steps per iteration.</p><p><strong>Time:</strong> O(n) &nbsp; <strong>Space:</strong> O(1)</p>",
+  "prepare": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n    \n    def __repr__(self):\n        return f'ListNode({self.val})'\n\ndef prepare(test_case_input):\n    head_array = test_case_input['head']\n    if not head_array:\n        return (None,)\n\n    def build_list(arr):\n        if not arr:\n            return None\n        head = ListNode(arr[0])\n        current = head\n        for i in range(1, len(arr)):\n            current.next = ListNode(arr[i])\n            current = current.next\n        return head\n\n    return (build_list(head_array),)",
+  "verify": "def verify(actual_output, expected_output):\n    def list_to_array(head):\n        result = []\n        current = head\n        while current:\n            result.append(current.val)\n            current = current.next\n        return result\n\n    actual_array = list_to_array(actual_output)\n    passed = actual_array == expected_output\n    return [passed, str(actual_array)]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "head": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "output": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 2,
+      "input": {
+        "head": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "output": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": 3,
+      "input": {
+        "head": [
+          1
+        ]
+      },
+      "output": [
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "input": {
+        "head": [
+          1,
+          2
+        ]
+      },
+      "output": [
+        2
+      ]
+    },
+    {
+      "id": 5,
+      "input": {
+        "head": [
+          1,
+          2,
+          3
+        ]
+      },
+      "output": [
+        2,
+        3
+      ]
+    }
+  ]
+}

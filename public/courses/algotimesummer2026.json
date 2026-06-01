@@ -17,6 +17,120 @@
   ],
   "badge": "Summer 2026",
   "units": {
+    "week5": {
+      "title": "Week 5",
+      "description": "Navigate the linked list — this week covers the core techniques every linked list problem relies on. Start with reversing a list and finding its midpoint using fast/slow pointers, then rearrange nodes with the odd-even grouping problem and the classic nth-from-end removal, and finish with two hard challenges: sorting a list in O(n log n) using merge sort and merging k sorted lists with a heap.",
+      "questions": [
+        {
+          "filename": "reverse-linked-list",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/reverse-linked-list/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            },
+            {
+              "url": "https://neetcode.io/solutions/reverse-linked-list",
+              "tooltip": "Solution",
+              "color": "#16a34a",
+              "visibleString": "Answer"
+            }
+          ],
+          "tags": ["Easy", "Linked List"]
+        },
+        {
+          "filename": "middle-of-the-linked-list",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/middle-of-the-linked-list/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            },
+            {
+              "url": "https://neetcode.io/solutions/middle-of-the-linked-list",
+              "tooltip": "Solution",
+              "color": "#16a34a",
+              "visibleString": "Answer"
+            }
+          ],
+          "tags": ["Easy", "Linked List"]
+        },
+        {
+          "filename": "odd-even-linked-list",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/odd-even-linked-list/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            },
+            {
+              "url": "https://neetcode.io/solutions/odd-even-linked-list",
+              "tooltip": "Solution",
+              "color": "#16a34a",
+              "visibleString": "Answer"
+            }
+          ],
+          "tags": ["Medium", "Linked List"]
+        },
+        {
+          "filename": "remove-nth-node-from-end-of-list",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            },
+            {
+              "url": "https://neetcode.io/solutions/remove-nth-node-from-end-of-list",
+              "tooltip": "Solution",
+              "color": "#16a34a",
+              "visibleString": "Answer"
+            }
+          ],
+          "tags": ["Medium", "Linked List"]
+        },
+        {
+          "filename": "sort-list",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/sort-list/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            },
+            {
+              "url": "https://neetcode.io/solutions/sort-list",
+              "tooltip": "Solution",
+              "color": "#16a34a",
+              "visibleString": "Answer"
+            }
+          ],
+          "tags": ["Hard", "Linked List"]
+        },
+        {
+          "filename": "merge-k-sorted-lists",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/merge-k-sorted-lists/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            },
+            {
+              "url": "https://neetcode.io/solutions/merge-k-sorted-lists",
+              "tooltip": "Solution",
+              "color": "#16a34a",
+              "visibleString": "Answer"
+            }
+          ],
+          "tags": ["Hard", "Linked List"]
+        }
+      ]
+    },
     "week4": {
       "title": "Week 4",
       "description": "Master the map — this week is dedicated entirely to hash map patterns. Start with two classic easy problems that show the core lookup and bijection ideas, move into medium challenges that use frequency maps and sliding windows, then tackle two hard problems: the minimum window substring and designing an LRU cache from scratch.",
