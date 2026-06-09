@@ -17,6 +17,120 @@
   ],
   "badge": "Summer 2026",
   "units": {
+    "week6": {
+      "title": "Week 6",
+      "description": "Climb the tree — this week is dedicated to binary trees and BSTs. Start with two essential easy problems that test structural symmetry and path existence, move into medium BST problems that leverage in-order traversal to validate structure and find the kth smallest element, then tackle the classic level-order traversal and finish with the hardest binary tree challenge: finding the maximum path sum through any sequence of nodes.",
+      "questions": [
+        {
+          "filename": "path-sum",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/path-sum/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            },
+            {
+              "url": "https://neetcode.io/solutions/path-sum",
+              "tooltip": "Solution",
+              "color": "#16a34a",
+              "visibleString": "Answer"
+            }
+          ],
+          "tags": ["Easy", "Trees"]
+        },
+        {
+          "filename": "symmetric-tree",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/symmetric-tree/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            },
+            {
+              "url": "https://neetcode.io/solutions/symmetric-tree",
+              "tooltip": "Solution",
+              "color": "#16a34a",
+              "visibleString": "Answer"
+            }
+          ],
+          "tags": ["Easy", "Trees"]
+        },
+        {
+          "filename": "validate-binary-search-tree",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/validate-binary-search-tree/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            },
+            {
+              "url": "https://neetcode.io/solutions/validate-binary-search-tree",
+              "tooltip": "Solution",
+              "color": "#16a34a",
+              "visibleString": "Answer"
+            }
+          ],
+          "tags": ["Medium", "Trees"]
+        },
+        {
+          "filename": "kth-smallest-element-in-a-bst",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            },
+            {
+              "url": "https://neetcode.io/solutions/kth-smallest-element-in-a-bst",
+              "tooltip": "Solution",
+              "color": "#16a34a",
+              "visibleString": "Answer"
+            }
+          ],
+          "tags": ["Medium", "Trees"]
+        },
+        {
+          "filename": "binary-tree-level-order-traversal",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/binary-tree-level-order-traversal/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            },
+            {
+              "url": "https://neetcode.io/solutions/binary-tree-level-order-traversal",
+              "tooltip": "Solution",
+              "color": "#16a34a",
+              "visibleString": "Answer"
+            }
+          ],
+          "tags": ["Medium", "Trees"]
+        },
+        {
+          "filename": "binary-tree-maximum-path-sum",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            },
+            {
+              "url": "https://neetcode.io/solutions/binary-tree-maximum-path-sum",
+              "tooltip": "Solution",
+              "color": "#16a34a",
+              "visibleString": "Answer"
+            }
+          ],
+          "tags": ["Hard", "Trees"]
+        }
+      ]
+    },
     "week5": {
       "title": "Week 5",
       "description": "Navigate the linked list — this week covers the core techniques every linked list problem relies on. Start with reversing a list and finding its midpoint using fast/slow pointers, then rearrange nodes with the odd-even grouping problem and the classic nth-from-end removal, and finish with two hard challenges: sorting a list in O(n log n) using merge sort and merging k sorted lists with a heap.",

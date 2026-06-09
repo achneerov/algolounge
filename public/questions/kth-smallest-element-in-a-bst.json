@@ -1,0 +1,151 @@
+{
+  "index": 259,
+  "filename": "kth-smallest-element-in-a-bst",
+  "title": "Kth Smallest Element in a BST",
+  "difficulty": "Medium",
+  "tags": [
+    "Trees"
+  ],
+  "keywords": [
+    "binary",
+    "search",
+    "tree",
+    "BST",
+    "kth",
+    "smallest",
+    "inorder",
+    "traversal",
+    "leetcode",
+    "230"
+  ],
+  "description": "<h2>Kth Smallest Element in a BST</h2><p><em>LeetCode 230. Kth Smallest Element in a BST</em></p><p>Given the <code>root</code> of a binary search tree and an integer <code>k</code>, return the <code>k<sup>th</sup></code> smallest value (<strong>1-indexed</strong>) of all the values of the nodes in the tree.</p><h3>Examples:</h3><ul><li><strong>Input:</strong> root = [3,1,4,null,2], k = 1<br><pre>  3\n / \\\n1   4\n \\\n  2</pre><strong>Output:</strong> 1</li><li><strong>Input:</strong> root = [5,3,6,2,4,null,null,1], k = 3<br><pre>      5\n     / \\\n    3   6\n   / \\\n  2   4\n /\n1</pre><strong>Output:</strong> 3</li></ul><h3>Constraints:</h3><ul><li>The number of nodes in the tree is <code>n</code></li><li><code>1 <= k <= n <= 10<sup>4</sup></code></li><li><code>0 <= Node.val <= 10<sup>4</sup></code></li></ul>",
+  "entry_function": "kthSmallest",
+  "template": "# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\n\ndef kthSmallest(root, k):\n    ",
+  "solution_code": "def kthSmallest(root, k):\n    stk = []\n    while root or stk:\n        if root:\n            stk.append(root)\n            root = root.left\n        else:\n            root = stk.pop()\n            k -= 1\n            if k == 0:\n                return root.val\n            root = root.right",
+  "solution_text": "<h3>Kth Smallest Element in a BST</h3><p><strong>Algorithm:</strong></p><ol><li>In-order traversal of a BST visits nodes in ascending order</li><li>Use an iterative stack-based in-order traversal</li><li>Decrement a counter each time you process a node; when it reaches 0, return that node's value</li></ol><p><strong>Time Complexity:</strong> O(h + k) — traverses at most h + k nodes, where h is tree height</p><p><strong>Space Complexity:</strong> O(h) — stack holds one path from root to current node</p><p><strong>Key Insight:</strong> BST in-order traversal yields sorted values for free — the kth node visited is the kth smallest. The iterative approach lets you stop early as soon as you've counted k nodes.</p>",
+  "prepare": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\n    def __repr__(self):\n        return f'TreeNode({self.val})'\n\ndef build_tree(arr):\n    if not arr or arr[0] is None:\n        return None\n    from collections import deque\n    root = TreeNode(arr[0])\n    queue = deque([root])\n    i = 1\n    while queue and i < len(arr):\n        node = queue.popleft()\n        if i < len(arr):\n            if arr[i] is not None:\n                node.left = TreeNode(arr[i])\n                queue.append(node.left)\n            i += 1\n        if i < len(arr):\n            if arr[i] is not None:\n                node.right = TreeNode(arr[i])\n                queue.append(node.right)\n            i += 1\n    return root\n\ndef prepare(test_case_input):\n    root = build_tree(test_case_input['root'])\n    return (root, test_case_input['k'])",
+  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "root": [
+          3,
+          1,
+          4,
+          null,
+          2
+        ],
+        "k": 1
+      },
+      "output": 1
+    },
+    {
+      "id": 2,
+      "input": {
+        "root": [
+          5,
+          3,
+          6,
+          2,
+          4,
+          null,
+          null,
+          1
+        ],
+        "k": 3
+      },
+      "output": 3
+    },
+    {
+      "id": 3,
+      "input": {
+        "root": [
+          1
+        ],
+        "k": 1
+      },
+      "output": 1
+    },
+    {
+      "id": 4,
+      "input": {
+        "root": [
+          3,
+          1,
+          4,
+          null,
+          2
+        ],
+        "k": 2
+      },
+      "output": 2
+    },
+    {
+      "id": 5,
+      "input": {
+        "root": [
+          5,
+          3,
+          6,
+          2,
+          4,
+          null,
+          null,
+          1
+        ],
+        "k": 5
+      },
+      "output": 5
+    },
+    {
+      "id": 6,
+      "input": {
+        "root": [
+          5,
+          3,
+          6,
+          2,
+          4,
+          null,
+          null,
+          1
+        ],
+        "k": 1
+      },
+      "output": 1
+    },
+    {
+      "id": 7,
+      "input": {
+        "root": [
+          10,
+          5,
+          15,
+          3,
+          7,
+          12,
+          20
+        ],
+        "k": 4
+      },
+      "output": 10
+    },
+    {
+      "id": 8,
+      "input": {
+        "root": [
+          4,
+          2,
+          6,
+          1,
+          3,
+          5,
+          7
+        ],
+        "k": 7
+      },
+      "output": 7
+    }
+  ]
+}

@@ -3998,8 +3998,91 @@
         "sorting",
         "recursion"
       ]
+    },
+    {
+      "index": 259,
+      "filename": "kth-smallest-element-in-a-bst",
+      "title": "Kth Smallest Element in a BST",
+      "difficulty": "Medium",
+      "tags": [
+        "Trees"
+      ],
+      "keywords": [
+        "binary",
+        "search",
+        "tree",
+        "BST",
+        "kth",
+        "smallest",
+        "inorder",
+        "traversal",
+        "leetcode",
+        "230"
+      ]
+    },
+    {
+      "index": 260,
+      "filename": "path-sum",
+      "title": "Path Sum",
+      "difficulty": "Easy",
+      "tags": [
+        "Trees"
+      ],
+      "keywords": [
+        "binary",
+        "tree",
+        "path",
+        "sum",
+        "root",
+        "leaf",
+        "dfs",
+        "recursion",
+        "leetcode",
+        "112"
+      ]
+    },
+    {
+      "index": 261,
+      "filename": "symmetric-tree",
+      "title": "Symmetric Tree",
+      "difficulty": "Easy",
+      "tags": [
+        "Trees"
+      ],
+      "keywords": [
+        "binary",
+        "tree",
+        "symmetric",
+        "mirror",
+        "dfs",
+        "recursion",
+        "leetcode",
+        "101"
+      ]
+    },
+    {
+      "index": 262,
+      "filename": "validate-binary-search-tree",
+      "title": "Validate Binary Search Tree",
+      "difficulty": "Medium",
+      "tags": [
+        "Trees"
+      ],
+      "keywords": [
+        "binary",
+        "search",
+        "tree",
+        "BST",
+        "validate",
+        "valid",
+        "inorder",
+        "traversal",
+        "dfs",
+        "leetcode",
+        "98"
+      ]
     }
   ],
-  "lastUpdated": "2026-06-01T18:59:02.266Z",
-  "totalQuestions": 203
+  "lastUpdated": "2026-06-09T06:26:05.836Z",
+  "totalQuestions": 207
 }

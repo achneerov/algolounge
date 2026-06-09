@@ -1,0 +1,141 @@
+{
+  "index": 261,
+  "filename": "symmetric-tree",
+  "title": "Symmetric Tree",
+  "difficulty": "Easy",
+  "tags": [
+    "Trees"
+  ],
+  "keywords": [
+    "binary",
+    "tree",
+    "symmetric",
+    "mirror",
+    "dfs",
+    "recursion",
+    "leetcode",
+    "101"
+  ],
+  "description": "<h2>Symmetric Tree</h2><p><em>LeetCode 101. Symmetric Tree</em></p><p>Given the <code>root</code> of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center).</p><h3>Examples:</h3><ul><li><strong>Input:</strong> root = [1,2,2,3,4,4,3]<br><pre>    1\n   / \\\n  2   2\n / \\ / \\\n3  4 4  3</pre><strong>Output:</strong> true</li><li><strong>Input:</strong> root = [1,2,2,null,3,null,3]<br><pre>    1\n   / \\\n  2   2\n   \\   \\\n   3   3</pre><strong>Output:</strong> false</li></ul><h3>Constraints:</h3><ul><li>The number of nodes in the tree is in the range <code>[1, 1000]</code></li><li><code>-100 <= Node.val <= 100</code></li></ul>",
+  "entry_function": "isSymmetric",
+  "template": "# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\n\ndef isSymmetric(root):\n    ",
+  "solution_code": "def isSymmetric(root):\n    def dfs(left, right):\n        if left is None and right is None:\n            return True\n        if left is None or right is None or left.val != right.val:\n            return False\n        return dfs(left.left, right.right) and dfs(left.right, right.left)\n\n    return dfs(root.left, root.right)",
+  "solution_text": "<h3>Symmetric Tree</h3><p><strong>Algorithm:</strong></p><ol><li>A tree is symmetric if its left and right subtrees are mirrors of each other</li><li>Two subtrees are mirrors if their roots have equal values, and each subtree's left child mirrors the other's right child</li><li>Use a helper that simultaneously walks both subtrees, comparing mirrored nodes</li></ol><p><strong>Time Complexity:</strong> O(n) — visits every node once</p><p><strong>Space Complexity:</strong> O(h) — recursion stack height</p><p><strong>Key Insight:</strong> Instead of comparing a tree to its flipped copy, recursively check that <code>left.left</code> mirrors <code>right.right</code> and <code>left.right</code> mirrors <code>right.left</code>.</p>",
+  "prepare": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\n    def __repr__(self):\n        return f'TreeNode({self.val})'\n\ndef build_tree(arr):\n    if not arr or arr[0] is None:\n        return None\n    from collections import deque\n    root = TreeNode(arr[0])\n    queue = deque([root])\n    i = 1\n    while queue and i < len(arr):\n        node = queue.popleft()\n        if i < len(arr):\n            if arr[i] is not None:\n                node.left = TreeNode(arr[i])\n                queue.append(node.left)\n            i += 1\n        if i < len(arr):\n            if arr[i] is not None:\n                node.right = TreeNode(arr[i])\n                queue.append(node.right)\n            i += 1\n    return root\n\ndef prepare(test_case_input):\n    root = build_tree(test_case_input['root'])\n    return (root,)",
+  "verify": "def verify(actual_output, expected_output):\n    if isinstance(expected_output, str):\n        expected_output = expected_output.lower() == 'true'\n    passed = bool(actual_output) == bool(expected_output)\n    return [passed, 'true' if actual_output else 'false']",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "root": [
+          1,
+          2,
+          2,
+          3,
+          4,
+          4,
+          3
+        ]
+      },
+      "output": "true"
+    },
+    {
+      "id": 2,
+      "input": {
+        "root": [
+          1,
+          2,
+          2,
+          null,
+          3,
+          null,
+          3
+        ]
+      },
+      "output": "false"
+    },
+    {
+      "id": 3,
+      "input": {
+        "root": [
+          1
+        ]
+      },
+      "output": "true"
+    },
+    {
+      "id": 4,
+      "input": {
+        "root": [
+          1,
+          2,
+          2,
+          2,
+          null,
+          2
+        ]
+      },
+      "output": "false"
+    },
+    {
+      "id": 5,
+      "input": {
+        "root": [
+          1,
+          2,
+          2,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "output": "true"
+    },
+    {
+      "id": 6,
+      "input": {
+        "root": [
+          5,
+          4,
+          4,
+          3,
+          null,
+          null,
+          3
+        ]
+      },
+      "output": "true"
+    },
+    {
+      "id": 7,
+      "input": {
+        "root": [
+          1,
+          0,
+          0,
+          null,
+          -1,
+          -1,
+          null
+        ]
+      },
+      "output": "false"
+    },
+    {
+      "id": 8,
+      "input": {
+        "root": [
+          2,
+          3,
+          3,
+          4,
+          5,
+          5,
+          4
+        ]
+      },
+      "output": "true"
+    }
+  ]
+}
