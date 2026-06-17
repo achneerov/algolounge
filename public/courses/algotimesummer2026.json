@@ -17,6 +17,102 @@
   ],
   "badge": "Summer 2026",
   "units": {
+    "week7": {
+      "title": "Week 7",
+      "description": "Week 7 — Sum of Unique Elements, Calculate Money in Leetcode Bank, Rotate Image, Minimum Number of People to Teach, Number of Distinct Roll Sequences, Longest Valid Parentheses.",
+      "questions": [
+        {
+          "filename": "sum-of-unique-elements",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/sum-of-unique-elements/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Easy",
+            "Array"
+          ]
+        },
+        {
+          "filename": "calculate-money-in-leetcode-bank",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/calculate-money-in-leetcode-bank/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Easy",
+            "Math"
+          ]
+        },
+        {
+          "filename": "rotate-image",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/rotate-image/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Medium",
+            "Array"
+          ]
+        },
+        {
+          "filename": "minimum-number-of-people-to-teach",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/minimum-number-of-people-to-teach/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Medium",
+            "Array"
+          ]
+        },
+        {
+          "filename": "number-of-distinct-roll-sequences",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/number-of-distinct-roll-sequences/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Hard",
+            "Dynamic Programming"
+          ]
+        },
+        {
+          "filename": "longest-valid-parentheses",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/longest-valid-parentheses/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Hard",
+            "String"
+          ]
+        }
+      ]
+    },
     "week6": {
       "title": "Week 6",
       "description": "Climb the tree — this week is dedicated to binary trees and BSTs. Start with two essential easy problems that test structural symmetry and path existence, move into medium BST problems that leverage in-order traversal to validate structure and find the kth smallest element, then tackle the classic level-order traversal and finish with the hardest binary tree challenge: finding the maximum path sum through any sequence of nodes.",
@@ -37,7 +133,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Easy", "Trees"]
+          "tags": [
+            "Easy",
+            "Trees"
+          ]
         },
         {
           "filename": "symmetric-tree",
@@ -55,7 +154,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Easy", "Trees"]
+          "tags": [
+            "Easy",
+            "Trees"
+          ]
         },
         {
           "filename": "validate-binary-search-tree",
@@ -73,7 +175,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Medium", "Trees"]
+          "tags": [
+            "Medium",
+            "Trees"
+          ]
         },
         {
           "filename": "kth-smallest-element-in-a-bst",
@@ -91,7 +196,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Medium", "Trees"]
+          "tags": [
+            "Medium",
+            "Trees"
+          ]
         },
         {
           "filename": "binary-tree-level-order-traversal",
@@ -109,7 +217,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Medium", "Trees"]
+          "tags": [
+            "Medium",
+            "Trees"
+          ]
         },
         {
           "filename": "binary-tree-maximum-path-sum",
@@ -127,7 +238,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Hard", "Trees"]
+          "tags": [
+            "Hard",
+            "Trees"
+          ]
         }
       ]
     },
@@ -151,7 +265,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Easy", "Linked List"]
+          "tags": [
+            "Easy",
+            "Linked List"
+          ]
         },
         {
           "filename": "middle-of-the-linked-list",
@@ -169,7 +286,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Easy", "Linked List"]
+          "tags": [
+            "Easy",
+            "Linked List"
+          ]
         },
         {
           "filename": "odd-even-linked-list",
@@ -187,7 +307,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Medium", "Linked List"]
+          "tags": [
+            "Medium",
+            "Linked List"
+          ]
         },
         {
           "filename": "remove-nth-node-from-end-of-list",
@@ -205,7 +328,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Medium", "Linked List"]
+          "tags": [
+            "Medium",
+            "Linked List"
+          ]
         },
         {
           "filename": "sort-list",
@@ -223,7 +349,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Hard", "Linked List"]
+          "tags": [
+            "Hard",
+            "Linked List"
+          ]
         },
         {
           "filename": "merge-k-sorted-lists",
@@ -241,7 +370,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Hard", "Linked List"]
+          "tags": [
+            "Hard",
+            "Linked List"
+          ]
         }
       ]
     },
@@ -265,7 +397,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Easy", "Arrays and Hashing"]
+          "tags": [
+            "Easy",
+            "Arrays and Hashing"
+          ]
         },
         {
           "filename": "word-pattern",
@@ -283,7 +418,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Easy", "Arrays and Hashing"]
+          "tags": [
+            "Easy",
+            "Arrays and Hashing"
+          ]
         },
         {
           "filename": "longest-substring-without-repeating-characters",
@@ -301,7 +439,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Medium", "Arrays and Hashing"]
+          "tags": [
+            "Medium",
+            "Arrays and Hashing"
+          ]
         },
         {
           "filename": "top-k-frequent-elements",
@@ -319,7 +460,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Medium", "Arrays and Hashing"]
+          "tags": [
+            "Medium",
+            "Arrays and Hashing"
+          ]
         },
         {
           "filename": "minimum-window-substring",
@@ -337,7 +481,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Hard", "Arrays and Hashing"]
+          "tags": [
+            "Hard",
+            "Arrays and Hashing"
+          ]
         },
         {
           "filename": "lru-cache",
@@ -355,7 +502,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Hard", "Arrays and Hashing"]
+          "tags": [
+            "Hard",
+            "Arrays and Hashing"
+          ]
         }
       ]
     },
@@ -379,7 +529,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Easy", "Stack"]
+          "tags": [
+            "Easy",
+            "Stack"
+          ]
         },
         {
           "filename": "backspace-string-compare",
@@ -397,7 +550,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Easy", "Stack"]
+          "tags": [
+            "Easy",
+            "Stack"
+          ]
         },
         {
           "filename": "online-stock-span",
@@ -415,7 +571,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Medium", "Stack"]
+          "tags": [
+            "Medium",
+            "Stack"
+          ]
         },
         {
           "filename": "daily-temperatures",
@@ -433,7 +592,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Medium", "Stack"]
+          "tags": [
+            "Medium",
+            "Stack"
+          ]
         },
         {
           "filename": "number-of-visible-people-in-a-queue",
@@ -445,7 +607,10 @@
               "visibleString": "LeetCode"
             }
           ],
-          "tags": ["Hard", "Stack"]
+          "tags": [
+            "Hard",
+            "Stack"
+          ]
         },
         {
           "filename": "largest-rectangle-in-histogram",
@@ -463,7 +628,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Hard", "Stack"]
+          "tags": [
+            "Hard",
+            "Stack"
+          ]
         }
       ]
     },
@@ -487,7 +655,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Easy", "Two Pointers"]
+          "tags": [
+            "Easy",
+            "Two Pointers"
+          ]
         },
         {
           "filename": "plus-one",
@@ -505,7 +676,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Easy", "Arrays and Hashing"]
+          "tags": [
+            "Easy",
+            "Arrays and Hashing"
+          ]
         },
         {
           "filename": "generate-parentheses",
@@ -523,7 +697,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Medium", "Backtracking"]
+          "tags": [
+            "Medium",
+            "Backtracking"
+          ]
         },
         {
           "filename": "binary-tree-right-side-view",
@@ -541,7 +718,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Medium", "Trees"]
+          "tags": [
+            "Medium",
+            "Trees"
+          ]
         },
         {
           "filename": "interleaving-string",
@@ -559,7 +739,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Hard", "Dynamic Programming"]
+          "tags": [
+            "Hard",
+            "Dynamic Programming"
+          ]
         },
         {
           "filename": "serialize-and-deserialize-binary-tree",
@@ -577,7 +760,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Hard", "Trees"]
+          "tags": [
+            "Hard",
+            "Trees"
+          ]
         }
       ]
     },
@@ -601,7 +787,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Easy", "Arrays and Hashing"]
+          "tags": [
+            "Easy",
+            "Arrays and Hashing"
+          ]
         },
         {
           "filename": "palindrome-number",
@@ -619,7 +808,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Easy", "Math"]
+          "tags": [
+            "Easy",
+            "Math"
+          ]
         },
         {
           "filename": "anagram-groups",
@@ -637,7 +829,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Medium", "Arrays and Hashing"]
+          "tags": [
+            "Medium",
+            "Arrays and Hashing"
+          ]
         },
         {
           "filename": "longest-palindromic-substring",
@@ -655,7 +850,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Medium", "Two Pointers"]
+          "tags": [
+            "Medium",
+            "Two Pointers"
+          ]
         },
         {
           "filename": "edit-distance",
@@ -673,7 +871,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Hard", "Dynamic Programming"]
+          "tags": [
+            "Hard",
+            "Dynamic Programming"
+          ]
         },
         {
           "filename": "trapping-rain-water",
@@ -691,7 +892,10 @@
               "visibleString": "Answer"
             }
           ],
-          "tags": ["Hard", "Two Pointers"]
+          "tags": [
+            "Hard",
+            "Two Pointers"
+          ]
         }
       ]
     }

@@ -1,0 +1,47 @@
+{
+  "index": 263,
+  "filename": "calculate-money-in-leetcode-bank",
+  "title": "Calculate Money in Leetcode Bank",
+  "difficulty": "Easy",
+  "tags": [
+    "Math"
+  ],
+  "keywords": [
+    "calculate",
+    "money",
+    "in",
+    "leetcode",
+    "bank",
+    "math"
+  ],
+  "description": "<h2>Calculate Money in Leetcode Bank</h2><p>Hercy wants to save money for his first car. He puts money in the Leetcode&nbsp;bank <strong>every day</strong>.</p>\n\n<p>He starts by putting in <code>$1</code> on Monday, the first day. Every day from Tuesday to Sunday, he will put in <code>$1</code> more than the day before. On every subsequent Monday, he will put in <code>$1</code> more than the <strong>previous Monday</strong>.<span style=\"display: none;\"> </span></p>\n\n<p>Given <code>n</code>, return <em>the total amount of money he will have in the Leetcode bank at the end of the </em><code>n<sup>th</sup></code><em> day.</em></p>\n\n\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> n = 4<br><strong>Output:</strong> 10<br><strong>Explanation:</strong>&nbsp;After the 4<sup>th</sup> day, the total is 1 + 2 + 3 + 4 = 10.</li><li><strong>Input:</strong> n = 10<br><strong>Output:</strong> 37<br><strong>Explanation:</strong>&nbsp;After the 10<sup>th</sup> day, the total is (1 + 2 + 3 + 4 + 5 + 6 + 7) + (2 + 3 + 4) = 37. Notice that on the 2<sup>nd</sup> Monday, Hercy only puts in $2.</li><li><strong>Input:</strong> n = 20<br><strong>Output:</strong> 96<br><strong>Explanation:</strong>&nbsp;After the 20<sup>th</sup> day, the total is (1 + 2 + 3 + 4 + 5 + 6 + 7) + (2 + 3 + 4 + 5 + 6 + 7 + 8) + (3 + 4 + 5 + 6 + 7 + 8) = 96.</li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= n &lt;= 1000</code></li>\n</ul>\n",
+  "entry_function": "totalMoney",
+  "template": "def totalMoney(n):\n    ",
+  "solution_text": "",
+  "solution_code": "",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['n'],)",
+  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "n": 4
+      },
+      "output": 10
+    },
+    {
+      "id": 2,
+      "input": {
+        "n": 10
+      },
+      "output": 37
+    },
+    {
+      "id": 3,
+      "input": {
+        "n": 20
+      },
+      "output": 96
+    }
+  ]
+}

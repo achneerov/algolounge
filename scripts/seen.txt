@@ -1,1 +1,7 @@
 two-sum
+sum-of-unique-elements
+calculate-money-in-leetcode-bank
+rotate-image
+minimum-number-of-people-to-teach
+number-of-distinct-roll-sequences
+longest-valid-parentheses

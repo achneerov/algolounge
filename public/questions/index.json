@@ -4081,8 +4081,100 @@
         "leetcode",
         "98"
       ]
+    },
+    {
+      "index": 263,
+      "filename": "calculate-money-in-leetcode-bank",
+      "title": "Calculate Money in Leetcode Bank",
+      "difficulty": "Easy",
+      "tags": [
+        "Math"
+      ],
+      "keywords": [
+        "calculate",
+        "money",
+        "in",
+        "leetcode",
+        "bank",
+        "math"
+      ]
+    },
+    {
+      "index": 264,
+      "filename": "minimum-number-of-people-to-teach",
+      "title": "Minimum Number of People to Teach",
+      "difficulty": "Medium",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "minimum",
+        "number",
+        "of",
+        "people",
+        "to",
+        "teach",
+        "array",
+        "hash",
+        "table",
+        "greedy"
+      ]
+    },
+    {
+      "index": 265,
+      "filename": "number-of-distinct-roll-sequences",
+      "title": "Number of Distinct Roll Sequences",
+      "difficulty": "Hard",
+      "tags": [
+        "Dynamic Programming"
+      ],
+      "keywords": [
+        "number",
+        "of",
+        "distinct",
+        "roll",
+        "sequences",
+        "dynamic",
+        "programming",
+        "memoization"
+      ]
+    },
+    {
+      "index": 266,
+      "filename": "rotate-image",
+      "title": "Rotate Image",
+      "difficulty": "Medium",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "rotate",
+        "image",
+        "array",
+        "math",
+        "matrix"
+      ]
+    },
+    {
+      "index": 267,
+      "filename": "sum-of-unique-elements",
+      "title": "Sum of Unique Elements",
+      "difficulty": "Easy",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "sum",
+        "of",
+        "unique",
+        "elements",
+        "array",
+        "hash",
+        "table",
+        "counting"
+      ]
     }
   ],
-  "lastUpdated": "2026-06-09T06:26:05.836Z",
-  "totalQuestions": 207
+  "lastUpdated": "2026-06-17T05:58:18.522Z",
+  "totalQuestions": 212
 }
