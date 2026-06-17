@@ -1,0 +1,38 @@
+name: Generate Week
+
+on:
+  workflow_dispatch:
+    inputs:
+      course:
+        description: "Course filename (e.g. algotimesummer2026)"
+        required: true
+        type: string
+      week:
+        description: "Week number (e.g. 6)"
+        required: true
+        type: number
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run scrape script
+        run: node scripts/scrape.js "${{ inputs.course }}" "${{ inputs.week }}"
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/questions/ public/courses/ public/questions/index.json scripts/seen.txt
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "Add week${{ inputs.week }} to ${{ inputs.course }}"
+          git push

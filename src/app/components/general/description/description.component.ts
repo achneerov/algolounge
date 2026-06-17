@@ -72,7 +72,7 @@ export class DescriptionComponent implements OnChanges {
         }
 
         // Collect description content
-        if (el.tagName === 'P' || el.tagName === 'UL') {
+        if (['P', 'UL', 'OL', 'PRE', 'BLOCKQUOTE', 'TABLE'].includes(el.tagName)) {
           descriptionParts.push(el.outerHTML);
         }
       }
