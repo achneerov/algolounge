@@ -5,3 +5,9 @@ rotate-image
 minimum-number-of-people-to-teach
 number-of-distinct-roll-sequences
 longest-valid-parentheses
+reverse-string-ii
+goal-parser-interpretation
+valid-binary-strings-with-cost-limit
+maximum-manhattan-distance-after-k-changes
+n-queens-ii
+manhattan-distances-of-all-arrangements-of-pieces

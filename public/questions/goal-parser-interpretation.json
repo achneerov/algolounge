@@ -1,0 +1,45 @@
+{
+  "index": 268,
+  "filename": "goal-parser-interpretation",
+  "title": "Goal Parser Interpretation",
+  "difficulty": "Easy",
+  "tags": [
+    "String"
+  ],
+  "keywords": [
+    "goal",
+    "parser",
+    "interpretation",
+    "string"
+  ],
+  "description": "<h2>Goal Parser Interpretation</h2><p>You own a <strong>Goal Parser</strong> that can interpret a string <code>command</code>. The <code>command</code> consists of an alphabet of <code>&quot;G&quot;</code>, <code>&quot;()&quot;</code> and/or <code>&quot;(al)&quot;</code> in some order. The Goal Parser will interpret <code>&quot;G&quot;</code> as the string <code>&quot;G&quot;</code>, <code>&quot;()&quot;</code> as the string <code>&quot;o&quot;</code>, and <code>&quot;(al)&quot;</code> as the string <code>&quot;al&quot;</code>. The interpreted strings are then concatenated in the original order.</p>\n\n<p>Given the string <code>command</code>, return <em>the <strong>Goal Parser</strong>&#39;s interpretation of </em><code>command</code>.</p>\n\n\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> command = &quot;G()(al)&quot;<br><strong>Output:</strong> &quot;Goal&quot;<br><strong>Explanation:</strong>&nbsp;The Goal Parser interprets the command as follows:<br>G -&gt; G<br>() -&gt; o<br>(al) -&gt; al<br>The final concatenated result is &quot;Goal&quot;.</li><li><strong>Input:</strong> command = &quot;G()()()()(al)&quot;<br><strong>Output:</strong> &quot;Gooooal&quot;</li><li><strong>Input:</strong> command = &quot;(al)G(al)()()G&quot;<br><strong>Output:</strong> &quot;alGalooG&quot;</li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= command.length &lt;= 100</code></li>\n\t<li><code>command</code> consists of <code>&quot;G&quot;</code>, <code>&quot;()&quot;</code>, and/or <code>&quot;(al)&quot;</code> in some order.</li>\n</ul>\n",
+  "entry_function": "interpret",
+  "template": "def interpret(command):\n    ",
+  "solution_text": "",
+  "solution_code": "",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['command'],)",
+  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "command": "G()(al)"
+      },
+      "output": "Goal"
+    },
+    {
+      "id": 2,
+      "input": {
+        "command": "G()()()()(al)"
+      },
+      "output": "Gooooal"
+    },
+    {
+      "id": 3,
+      "input": {
+        "command": "(al)G(al)()()G"
+      },
+      "output": "alGalooG"
+    }
+  ]
+}

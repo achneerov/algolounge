@@ -1,0 +1,41 @@
+{
+  "index": 272,
+  "filename": "reverse-string-ii",
+  "title": "Reverse String II",
+  "difficulty": "Easy",
+  "tags": [
+    "Two Pointers"
+  ],
+  "keywords": [
+    "reverse",
+    "string",
+    "ii",
+    "two",
+    "pointers"
+  ],
+  "description": "<h2>Reverse String II</h2><p>Given a string <code>s</code> and an integer <code>k</code>, reverse the first <code>k</code> characters for every <code>2k</code> characters counting from the start of the string.</p>\n\n<p>If there are fewer than <code>k</code> characters left, reverse all of them. If there are less than <code>2k</code> but greater than or equal to <code>k</code> characters, then reverse the first <code>k</code> characters and leave the other as original.</p>\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> s = \"abcdefg\", k = 2<br><strong>Output:</strong> \"bacdfeg\"</li><li><strong>Input:</strong> s = \"abcd\", k = 2<br><strong>Output:</strong> \"bacd\"</li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>s</code> consists of only lowercase English letters.</li>\n\t<li><code>1 &lt;= k &lt;= 10<sup>4</sup></code></li>\n</ul>\n",
+  "entry_function": "reverseStr",
+  "template": "def reverseStr(s, k):\n    ",
+  "solution_text": "",
+  "solution_code": "",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['s'], test_case_input['k'])",
+  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "s": "abcdefg",
+        "k": 2
+      },
+      "output": "bacdfeg"
+    },
+    {
+      "id": 2,
+      "input": {
+        "s": "abcd",
+        "k": 2
+      },
+      "output": "bacd"
+    }
+  ]
+}

@@ -4173,8 +4173,117 @@
         "table",
         "counting"
       ]
+    },
+    {
+      "index": 268,
+      "filename": "goal-parser-interpretation",
+      "title": "Goal Parser Interpretation",
+      "difficulty": "Easy",
+      "tags": [
+        "String"
+      ],
+      "keywords": [
+        "goal",
+        "parser",
+        "interpretation",
+        "string"
+      ]
+    },
+    {
+      "index": 269,
+      "filename": "manhattan-distances-of-all-arrangements-of-pieces",
+      "title": "Manhattan Distances of All Arrangements of Pieces",
+      "difficulty": "Hard",
+      "tags": [
+        "Math"
+      ],
+      "keywords": [
+        "manhattan",
+        "distances",
+        "of",
+        "all",
+        "arrangements",
+        "pieces",
+        "math",
+        "combinatorics"
+      ]
+    },
+    {
+      "index": 270,
+      "filename": "maximum-manhattan-distance-after-k-changes",
+      "title": "Maximum Manhattan Distance After K Changes",
+      "difficulty": "Medium",
+      "tags": [
+        "Hash Table"
+      ],
+      "keywords": [
+        "maximum",
+        "manhattan",
+        "distance",
+        "after",
+        "k",
+        "changes",
+        "hash",
+        "table",
+        "math",
+        "string",
+        "counting"
+      ]
+    },
+    {
+      "index": 271,
+      "filename": "n-queens-ii",
+      "title": "N-Queens II",
+      "difficulty": "Hard",
+      "tags": [
+        "Backtracking"
+      ],
+      "keywords": [
+        "n",
+        "queens",
+        "ii",
+        "backtracking"
+      ]
+    },
+    {
+      "index": 272,
+      "filename": "reverse-string-ii",
+      "title": "Reverse String II",
+      "difficulty": "Easy",
+      "tags": [
+        "Two Pointers"
+      ],
+      "keywords": [
+        "reverse",
+        "string",
+        "ii",
+        "two",
+        "pointers"
+      ]
+    },
+    {
+      "index": 273,
+      "filename": "valid-binary-strings-with-cost-limit",
+      "title": "Valid Binary Strings With Cost Limit",
+      "difficulty": "Medium",
+      "tags": [
+        "String"
+      ],
+      "keywords": [
+        "valid",
+        "binary",
+        "strings",
+        "with",
+        "cost",
+        "limit",
+        "string",
+        "backtracking",
+        "bit",
+        "manipulation",
+        "enumeration"
+      ]
     }
   ],
-  "lastUpdated": "2026-06-17T05:58:18.522Z",
-  "totalQuestions": 212
+  "lastUpdated": "2026-06-23T17:20:06.009Z",
+  "totalQuestions": 218
 }

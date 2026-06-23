@@ -1,0 +1,54 @@
+{
+  "index": 273,
+  "filename": "valid-binary-strings-with-cost-limit",
+  "title": "Valid Binary Strings With Cost Limit",
+  "difficulty": "Medium",
+  "tags": [
+    "String"
+  ],
+  "keywords": [
+    "valid",
+    "binary",
+    "strings",
+    "with",
+    "cost",
+    "limit",
+    "string",
+    "backtracking",
+    "bit",
+    "manipulation",
+    "enumeration"
+  ],
+  "description": "<h2>Valid Binary Strings With Cost Limit</h2><p>You are given two integers <code>n</code> and <code>k</code>.</p>\n\n<p>The <strong>cost</strong> of a binary string <code>s</code> is defined as the sum of all indices <code>i</code> (0-based) such that <code>s[i] == &#39;1&#39;</code>.</p>\n\n<p>A binary string is considered <strong>valid</strong> if:</p>\n\n<ul>\n\t<li>It does not contain two consecutive <code>&#39;1&#39;</code> characters.</li>\n\t<li>Its cost is <strong>less than or equal</strong> to <code>k</code>.</li>\n</ul>\n\n<p>Return a list of all valid binary strings of length <code>n</code> in any order.</p>\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> n = 3, k = 1<br><strong>Output:</strong> [&quot;000&quot;,&quot;010&quot;,&quot;100&quot;]<br><strong>Explanation:</strong></p>\n\n<p>The binary strings of length 3 without consecutive <code>&#39;1&#39;</code> characters are:</p>\n\n<ul>\n\t<li><code>&quot;000&quot;</code> : <code>cost = 0</code></li>\n\t<li>&quot;<code>100&quot;</code> : <code>cost = 0</code></li>\n\t<li><code>&quot;010&quot;</code> : <code>cost = 1</code></li>\n\t<li><code>&quot;001&quot;</code> : <code>cost = 2</code></li>\n\t<li><code>&quot;101&quot;</code> : <code>cost = 0 + 2 = 2</code></li>\n</ul>\n\n<p>Among these, the strings with cost less than or equal to <code>k = 1</code> are <code>&quot;000&quot;</code>, <code>&quot;010&quot;</code> and <code>&quot;100&quot;</code>.</p>\n\n<p>Thus, the valid strings are <code>[&quot;000&quot;, &quot;010&quot;, &quot;100&quot;]</code>.</p></li><li><strong>Input:</strong> n = 1, k = 0<br><strong>Output:</strong> [&quot;0&quot;,&quot;1&quot;]<br><strong>Explanation:</strong></p>\n\n<p>The valid binary strings of length 1 are <code>&quot;0&quot;</code> and <code>&quot;1&quot;</code>.</p>\n\n<p>Thus the answer is <code>[&quot;0&quot;, &quot;1&quot;]</code>.</p></li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= n &lt;= 12</code></li>\n\t<li><code>0 &lt;= k &lt;= n * (n - 1) / 2</code></li>\n</ul>\n",
+  "entry_function": "generateValidStrings",
+  "template": "def generateValidStrings(n, k):\n    ",
+  "solution_text": "",
+  "solution_code": "",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['n'], test_case_input['k'])",
+  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "n": 3,
+        "k": 1
+      },
+      "output": [
+        "000",
+        "010",
+        "100"
+      ]
+    },
+    {
+      "id": 2,
+      "input": {
+        "n": 1,
+        "k": 0
+      },
+      "output": [
+        "0",
+        "1"
+      ]
+    }
+  ]
+}

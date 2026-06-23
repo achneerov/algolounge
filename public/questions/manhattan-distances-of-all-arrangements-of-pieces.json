@@ -1,0 +1,46 @@
+{
+  "index": 269,
+  "filename": "manhattan-distances-of-all-arrangements-of-pieces",
+  "title": "Manhattan Distances of All Arrangements of Pieces",
+  "difficulty": "Hard",
+  "tags": [
+    "Math"
+  ],
+  "keywords": [
+    "manhattan",
+    "distances",
+    "of",
+    "all",
+    "arrangements",
+    "pieces",
+    "math",
+    "combinatorics"
+  ],
+  "description": "<h2>Manhattan Distances of All Arrangements of Pieces</h2><p>You are given three integers <code><font face=\"monospace\">m</font></code>, <code><font face=\"monospace\">n</font></code>, and <code>k</code>.</p>\n\n<p>There is a rectangular grid of size <code>m &times; n</code> containing <code>k</code> identical pieces. Return the sum of Manhattan distances between every pair of pieces over all <strong>valid arrangements</strong> of pieces.</p>\n\n<p>A <strong>valid arrangement</strong> is a placement of all <code>k</code> pieces on the grid with <strong>at most</strong> one piece per cell.</p>\n\n<p>Since the answer may be very large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.</p>\n\n<p>The Manhattan Distance between two cells <code>(x<sub>i</sub>, y<sub>i</sub>)</code> and <code>(x<sub>j</sub>, y<sub>j</sub>)</code> is <code>|x<sub>i</sub> - x<sub>j</sub>| + |y<sub>i</sub> - y<sub>j</sub>|</code>.</p>\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> m = 2, n = 2, k = 2<br><strong>Output:</strong> 8<br><strong>Explanation:</strong></p>\n\n<p>The valid arrangements of pieces on the board are:</p>\n\n<p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2024/12/25/4040example1.drawio\" /><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2024/12/25/untitled-diagramdrawio.png\" style=\"width: 441px; height: 204px;\" /></p>\n\n<ul>\n\t<li>In the first 4 arrangements, the Manhattan distance between the two pieces is 1.</li>\n\t<li>In the last 2 arrangements, the Manhattan distance between the two pieces is 2.</li>\n</ul>\n\n<p>Thus, the total Manhattan distance across all valid arrangements is <code>1 + 1 + 1 + 1 + 2 + 2 = 8</code>.</p></li><li><strong>Input:</strong> m = 1, n = 4, k = 3<br><strong>Output:</strong> 20<br><strong>Explanation:</strong></p>\n\n<p>The valid arrangements of pieces on the board are:</p>\n\n<p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2024/12/25/4040example2drawio.png\" style=\"width: 762px; height: 41px;\" /></p>\n\n<ul>\n\t<li>The first and last arrangements have a total Manhattan distance of <code>1 + 1 + 2 = 4</code>.</li>\n\t<li>The middle two arrangements have a total Manhattan distance of <code>1 + 2 + 3 = 6</code>.</li>\n</ul>\n\n<p>The total Manhattan distance between all pairs of pieces across all arrangements is <code>4 + 6 + 6 + 4 = 20</code>.</p></li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= m, n &lt;= 10<sup>5</sup></code></li>\n\t<li><code>2 &lt;= m * n &lt;= 10<sup>5</sup></code></li>\n\t<li><code><font face=\"monospace\">2 &lt;= k &lt;= m * n</font></code></li>\n</ul>\n",
+  "entry_function": "distanceSum",
+  "template": "def distanceSum(m, n, k):\n    ",
+  "solution_text": "",
+  "solution_code": "",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['m'], test_case_input['n'], test_case_input['k'])",
+  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "m": 2,
+        "n": 2,
+        "k": 2
+      },
+      "output": 8
+    },
+    {
+      "id": 2,
+      "input": {
+        "m": 1,
+        "n": 4,
+        "k": 3
+      },
+      "output": 20
+    }
+  ]
+}
