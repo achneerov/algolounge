@@ -11,3 +11,9 @@ valid-binary-strings-with-cost-limit
 maximum-manhattan-distance-after-k-changes
 n-queens-ii
 manhattan-distances-of-all-arrangements-of-pieces
+minimum-sum-of-mountain-triplets-i
+check-if-strings-can-be-made-equal-with-operations-i
+select-k-disjoint-special-substrings
+container-with-most-water
+maximum-element-sum-of-a-complete-subset-of-indices
+maximum-points-after-collecting-coins-from-all-nodes

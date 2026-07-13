@@ -4282,8 +4282,122 @@
         "manipulation",
         "enumeration"
       ]
+    },
+    {
+      "index": 274,
+      "filename": "check-if-strings-can-be-made-equal-with-operations-i",
+      "title": "Check if Strings Can be Made Equal With Operations I",
+      "difficulty": "Easy",
+      "tags": [
+        "String"
+      ],
+      "keywords": [
+        "check",
+        "if",
+        "strings",
+        "can",
+        "be",
+        "made",
+        "equal",
+        "with",
+        "operations",
+        "i",
+        "string"
+      ]
+    },
+    {
+      "index": 275,
+      "filename": "maximum-element-sum-of-a-complete-subset-of-indices",
+      "title": "Maximum Element-Sum of a Complete Subset of Indices",
+      "difficulty": "Hard",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "maximum",
+        "element",
+        "sum",
+        "of",
+        "a",
+        "complete",
+        "subset",
+        "indices",
+        "array",
+        "math",
+        "number",
+        "theory"
+      ]
+    },
+    {
+      "index": 276,
+      "filename": "maximum-points-after-collecting-coins-from-all-nodes",
+      "title": "Maximum Points After Collecting Coins From All Nodes",
+      "difficulty": "Hard",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "maximum",
+        "points",
+        "after",
+        "collecting",
+        "coins",
+        "from",
+        "all",
+        "nodes",
+        "array",
+        "dynamic",
+        "programming",
+        "bit",
+        "manipulation",
+        "tree",
+        "depth-first",
+        "search",
+        "memoization"
+      ]
+    },
+    {
+      "index": 277,
+      "filename": "minimum-sum-of-mountain-triplets-i",
+      "title": "Minimum Sum of Mountain Triplets I",
+      "difficulty": "Easy",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "minimum",
+        "sum",
+        "of",
+        "mountain",
+        "triplets",
+        "i",
+        "array"
+      ]
+    },
+    {
+      "index": 278,
+      "filename": "select-k-disjoint-special-substrings",
+      "title": "Select K Disjoint Special Substrings",
+      "difficulty": "Medium",
+      "tags": [
+        "Hash Table"
+      ],
+      "keywords": [
+        "select",
+        "k",
+        "disjoint",
+        "special",
+        "substrings",
+        "hash",
+        "table",
+        "string",
+        "dynamic",
+        "programming",
+        "greedy",
+        "sorting"
+      ]
     }
   ],
-  "lastUpdated": "2026-06-23T17:20:06.009Z",
-  "totalQuestions": 218
+  "lastUpdated": "2026-07-13T02:49:23.602Z",
+  "totalQuestions": 223
 }

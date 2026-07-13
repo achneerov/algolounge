@@ -17,6 +17,102 @@
   ],
   "badge": "Summer 2026",
   "units": {
+    "week8": {
+      "title": "Week 8",
+      "description": "Week 8 — Minimum Sum of Mountain Triplets I, Check if Strings Can be Made Equal With Operations I, Select K Disjoint Special Substrings, Container With Most Water, Maximum Element-Sum of a Complete Subset of Indices, Maximum Points After Collecting Coins From All Nodes.",
+      "questions": [
+        {
+          "filename": "minimum-sum-of-mountain-triplets-i",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/minimum-sum-of-mountain-triplets-i/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Easy",
+            "Array"
+          ]
+        },
+        {
+          "filename": "check-if-strings-can-be-made-equal-with-operations-i",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/check-if-strings-can-be-made-equal-with-operations-i/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Easy",
+            "String"
+          ]
+        },
+        {
+          "filename": "select-k-disjoint-special-substrings",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/select-k-disjoint-special-substrings/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Medium",
+            "Hash Table"
+          ]
+        },
+        {
+          "filename": "container-with-most-water",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/container-with-most-water/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Medium",
+            "Array"
+          ]
+        },
+        {
+          "filename": "maximum-element-sum-of-a-complete-subset-of-indices",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/maximum-element-sum-of-a-complete-subset-of-indices/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Hard",
+            "Array"
+          ]
+        },
+        {
+          "filename": "maximum-points-after-collecting-coins-from-all-nodes",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/maximum-points-after-collecting-coins-from-all-nodes/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Hard",
+            "Array"
+          ]
+        }
+      ]
+    },
     "week7": {
       "title": "Week 7",
       "description": "Week 7 — Sum of Unique Elements, Calculate Money in Leetcode Bank, Rotate Image, Minimum Number of People to Teach, Number of Distinct Roll Sequences, Longest Valid Parentheses.",

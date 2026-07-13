@@ -1,0 +1,47 @@
+{
+  "index": 274,
+  "filename": "check-if-strings-can-be-made-equal-with-operations-i",
+  "title": "Check if Strings Can be Made Equal With Operations I",
+  "difficulty": "Easy",
+  "tags": [
+    "String"
+  ],
+  "keywords": [
+    "check",
+    "if",
+    "strings",
+    "can",
+    "be",
+    "made",
+    "equal",
+    "with",
+    "operations",
+    "i",
+    "string"
+  ],
+  "description": "<h2>Check if Strings Can be Made Equal With Operations I</h2><p>You are given two strings <code>s1</code> and <code>s2</code>, both of length <code>4</code>, consisting of <strong>lowercase</strong> English letters.</p>\n\n<p>You can apply the following operation on any of the two strings <strong>any</strong> number of times:</p>\n\n<ul>\n\t<li>Choose any two indices <code>i</code> and <code>j</code> such that <code>j - i = 2</code>, then <strong>swap</strong> the two characters at those indices in the string.</li>\n</ul>\n\n<p>Return <code>true</code><em> if you can make the strings </em><code>s1</code><em> and </em><code>s2</code><em> equal, and </em><code>false</code><em> otherwise</em>.</p>\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> s1 = &quot;abcd&quot;, s2 = &quot;cdab&quot;<br><strong>Output:</strong> true<br><strong>Explanation:</strong> We can do the following operations on s1:<br>- Choose the indices i = 0, j = 2. The resulting string is s1 = &quot;cbad&quot;.<br>- Choose the indices i = 1, j = 3. The resulting string is s1 = &quot;cdab&quot; = s2.</li><li><strong>Input:</strong> s1 = &quot;abcd&quot;, s2 = &quot;dacb&quot;<br><strong>Output:</strong> false<br><strong>Explanation:</strong> It is not possible to make the two strings equal.</li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>s1.length == s2.length == 4</code></li>\n\t<li><code>s1</code> and <code>s2</code> consist only of lowercase English letters.</li>\n</ul>\n",
+  "entry_function": "canBeEqual",
+  "template": "def canBeEqual(s1, s2):\n    ",
+  "solution_text": "",
+  "solution_code": "",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['s1'], test_case_input['s2'])",
+  "verify": "def verify(actual_output, expected_output):\n    if isinstance(expected_output, str):\n        expected_output = expected_output.lower() == 'true'\n    passed = bool(actual_output) == bool(expected_output)\n    return [passed, 'true' if actual_output else 'false']",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "s1": "abcd",
+        "s2": "cdab"
+      },
+      "output": "true"
+    },
+    {
+      "id": 2,
+      "input": {
+        "s1": "abcd",
+        "s2": "dacb"
+      },
+      "output": "false"
+    }
+  ]
+}
