@@ -17,3 +17,9 @@ select-k-disjoint-special-substrings
 container-with-most-water
 maximum-element-sum-of-a-complete-subset-of-indices
 maximum-points-after-collecting-coins-from-all-nodes
+diameter-of-binary-tree
+calculate-amount-paid-in-taxes
+find-kth-largest-xor-coordinate-value
+maximum-subarray-sum-after-multiplier
+maximum-value-of-k-coins-from-piles
+regular-expression-matching

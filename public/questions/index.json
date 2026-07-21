@@ -4396,8 +4396,116 @@
         "greedy",
         "sorting"
       ]
+    },
+    {
+      "index": 279,
+      "filename": "calculate-amount-paid-in-taxes",
+      "title": "Calculate Amount Paid in Taxes",
+      "difficulty": "Easy",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "calculate",
+        "amount",
+        "paid",
+        "in",
+        "taxes",
+        "array",
+        "simulation"
+      ]
+    },
+    {
+      "index": 280,
+      "filename": "diameter-of-binary-tree",
+      "title": "Diameter of Binary Tree",
+      "difficulty": "Easy",
+      "tags": [
+        "Tree"
+      ],
+      "keywords": [
+        "diameter",
+        "of",
+        "binary",
+        "tree",
+        "depth-first",
+        "search"
+      ]
+    },
+    {
+      "index": 281,
+      "filename": "find-kth-largest-xor-coordinate-value",
+      "title": "Find Kth Largest XOR Coordinate Value",
+      "difficulty": "Medium",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "find",
+        "kth",
+        "largest",
+        "xor",
+        "coordinate",
+        "value",
+        "array",
+        "divide",
+        "and",
+        "conquer",
+        "bit",
+        "manipulation",
+        "sorting",
+        "heap",
+        "(priority",
+        "queue)",
+        "matrix",
+        "prefix",
+        "sum",
+        "quickselect"
+      ]
+    },
+    {
+      "index": 282,
+      "filename": "maximum-subarray-sum-after-multiplier",
+      "title": "Maximum Subarray Sum After Multiplier",
+      "difficulty": "Medium",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "maximum",
+        "subarray",
+        "sum",
+        "after",
+        "multiplier",
+        "array",
+        "dynamic",
+        "programming"
+      ]
+    },
+    {
+      "index": 283,
+      "filename": "maximum-value-of-k-coins-from-piles",
+      "title": "Maximum Value of K Coins From Piles",
+      "difficulty": "Hard",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "maximum",
+        "value",
+        "of",
+        "k",
+        "coins",
+        "from",
+        "piles",
+        "array",
+        "dynamic",
+        "programming",
+        "prefix",
+        "sum"
+      ]
     }
   ],
-  "lastUpdated": "2026-07-13T02:49:23.602Z",
-  "totalQuestions": 223
+  "lastUpdated": "2026-07-21T05:16:50.430Z",
+  "totalQuestions": 228
 }

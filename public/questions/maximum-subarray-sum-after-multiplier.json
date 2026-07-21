@@ -1,0 +1,54 @@
+{
+  "index": 282,
+  "filename": "maximum-subarray-sum-after-multiplier",
+  "title": "Maximum Subarray Sum After Multiplier",
+  "difficulty": "Medium",
+  "tags": [
+    "Array"
+  ],
+  "keywords": [
+    "maximum",
+    "subarray",
+    "sum",
+    "after",
+    "multiplier",
+    "array",
+    "dynamic",
+    "programming"
+  ],
+  "description": "<h2>Maximum Subarray Sum After Multiplier</h2><p>You are given an integer array <code>nums</code> and a positive integer <code>k</code>.</p>\n\n<p>You must choose <strong>exactly</strong> one <span data-keyword=\"subarray-nonempty\">subarray</span> of <code>nums</code> and perform <strong>exactly</strong> one of the following operations:</p>\n\n<ol>\n\t<li>Multiply each number in the chosen subarray by <code>k</code>.</li>\n\t<li>Divide each number in the chosen subarray by <code>k</code>.\n\t<ul>\n\t\t<li>When dividing a positive number by <code>k</code>, use the <strong>floor</strong> value of the division result.</li>\n\t\t<li>When dividing a negative number by <code>k</code>, use the <strong>ceiling</strong> value of the division result.</li>\n\t</ul>\n\t</li>\n</ol>\n\n<p>Return the <strong>maximum</strong> possible sum of a <strong>non-empty</strong> subarray in the resulting array.</p>\n\n<p>Note that the subarray chosen for the operation and the subarray chosen for the sum may be <strong>different</strong>.</p>\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> nums = [1,-2,3,4,-5], k = 2<br><strong>Output:</strong> 14<br><strong>Explanation:</strong></p>\n\n<ul>\n\t<li>Multiply each number in the subarray <code>[3, 4]</code> by 2.</li>\n\t<li>This results in <code>nums = [1, -2, 6, 8, -5]</code>.</li>\n\t<li>The subarray with the largest sum is <code>[6, 8]</code>, so the output is <code>6 + 8 = 14</code>.</li>\n</ul></li><li><strong>Input:</strong> nums = [-5,-4,-3], k = 2<br><strong>Output:</strong> -1<br><strong>Explanation:</strong></p>\n\n<ul>\n\t<li>Divide each number in the subarray <code>[-3]</code> by 2.</li>\n\t<li>This results in <code>nums = [-5, -4, -1]</code>.</li>\n\t<li>The subarray with the largest sum is <code>[-1]</code>, so the output is -1.</li>\n</ul></li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>-10<sup>5</sup> &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>\n\t<li><code>1 &lt;= k &lt;= 10<sup>5</sup></code></li>\n</ul>\n",
+  "entry_function": "maxSubarraySum",
+  "template": "def maxSubarraySum(nums, k):\n    ",
+  "solution_text": "",
+  "solution_code": "",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['nums'], test_case_input['k'])",
+  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "nums": [
+          1,
+          -2,
+          3,
+          4,
+          -5
+        ],
+        "k": 2
+      },
+      "output": 14
+    },
+    {
+      "id": 2,
+      "input": {
+        "nums": [
+          -5,
+          -4,
+          -3
+        ],
+        "k": 2
+      },
+      "output": -1
+    }
+  ]
+}

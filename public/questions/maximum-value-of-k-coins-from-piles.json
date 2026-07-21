@@ -1,0 +1,87 @@
+{
+  "index": 283,
+  "filename": "maximum-value-of-k-coins-from-piles",
+  "title": "Maximum Value of K Coins From Piles",
+  "difficulty": "Hard",
+  "tags": [
+    "Array"
+  ],
+  "keywords": [
+    "maximum",
+    "value",
+    "of",
+    "k",
+    "coins",
+    "from",
+    "piles",
+    "array",
+    "dynamic",
+    "programming",
+    "prefix",
+    "sum"
+  ],
+  "description": "<h2>Maximum Value of K Coins From Piles</h2><p>There are <code>n</code> <strong>piles</strong> of coins on a table. Each pile consists of a <strong>positive number</strong> of coins of assorted denominations.</p>\n\n<p>In one move, you can choose any coin on <strong>top</strong> of any pile, remove it, and add it to your wallet.</p>\n\n<p>Given a list <code>piles</code>, where <code>piles[i]</code> is a list of integers denoting the composition of the <code>i<sup>th</sup></code> pile from <strong>top to bottom</strong>, and a positive integer <code>k</code>, return <em>the <strong>maximum total value</strong> of coins you can have in your wallet if you choose <strong>exactly</strong></em> <code>k</code> <em>coins optimally</em>.</p>\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2019/11/09/e1.png\" style=\"width: 600px; height: 243px;\" />\n<strong>Input:</strong> piles = [[1,100,3],[7,8,9]], k = 2<br><strong>Output:</strong> 101<br><strong>Explanation:</strong><br>The above diagram shows the different ways we can choose k coins.<br>The maximum total we can obtain is 101.</li><li><strong>Input:</strong> piles = [[100],[100],[100],[100],[100],[100],[1,1,1,1,1,1,700]], k = 7<br><strong>Output:</strong> 706<br><strong>Explanation:<br></strong>The maximum total can be obtained if we choose all coins from the last pile.</li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>n == piles.length</code></li>\n\t<li><code>1 &lt;= n &lt;= 1000</code></li>\n\t<li><code>1 &lt;= piles[i][j] &lt;= 10<sup>5</sup></code></li>\n\t<li><code>1 &lt;= k &lt;= sum(piles[i].length) &lt;= 2000</code></li>\n</ul>\n",
+  "entry_function": "maxValueOfCoins",
+  "template": "def maxValueOfCoins(piles, k):\n    ",
+  "solution_text": "",
+  "solution_code": "",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['piles'], test_case_input['k'])",
+  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "piles": [
+          [
+            1,
+            100,
+            3
+          ],
+          [
+            7,
+            8,
+            9
+          ]
+        ],
+        "k": 2
+      },
+      "output": 101
+    },
+    {
+      "id": 2,
+      "input": {
+        "piles": [
+          [
+            100
+          ],
+          [
+            100
+          ],
+          [
+            100
+          ],
+          [
+            100
+          ],
+          [
+            100
+          ],
+          [
+            100
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            700
+          ]
+        ],
+        "k": 7
+      },
+      "output": 706
+    }
+  ]
+}

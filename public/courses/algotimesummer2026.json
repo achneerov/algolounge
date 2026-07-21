@@ -17,6 +17,102 @@
   ],
   "badge": "Summer 2026",
   "units": {
+    "week9": {
+      "title": "Week 9",
+      "description": "Week 9 — Diameter of Binary Tree, Calculate Amount Paid in Taxes, Find Kth Largest XOR Coordinate Value, Maximum Subarray Sum After Multiplier, Maximum Value of K Coins From Piles, Regular Expression Matching.",
+      "questions": [
+        {
+          "filename": "diameter-of-binary-tree",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/diameter-of-binary-tree/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Easy",
+            "Tree"
+          ]
+        },
+        {
+          "filename": "calculate-amount-paid-in-taxes",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/calculate-amount-paid-in-taxes/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Easy",
+            "Array"
+          ]
+        },
+        {
+          "filename": "find-kth-largest-xor-coordinate-value",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/find-kth-largest-xor-coordinate-value/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Medium",
+            "Array"
+          ]
+        },
+        {
+          "filename": "maximum-subarray-sum-after-multiplier",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/maximum-subarray-sum-after-multiplier/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Medium",
+            "Array"
+          ]
+        },
+        {
+          "filename": "maximum-value-of-k-coins-from-piles",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/maximum-value-of-k-coins-from-piles/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Hard",
+            "Array"
+          ]
+        },
+        {
+          "filename": "regular-expression-matching",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/regular-expression-matching/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Hard",
+            "String"
+          ]
+        }
+      ]
+    },
     "week8": {
       "title": "Week 8",
       "description": "Week 8 — Minimum Sum of Mountain Triplets I, Check if Strings Can be Made Equal With Operations I, Select K Disjoint Special Substrings, Container With Most Water, Maximum Element-Sum of a Complete Subset of Indices, Maximum Points After Collecting Coins From All Nodes.",
