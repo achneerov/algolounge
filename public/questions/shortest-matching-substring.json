@@ -1,0 +1,60 @@
+{
+  "index": 288,
+  "filename": "shortest-matching-substring",
+  "title": "Shortest Matching Substring",
+  "difficulty": "Hard",
+  "tags": [
+    "Two Pointers"
+  ],
+  "keywords": [
+    "shortest",
+    "matching",
+    "substring",
+    "two",
+    "pointers",
+    "string",
+    "binary",
+    "search"
+  ],
+  "description": "<h2>Shortest Matching Substring</h2><p>You are given a string <code>s</code> and a pattern string <code>p</code>, where <code>p</code> contains <strong>exactly two</strong> <code>&#39;*&#39;</code> characters.</p>\n\n<p>The <code>&#39;*&#39;</code> in <code>p</code> matches any sequence of zero or more characters.</p>\n\n<p>Return the length of the <strong>shortest</strong> <span data-keyword=\"substring\">substring</span> in <code>s</code> that matches <code>p</code>. If there is no such substring, return -1.</p>\n<strong>Note:</strong> The empty substring is considered valid.\n\n\n\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> s = &quot;abaacbaecebce&quot;, p = &quot;ba*c*ce&quot;<br><strong>Output:</strong> 8<br><strong>Explanation:</strong></p>\n\n<p>The shortest matching substring of <code>p</code> in <code>s</code> is <code>&quot;<u><strong>ba</strong></u>e<u><strong>c</strong></u>eb<u><strong>ce</strong></u>&quot;</code>.</p></li><li><strong>Input:</strong> s = &quot;baccbaadbc&quot;, p = &quot;cc*baa*adb&quot;<br><strong>Output:</strong> -1<br><strong>Explanation:</strong></p>\n\n<p>There is no matching substring in <code>s</code>.</p></li><li><strong>Input:</strong> s = &quot;a&quot;, p = &quot;**&quot;<br><strong>Output:</strong> 0<br><strong>Explanation:</strong></p>\n\n<p>The empty substring is the shortest matching substring.</p></li><li><strong>Input:</strong> s = &quot;madlogic&quot;, p = &quot;*adlogi*&quot;<br><strong>Output:</strong> 6<br><strong>Explanation:</strong></p>\n\n<p>The shortest matching substring of <code>p</code> in <code>s</code> is <code>&quot;<strong><u>adlogi</u></strong>&quot;</code>.</p></li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>2 &lt;= p.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>s</code> contains only lowercase English letters.</li>\n\t<li><code>p</code> contains only lowercase English letters and exactly two <code>&#39;*&#39;</code>.</li>\n</ul>\n",
+  "entry_function": "shortestMatchingSubstring",
+  "template": "def shortestMatchingSubstring(s, p):\n    ",
+  "solution_text": "",
+  "solution_code": "",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['s'], test_case_input['p'])",
+  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "s": "abaacbaecebce",
+        "p": "ba*c*ce"
+      },
+      "output": 8
+    },
+    {
+      "id": 2,
+      "input": {
+        "s": "baccbaadbc",
+        "p": "cc*baa*adb"
+      },
+      "output": -1
+    },
+    {
+      "id": 3,
+      "input": {
+        "s": "a",
+        "p": "**"
+      },
+      "output": 0
+    },
+    {
+      "id": 4,
+      "input": {
+        "s": "madlogic",
+        "p": "*adlogi*"
+      },
+      "output": 6
+    }
+  ]
+}

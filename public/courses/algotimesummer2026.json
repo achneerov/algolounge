@@ -17,6 +17,102 @@
   ],
   "badge": "Summer 2026",
   "units": {
+    "week10": {
+      "title": "Week 10",
+      "description": "Week 10 — Limit Occurrences in Sorted Array, N-ary Tree Preorder Traversal, Steps to Make Array Non-decreasing, Maximum Number of Distinct Elements After Operations, Maximum Height by Stacking Cuboids , Shortest Matching Substring.",
+      "questions": [
+        {
+          "filename": "limit-occurrences-in-sorted-array",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/limit-occurrences-in-sorted-array/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Easy",
+            "Array"
+          ]
+        },
+        {
+          "filename": "n-ary-tree-preorder-traversal",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/n-ary-tree-preorder-traversal/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Easy",
+            "Stack"
+          ]
+        },
+        {
+          "filename": "steps-to-make-array-non-decreasing",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/steps-to-make-array-non-decreasing/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Medium",
+            "Array"
+          ]
+        },
+        {
+          "filename": "maximum-number-of-distinct-elements-after-operations",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/maximum-number-of-distinct-elements-after-operations/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Medium",
+            "Array"
+          ]
+        },
+        {
+          "filename": "maximum-height-by-stacking-cuboids",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/maximum-height-by-stacking-cuboids/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Hard",
+            "Array"
+          ]
+        },
+        {
+          "filename": "shortest-matching-substring",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/shortest-matching-substring/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Hard",
+            "Two Pointers"
+          ]
+        }
+      ]
+    },
     "week9": {
       "title": "Week 9",
       "description": "Week 9 — Diameter of Binary Tree, Calculate Amount Paid in Taxes, Find Kth Largest XOR Coordinate Value, Maximum Subarray Sum After Multiplier, Maximum Value of K Coins From Piles, Regular Expression Matching.",

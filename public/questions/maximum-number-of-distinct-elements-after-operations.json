@@ -1,0 +1,58 @@
+{
+  "index": 286,
+  "filename": "maximum-number-of-distinct-elements-after-operations",
+  "title": "Maximum Number of Distinct Elements After Operations",
+  "difficulty": "Medium",
+  "tags": [
+    "Array"
+  ],
+  "keywords": [
+    "maximum",
+    "number",
+    "of",
+    "distinct",
+    "elements",
+    "after",
+    "operations",
+    "array",
+    "greedy",
+    "sorting"
+  ],
+  "description": "<h2>Maximum Number of Distinct Elements After Operations</h2><p>You are given an integer array <code>nums</code> and an integer <code>k</code>.</p>\n\n<p>You are allowed to perform the following <strong>operation</strong> on each element of the array <strong>at most</strong> <em>once</em>:</p>\n\n<ul>\n\t<li>Add an integer in the range <code>[-k, k]</code> to the element.</li>\n</ul>\n\n<p>Return the <strong>maximum</strong> possible number of <strong>distinct</strong> elements in <code>nums</code> after performing the <strong>operations</strong>.</p>\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> nums = [1,2,2,3,3,4], k = 2<br><strong>Output:</strong> 6<br><strong>Explanation:</strong></p>\n\n<p><code>nums</code> changes to <code>[-1, 0, 1, 2, 3, 4]</code> after performing operations on the first four elements.</p></li><li><strong>Input:</strong> nums = [4,4,4,4], k = 1<br><strong>Output:</strong> 3<br><strong>Explanation:</strong></p>\n\n<p>By adding -1 to <code>nums[0]</code> and 1 to <code>nums[1]</code>, <code>nums</code> changes to <code>[3, 5, 4, 4]</code>.</p></li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>1 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>\n\t<li><code>0 &lt;= k &lt;= 10<sup>9</sup></code></li>\n</ul>\n",
+  "entry_function": "maxDistinctElements",
+  "template": "def maxDistinctElements(nums, k):\n    ",
+  "solution_text": "",
+  "solution_code": "",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['nums'], test_case_input['k'])",
+  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "nums": [
+          1,
+          2,
+          2,
+          3,
+          3,
+          4
+        ],
+        "k": 2
+      },
+      "output": 6
+    },
+    {
+      "id": 2,
+      "input": {
+        "nums": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "k": 1
+      },
+      "output": 3
+    }
+  ]
+}

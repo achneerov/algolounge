@@ -1,0 +1,65 @@
+{
+  "index": 289,
+  "filename": "steps-to-make-array-non-decreasing",
+  "title": "Steps to Make Array Non-decreasing",
+  "difficulty": "Medium",
+  "tags": [
+    "Array"
+  ],
+  "keywords": [
+    "steps",
+    "to",
+    "make",
+    "array",
+    "non",
+    "decreasing",
+    "linked",
+    "list",
+    "dynamic",
+    "programming",
+    "stack",
+    "monotonic",
+    "simulation"
+  ],
+  "description": "<h2>Steps to Make Array Non-decreasing</h2><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code>. In one step, <strong>remove</strong> all elements <code>nums[i]</code> where <code>nums[i - 1] &gt; nums[i]</code> for all <code>0 &lt; i &lt; nums.length</code>.</p>\n\n<p>Return <em>the number of steps performed until </em><code>nums</code><em> becomes a <strong>non-decreasing</strong> array</em>.</p>\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> nums = [5,3,4,4,7,3,6,11,8,5,11]<br><strong>Output:</strong> 3<br><strong>Explanation:</strong> The following are the steps performed:<br>- Step 1: [5,<strong><u>3</u></strong>,4,4,7,<u><strong>3</strong></u>,6,11,<u><strong>8</strong></u>,<u><strong>5</strong></u>,11] becomes [5,4,4,7,6,11,11]<br>- Step 2: [5,<u><strong>4</strong></u>,4,7,<u><strong>6</strong></u>,11,11] becomes [5,4,7,11,11]<br>- Step 3: [5,<u><strong>4</strong></u>,7,11,11] becomes [5,7,11,11]<br>[5,7,11,11] is a non-decreasing array. Therefore, we return 3.</li><li><strong>Input:</strong> nums = [4,5,7,7,13]<br><strong>Output:</strong> 0<br><strong>Explanation:</strong> nums is already a non-decreasing array. Therefore, we return 0.</li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>1 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>\n</ul>\n",
+  "entry_function": "totalSteps",
+  "template": "def totalSteps(nums):\n    ",
+  "solution_text": "",
+  "solution_code": "",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['nums'],)",
+  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "nums": [
+          5,
+          3,
+          4,
+          4,
+          7,
+          3,
+          6,
+          11,
+          8,
+          5,
+          11
+        ]
+      },
+      "output": 3
+    },
+    {
+      "id": 2,
+      "input": {
+        "nums": [
+          4,
+          5,
+          7,
+          7,
+          13
+        ]
+      },
+      "output": 0
+    }
+  ]
+}

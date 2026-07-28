@@ -23,3 +23,9 @@ find-kth-largest-xor-coordinate-value
 maximum-subarray-sum-after-multiplier
 maximum-value-of-k-coins-from-piles
 regular-expression-matching
+limit-occurrences-in-sorted-array
+n-ary-tree-preorder-traversal
+steps-to-make-array-non-decreasing
+maximum-number-of-distinct-elements-after-operations
+maximum-height-by-stacking-cuboids
+shortest-matching-substring

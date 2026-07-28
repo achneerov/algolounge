@@ -1,0 +1,64 @@
+{
+  "index": 284,
+  "filename": "limit-occurrences-in-sorted-array",
+  "title": "Limit Occurrences in Sorted Array",
+  "difficulty": "Easy",
+  "tags": [
+    "Array"
+  ],
+  "keywords": [
+    "limit",
+    "occurrences",
+    "in",
+    "sorted",
+    "array",
+    "two",
+    "pointers"
+  ],
+  "description": "<h2>Limit Occurrences in Sorted Array</h2><p>You are given a <strong>sorted</strong> integer array <code>nums</code> and an integer <code>k</code>.</p>\n\n<p>Return an array such that each <strong>distinct</strong> element appears <strong>at most</strong> <code>k</code> times, while preserving the relative order of the elements in <code>nums</code>.</p>\n\n<p>Note: If a distinct element appears <strong>at least</strong> <code>k</code> times, then it must appear <strong>exactly</strong> <code>k</code> times in the resulting array.</p>\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> nums = [1,1,1,2,2,3], k = 2<br><strong>Output:</strong> [1,1,2,2,3]<br><strong>Explanation:</strong></p>\n\n<p>Each element can appear at most 2 times.</p>\n\n<ul>\n\t<li>The element 1 appears 3 times, so only 2 occurrences are kept.</li>\n\t<li>The element 2 appears 2 times, so both occurrences are kept.</li>\n\t<li>The element 3 appears 1 time, so it is kept.</li>\n</ul>\n\n<p>Thus, the resulting array is <code>[1, 1, 2, 2, 3]</code>.</p></li><li><strong>Input:</strong> nums = [1,2,3], k = 1<br><strong>Output:</strong> [1,2,3]<br><strong>Explanation:</strong></p>\n\n<p>All elements are distinct and already appear at most once, so the array remains unchanged.</p></li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 100</code></li>\n\t<li><code>1 &lt;= nums[i] &lt;= 100</code></li>\n\t<li><code>nums</code> is sorted in non-decreasing order.</li>\n\t<li><code>1 &lt;= k &lt;= nums.length</code></li>\n</ul>\n\n\n<p><strong>Follow-up:</strong></p>\n\n<ul>\n\t<li>Can you solve this in-place using O(1) extra space?</li>\n\t<li>Note that the space used for returning or resizing the result does not count toward the space complexity mentioned above, as some languages do not support in-place resizing.</li>\n</ul>\n",
+  "entry_function": "limitOccurrences",
+  "template": "def limitOccurrences(nums, k):\n    ",
+  "solution_text": "",
+  "solution_code": "",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['nums'], test_case_input['k'])",
+  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "nums": [
+          1,
+          1,
+          1,
+          2,
+          2,
+          3
+        ],
+        "k": 2
+      },
+      "output": [
+        1,
+        1,
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "id": 2,
+      "input": {
+        "nums": [
+          1,
+          2,
+          3
+        ],
+        "k": 1
+      },
+      "output": [
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}

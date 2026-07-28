@@ -4504,8 +4504,129 @@
         "prefix",
         "sum"
       ]
+    },
+    {
+      "index": 284,
+      "filename": "limit-occurrences-in-sorted-array",
+      "title": "Limit Occurrences in Sorted Array",
+      "difficulty": "Easy",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "limit",
+        "occurrences",
+        "in",
+        "sorted",
+        "array",
+        "two",
+        "pointers"
+      ]
+    },
+    {
+      "index": 285,
+      "filename": "maximum-height-by-stacking-cuboids",
+      "title": "Maximum Height by Stacking Cuboids ",
+      "difficulty": "Hard",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "maximum",
+        "height",
+        "by",
+        "stacking",
+        "cuboids",
+        "array",
+        "dynamic",
+        "programming",
+        "sorting"
+      ]
+    },
+    {
+      "index": 286,
+      "filename": "maximum-number-of-distinct-elements-after-operations",
+      "title": "Maximum Number of Distinct Elements After Operations",
+      "difficulty": "Medium",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "maximum",
+        "number",
+        "of",
+        "distinct",
+        "elements",
+        "after",
+        "operations",
+        "array",
+        "greedy",
+        "sorting"
+      ]
+    },
+    {
+      "index": 287,
+      "filename": "n-ary-tree-preorder-traversal",
+      "title": "N-ary Tree Preorder Traversal",
+      "difficulty": "Easy",
+      "tags": [
+        "Stack"
+      ],
+      "keywords": [
+        "n",
+        "ary",
+        "tree",
+        "preorder",
+        "traversal",
+        "stack",
+        "depth-first",
+        "search"
+      ]
+    },
+    {
+      "index": 288,
+      "filename": "shortest-matching-substring",
+      "title": "Shortest Matching Substring",
+      "difficulty": "Hard",
+      "tags": [
+        "Two Pointers"
+      ],
+      "keywords": [
+        "shortest",
+        "matching",
+        "substring",
+        "two",
+        "pointers",
+        "string",
+        "binary",
+        "search"
+      ]
+    },
+    {
+      "index": 289,
+      "filename": "steps-to-make-array-non-decreasing",
+      "title": "Steps to Make Array Non-decreasing",
+      "difficulty": "Medium",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "steps",
+        "to",
+        "make",
+        "array",
+        "non",
+        "decreasing",
+        "linked",
+        "list",
+        "dynamic",
+        "programming",
+        "stack",
+        "monotonic",
+        "simulation"
+      ]
     }
   ],
-  "lastUpdated": "2026-07-21T05:16:50.430Z",
-  "totalQuestions": 228
+  "lastUpdated": "2026-07-28T06:38:39.759Z",
+  "totalQuestions": 234
 }
