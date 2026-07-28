@@ -55,6 +55,70 @@
         "p": "*adlogi*"
       },
       "output": 6
+    },
+    {
+      "id": 5,
+      "input": {
+        "s": "abcabcabc",
+        "p": "a*b*c"
+      },
+      "output": 3
+    },
+    {
+      "id": 6,
+      "input": {
+        "s": "helloworld",
+        "p": "he*wo*ld"
+      },
+      "output": 10
+    },
+    {
+      "id": 7,
+      "input": {
+        "s": "aaaaaaaa",
+        "p": "a*a*a"
+      },
+      "output": 3
+    },
+    {
+      "id": 8,
+      "input": {
+        "s": "banana",
+        "p": "b*n*a"
+      },
+      "output": 4
+    },
+    {
+      "id": 9,
+      "input": {
+        "s": "abcdefg",
+        "p": "*cd*fg"
+      },
+      "output": 5
+    },
+    {
+      "id": 10,
+      "input": {
+        "s": "mississippi",
+        "p": "m*ss*pi"
+      },
+      "output": 11
+    },
+    {
+      "id": 11,
+      "input": {
+        "s": "abcdef",
+        "p": "z*z*z"
+      },
+      "output": -1
+    },
+    {
+      "id": 12,
+      "input": {
+        "s": "algolounge",
+        "p": "*lo*ge"
+      },
+      "output": 6
     }
   ]
 }
