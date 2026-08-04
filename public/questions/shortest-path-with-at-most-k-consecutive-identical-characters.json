@@ -1,0 +1,108 @@
+{
+  "index": 295,
+  "filename": "shortest-path-with-at-most-k-consecutive-identical-characters",
+  "title": "Shortest Path With At Most K Consecutive Identical Characters",
+  "difficulty": "Medium",
+  "tags": [
+    "String"
+  ],
+  "keywords": [
+    "shortest",
+    "path",
+    "with",
+    "at",
+    "most",
+    "k",
+    "consecutive",
+    "identical",
+    "characters",
+    "string",
+    "graph",
+    "theory",
+    "heap",
+    "(priority",
+    "queue)"
+  ],
+  "description": "<h2>Shortest Path With At Most K Consecutive Identical Characters</h2><p>You are given an integer <code>n</code> representing the number of nodes in a <strong>directed weighted</strong> graph, numbered from 0 to <code>n - 1</code>. This is represented by a 2D integer array <code>edges</code>, where <code>edges[i] = [u<sub>i</sub>, v<sub>i</sub>, w<sub>i</sub>]</code> represents a directed edge from node <code>u<sub>i</sub></code> to node <code>v<sub>i</sub></code> with weight <code>w<sub>i</sub></code>.</p>\n\n<p>You are also given a string <code>labels</code> of length <code>n</code>, where <code>labels[i]</code> is the character assigned to node <code>i</code>, and an integer <code>k</code>.</p>\n\n<p>Return the <strong>minimum</strong> <strong>total</strong> edge weight of a path from node 0 to node <code>n - 1</code> such that the concatenation of the labels of the nodes along the path contains <strong>at most</strong> <code>k</code> <strong>consecutive</strong> <strong>identical</strong> characters. If no valid path exists, return -1.</p>\n\n\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> n = 3, edges = [[0,1,1],[1,2,1],[0,2,3]], labels = &quot;aab&quot;, k = 1<br><strong>Output:</strong> 3<br><strong>Explanation:</strong></p>\n\n<p>The optimal valid path from node 0 to node 2 is as follows:</p>\n\n<ul>\n\t<li>Use <code>edges[2] = [0, 2, 3]</code> to reach node 2 with a weight <code>w<sub>i</sub> = 3</code>.</li>\n</ul>\nThe corresponding concatenation of labels is <code>&quot;ab&quot;</code>, which satisfies at most <code>k = 1</code> consecutive identical characters. Thus, the answer is 3.</li><li><strong>Input:</strong> n = 3, edges = [[0,1,1],[1,2,1],[0,2,3]], labels = &quot;aab&quot;, k = 2<br><strong>Output:</strong> 2<br><strong>Explanation:</strong></p>\n\n<p>The optimal valid path from node 0 to node 2 is as follows:</p>\n\n<ul>\n\t<li>Use <code>edges[0] = [0, 1, 1]</code> to reach node 1 with weight <code>w<sub>i</sub> = 1</code>.</li>\n\t<li>Use <code>edges[1] = [1, 2, 1]</code> to reach node 2 with weight <code>w<sub>i</sub> = 1</code>.</li>\n</ul>\nThe corresponding concatenation of labels is <code>&quot;aab&quot;</code>, which satisfies at most <code>k = 2</code> consecutive identical characters. Thus, the answer is 2.</li><li><strong>Input:</strong> n = 3, edges = [[0,1,1],[1,2,1]], labels = &quot;aaa&quot;, k = 2<br><strong>Output:</strong> -1<br><strong>Explanation:</strong></p>\n\n<p>There is no valid path from node 0 to node 2 that satisfies at most <code>k = 2</code> consecutive identical characters. Thus, the answer is -1.</p></li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= n == labels.length &lt;= 5 * 10<sup>4</sup></code></li>\n\t<li><code>0 &lt;= edges.length &lt;= 5 * 10<sup>4</sup></code></li>\n\t<li><code>edges[i] == [u<sub>i</sub>, v<sub>i</sub>, w<sub>i</sub>]</code></li>\n\t<li><code>0 &lt;= u<sub>i</sub>, v<sub>i</sub> &lt;= n - 1</code></li>\n\t<li><code>u<sub>i</sub> != v<sub>i</sub></code></li>\n\t<li><code>1 &lt;= w<sub>i</sub> &lt;= 10<sup>4</sup></code></li>\n\t<li><code>labels</code> consists of lowercase English letters</li>\n\t<li><code>1 &lt;= k &lt;= 50</code></li>\n</ul>\n",
+  "entry_function": "shortestPath",
+  "template": "def shortestPath(n, edges, labels, k):\n    ",
+  "solution_text": "",
+  "solution_code": "",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['n'], test_case_input['edges'], test_case_input['labels'], test_case_input['k'])",
+  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "n": 3,
+        "edges": [
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            3
+          ]
+        ],
+        "labels": "aab",
+        "k": 1
+      },
+      "output": 3
+    },
+    {
+      "id": 2,
+      "input": {
+        "n": 3,
+        "edges": [
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            3
+          ]
+        ],
+        "labels": "aab",
+        "k": 2
+      },
+      "output": 2
+    },
+    {
+      "id": 3,
+      "input": {
+        "n": 3,
+        "edges": [
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            2,
+            1
+          ]
+        ],
+        "labels": "aaa",
+        "k": 2
+      },
+      "output": -1
+    }
+  ]
+}

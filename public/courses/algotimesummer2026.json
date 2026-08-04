@@ -17,6 +17,102 @@
   ],
   "badge": "Summer 2026",
   "units": {
+    "week11": {
+      "title": "Week 11",
+      "description": "Week 11 — Check if a String Is an Acronym of Words, Richest Customer Wealth, Shortest Path With At Most K Consecutive Identical Characters, Largest Submatrix With Rearrangements, Minimum Time to Reach Target With Limited Power, Find in Mountain Array.",
+      "questions": [
+        {
+          "filename": "check-if-a-string-is-an-acronym-of-words",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/check-if-a-string-is-an-acronym-of-words/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Easy",
+            "Array"
+          ]
+        },
+        {
+          "filename": "richest-customer-wealth",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/richest-customer-wealth/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Easy",
+            "Array"
+          ]
+        },
+        {
+          "filename": "shortest-path-with-at-most-k-consecutive-identical-characters",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/shortest-path-with-at-most-k-consecutive-identical-characters/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Medium",
+            "String"
+          ]
+        },
+        {
+          "filename": "largest-submatrix-with-rearrangements",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/largest-submatrix-with-rearrangements/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Medium",
+            "Array"
+          ]
+        },
+        {
+          "filename": "minimum-time-to-reach-target-with-limited-power",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/minimum-time-to-reach-target-with-limited-power/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Hard",
+            "Array"
+          ]
+        },
+        {
+          "filename": "find-in-mountain-array",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/find-in-mountain-array/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Hard",
+            "Array"
+          ]
+        }
+      ]
+    },
     "week10": {
       "title": "Week 10",
       "description": "Week 10 — Limit Occurrences in Sorted Array, N-ary Tree Preorder Traversal, Steps to Make Array Non-decreasing, Maximum Number of Distinct Elements After Operations, Maximum Height by Stacking Cuboids , Shortest Matching Substring.",

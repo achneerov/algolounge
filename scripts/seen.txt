@@ -29,3 +29,9 @@ steps-to-make-array-non-decreasing
 maximum-number-of-distinct-elements-after-operations
 maximum-height-by-stacking-cuboids
 shortest-matching-substring
+check-if-a-string-is-an-acronym-of-words
+richest-customer-wealth
+shortest-path-with-at-most-k-consecutive-identical-characters
+largest-submatrix-with-rearrangements
+minimum-time-to-reach-target-with-limited-power
+find-in-mountain-array

@@ -4625,8 +4625,138 @@
         "monotonic",
         "simulation"
       ]
+    },
+    {
+      "index": 290,
+      "filename": "check-if-a-string-is-an-acronym-of-words",
+      "title": "Check if a String Is an Acronym of Words",
+      "difficulty": "Easy",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "check",
+        "if",
+        "a",
+        "string",
+        "is",
+        "an",
+        "acronym",
+        "of",
+        "words",
+        "array"
+      ]
+    },
+    {
+      "index": 291,
+      "filename": "find-in-mountain-array",
+      "title": "Find in Mountain Array",
+      "difficulty": "Hard",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "find",
+        "in",
+        "mountain",
+        "array",
+        "binary",
+        "search",
+        "interactive",
+        "ternary"
+      ]
+    },
+    {
+      "index": 292,
+      "filename": "largest-submatrix-with-rearrangements",
+      "title": "Largest Submatrix With Rearrangements",
+      "difficulty": "Medium",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "largest",
+        "submatrix",
+        "with",
+        "rearrangements",
+        "array",
+        "greedy",
+        "sorting",
+        "matrix"
+      ]
+    },
+    {
+      "index": 293,
+      "filename": "minimum-time-to-reach-target-with-limited-power",
+      "title": "Minimum Time to Reach Target With Limited Power",
+      "difficulty": "Hard",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "minimum",
+        "time",
+        "to",
+        "reach",
+        "target",
+        "with",
+        "limited",
+        "power",
+        "array",
+        "dynamic",
+        "programming",
+        "graph",
+        "theory",
+        "heap",
+        "(priority",
+        "queue)",
+        "shortest",
+        "path"
+      ]
+    },
+    {
+      "index": 294,
+      "filename": "richest-customer-wealth",
+      "title": "Richest Customer Wealth",
+      "difficulty": "Easy",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "richest",
+        "customer",
+        "wealth",
+        "array",
+        "matrix"
+      ]
+    },
+    {
+      "index": 295,
+      "filename": "shortest-path-with-at-most-k-consecutive-identical-characters",
+      "title": "Shortest Path With At Most K Consecutive Identical Characters",
+      "difficulty": "Medium",
+      "tags": [
+        "String"
+      ],
+      "keywords": [
+        "shortest",
+        "path",
+        "with",
+        "at",
+        "most",
+        "k",
+        "consecutive",
+        "identical",
+        "characters",
+        "string",
+        "graph",
+        "theory",
+        "heap",
+        "(priority",
+        "queue)"
+      ]
     }
   ],
-  "lastUpdated": "2026-07-28T06:59:31.485Z",
-  "totalQuestions": 234
+  "lastUpdated": "2026-08-04T19:00:45.817Z",
+  "totalQuestions": 240
 }
