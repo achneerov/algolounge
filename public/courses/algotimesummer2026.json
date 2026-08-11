@@ -17,6 +17,102 @@
   ],
   "badge": "Summer 2026",
   "units": {
+    "week12": {
+      "title": "Week 12",
+      "description": "Week 12 — Roman to Integer, Number of Equivalent Domino Pairs, Apply Discount to Prices, Group Anagrams, Reverse Nodes in k-Group, Building Boxes.",
+      "questions": [
+        {
+          "filename": "roman-to-integer",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/roman-to-integer/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Easy",
+            "Hash Table"
+          ]
+        },
+        {
+          "filename": "number-of-equivalent-domino-pairs",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/number-of-equivalent-domino-pairs/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Easy",
+            "Array"
+          ]
+        },
+        {
+          "filename": "apply-discount-to-prices",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/apply-discount-to-prices/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Medium",
+            "String"
+          ]
+        },
+        {
+          "filename": "group-anagrams",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/group-anagrams/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Medium",
+            "Array"
+          ]
+        },
+        {
+          "filename": "reverse-nodes-in-k-group",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/reverse-nodes-in-k-group/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Hard",
+            "Linked List"
+          ]
+        },
+        {
+          "filename": "building-boxes",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/building-boxes/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Hard",
+            "Math"
+          ]
+        }
+      ]
+    },
     "week11": {
       "title": "Week 11",
       "description": "Week 11 — Check if a String Is an Acronym of Words, Richest Customer Wealth, Shortest Path With At Most K Consecutive Identical Characters, Largest Submatrix With Rearrangements, Minimum Time to Reach Target With Limited Power, Find in Mountain Array.",

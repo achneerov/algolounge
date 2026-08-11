@@ -4755,8 +4755,79 @@
         "(priority",
         "queue)"
       ]
+    },
+    {
+      "index": 296,
+      "filename": "apply-discount-to-prices",
+      "title": "Apply Discount to Prices",
+      "difficulty": "Medium",
+      "tags": [
+        "String"
+      ],
+      "keywords": [
+        "apply",
+        "discount",
+        "to",
+        "prices",
+        "string"
+      ]
+    },
+    {
+      "index": 297,
+      "filename": "building-boxes",
+      "title": "Building Boxes",
+      "difficulty": "Hard",
+      "tags": [
+        "Math"
+      ],
+      "keywords": [
+        "building",
+        "boxes",
+        "math",
+        "binary",
+        "search",
+        "greedy"
+      ]
+    },
+    {
+      "index": 298,
+      "filename": "group-anagrams",
+      "title": "Group Anagrams",
+      "difficulty": "Medium",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "group",
+        "anagrams",
+        "array",
+        "hash",
+        "table",
+        "string",
+        "sorting"
+      ]
+    },
+    {
+      "index": 299,
+      "filename": "number-of-equivalent-domino-pairs",
+      "title": "Number of Equivalent Domino Pairs",
+      "difficulty": "Easy",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "number",
+        "of",
+        "equivalent",
+        "domino",
+        "pairs",
+        "array",
+        "hash",
+        "table",
+        "counting"
+      ]
     }
   ],
-  "lastUpdated": "2026-08-04T19:00:45.817Z",
-  "totalQuestions": 240
+  "lastUpdated": "2026-08-11T18:42:41.486Z",
+  "totalQuestions": 244
 }

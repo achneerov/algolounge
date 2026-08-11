@@ -35,3 +35,9 @@ shortest-path-with-at-most-k-consecutive-identical-characters
 largest-submatrix-with-rearrangements
 minimum-time-to-reach-target-with-limited-power
 find-in-mountain-array
+roman-to-integer
+number-of-equivalent-domino-pairs
+apply-discount-to-prices
+group-anagrams
+reverse-nodes-in-k-group
+building-boxes
