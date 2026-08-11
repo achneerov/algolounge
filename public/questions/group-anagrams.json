@@ -18,10 +18,10 @@
   "description": "<h2>Group Anagrams</h2><p>Given an array of strings <code>strs</code>, group the <span data-keyword=\"anagram\">anagrams</span> together. You can return the answer in <strong>any order</strong>.</p>\n\n\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> strs = [&quot;eat&quot;,&quot;tea&quot;,&quot;tan&quot;,&quot;ate&quot;,&quot;nat&quot;,&quot;bat&quot;]<br><strong>Output:</strong> [[&quot;bat&quot;],[&quot;nat&quot;,&quot;tan&quot;],[&quot;ate&quot;,&quot;eat&quot;,&quot;tea&quot;]]<br><strong>Explanation:</strong></p>\n\n<ul>\n\t<li>There is no string in strs that can be rearranged to form <code>&quot;bat&quot;</code>.</li>\n\t<li>The strings <code>&quot;nat&quot;</code> and <code>&quot;tan&quot;</code> are anagrams as they can be rearranged to form each other.</li>\n\t<li>The strings <code>&quot;ate&quot;</code>, <code>&quot;eat&quot;</code>, and <code>&quot;tea&quot;</code> are anagrams as they can be rearranged to form each other.</li>\n</ul></li><li><strong>Input:</strong> strs = [&quot;&quot;]<br><strong>Output:</strong> [[&quot;&quot;]]<br></li><li><strong>Input:</strong> strs = [&quot;a&quot;]<br><strong>Output:</strong> [[&quot;a&quot;]]<br></li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= strs.length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>0 &lt;= strs[i].length &lt;= 100</code></li>\n\t<li><code>strs[i]</code> consists of lowercase English letters.</li>\n</ul>\n",
   "entry_function": "groupAnagrams",
   "template": "def groupAnagrams(strs):\n    ",
-  "solution_text": "",
-  "solution_code": "",
+  "solution_text": "<h3>Group Anagrams</h3><p><strong>Algorithm:</strong></p><ol><li>For each string, build a canonical key that all its anagrams share. Sorting the letters is the simplest choice.</li><li>Bucket strings by that key using a hash map.</li><li>Return the map's values \u2014 the groups.</li></ol><p><strong>Time Complexity:</strong> O(n \u00b7 k log k), where <em>n</em> is the number of strings and <em>k</em> is the maximum string length.</p><p><strong>Space Complexity:</strong> O(n \u00b7 k) for the map and the returned groups.</p><p><strong>Key Insight:</strong> any invariant that two strings share iff they are anagrams works as a key \u2014 sorted characters, or a 26-length count tuple. The count-tuple version is O(n \u00b7 k) and avoids the sort.</p><p><em>Note:</em> LeetCode accepts the groups in any order, so the verifier compares the answer up to group ordering and within-group ordering.</p>",
+  "solution_code": "def groupAnagrams(strs):\n    groups = {}\n    for s in strs:\n        key = ''.join(sorted(s))\n        groups.setdefault(key, []).append(s)\n    return list(groups.values())",
   "prepare": "def prepare(test_case_input):\n    return (test_case_input['strs'],)",
-  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "verify": "def verify(actual_output, expected_output):\n    def canon(groups):\n        return sorted(sorted(g) for g in groups)\n    passed = canon(actual_output) == canon(expected_output)\n    return [passed, str(actual_output)]",
   "test_cases": [
     {
       "id": 1,
@@ -37,16 +37,16 @@
       },
       "output": [
         [
-          "bat"
-        ],
-        [
-          "nat",
-          "tan"
-        ],
-        [
-          "ate",
           "eat",
-          "tea"
+          "tea",
+          "ate"
+        ],
+        [
+          "tan",
+          "nat"
+        ],
+        [
+          "bat"
         ]
       ]
     },
@@ -73,6 +73,183 @@
       "output": [
         [
           "a"
+        ]
+      ]
+    },
+    {
+      "id": 4,
+      "input": {
+        "strs": [
+          "abc",
+          "bca",
+          "cab",
+          "xyz",
+          "zyx",
+          "yxz"
+        ]
+      },
+      "output": [
+        [
+          "abc",
+          "bca",
+          "cab"
+        ],
+        [
+          "xyz",
+          "zyx",
+          "yxz"
+        ]
+      ]
+    },
+    {
+      "id": 5,
+      "input": {
+        "strs": [
+          "listen",
+          "silent",
+          "enlist",
+          "google",
+          "gooegl"
+        ]
+      },
+      "output": [
+        [
+          "listen",
+          "silent",
+          "enlist"
+        ],
+        [
+          "google",
+          "gooegl"
+        ]
+      ]
+    },
+    {
+      "id": 6,
+      "input": {
+        "strs": [
+          "hello",
+          "world",
+          "olleh",
+          "dlrow",
+          "test"
+        ]
+      },
+      "output": [
+        [
+          "hello",
+          "olleh"
+        ],
+        [
+          "world",
+          "dlrow"
+        ],
+        [
+          "test"
+        ]
+      ]
+    },
+    {
+      "id": 7,
+      "input": {
+        "strs": [
+          "",
+          "",
+          "a",
+          "a",
+          "b"
+        ]
+      },
+      "output": [
+        [
+          "",
+          ""
+        ],
+        [
+          "a",
+          "a"
+        ],
+        [
+          "b"
+        ]
+      ]
+    },
+    {
+      "id": 8,
+      "input": {
+        "strs": [
+          "ab",
+          "ba",
+          "abc",
+          "cba",
+          "bca",
+          "cab",
+          "d"
+        ]
+      },
+      "output": [
+        [
+          "ab",
+          "ba"
+        ],
+        [
+          "abc",
+          "cba",
+          "bca",
+          "cab"
+        ],
+        [
+          "d"
+        ]
+      ]
+    },
+    {
+      "id": 9,
+      "input": {
+        "strs": [
+          "ddddddddddg",
+          "dgggggggggg"
+        ]
+      },
+      "output": [
+        [
+          "ddddddddddg"
+        ],
+        [
+          "dgggggggggg"
+        ]
+      ]
+    },
+    {
+      "id": 10,
+      "input": {
+        "strs": [
+          "rat",
+          "tar",
+          "art",
+          "car",
+          "arc",
+          "cra",
+          "bat",
+          "tab",
+          "abt"
+        ]
+      },
+      "output": [
+        [
+          "rat",
+          "tar",
+          "art"
+        ],
+        [
+          "car",
+          "arc",
+          "cra"
+        ],
+        [
+          "bat",
+          "tab",
+          "abt"
         ]
       ]
     }

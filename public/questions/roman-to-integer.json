@@ -3,7 +3,9 @@
   "filename": "roman-to-integer",
   "title": "Roman to Integer",
   "difficulty": "Easy",
-  "tags": ["Arrays and Hashing"],
+  "tags": [
+    "Arrays and Hashing"
+  ],
   "keywords": [
     "roman",
     "integer",
@@ -19,20 +21,80 @@
   "description": "<h2>Roman to Integer</h2><p>Roman numerals are represented by seven different symbols:</p><table><tr><th>Symbol</th><th>Value</th></tr><tr><td>I</td><td>1</td></tr><tr><td>V</td><td>5</td></tr><tr><td>X</td><td>10</td></tr><tr><td>L</td><td>50</td></tr><tr><td>C</td><td>100</td></tr><tr><td>D</td><td>500</td></tr><tr><td>M</td><td>1000</td></tr></table><p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not <code>IIII</code>. Instead, the number four is written as <code>IV</code>. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as <code>IX</code>.</p><p>There are six instances where subtraction is used:</p><ul><li><code>IV</code> = 4, <code>IX</code> = 9</li><li><code>XL</code> = 40, <code>XC</code> = 90</li><li><code>CD</code> = 400, <code>CM</code> = 900</li></ul><p>Given a roman numeral, convert it to an integer.</p><h3>Examples:</h3><ul><li><strong>Input:</strong> s = \"III\"<br><strong>Output:</strong> 3</li><li><strong>Input:</strong> s = \"LVIII\"<br><strong>Output:</strong> 58<br><strong>Explanation:</strong> L = 50, V = 5, III = 3</li><li><strong>Input:</strong> s = \"MCMXCIV\"<br><strong>Output:</strong> 1994<br><strong>Explanation:</strong> M = 1000, CM = 900, XC = 90, IV = 4</li></ul><h3>Constraints:</h3><ul><li><code>1 <= s.length <= 15</code></li><li><code>s</code> contains only the characters <code>('I', 'V', 'X', 'L', 'C', 'D', 'M')</code></li><li>It is guaranteed that <code>s</code> is a valid roman numeral in the range <code>[1, 3999]</code></li></ul>",
   "entry_function": "romanToInt",
   "template": "def romanToInt(s):\n    ",
-  "solution_text": "<h3>Roman to Integer</h3><p><strong>Algorithm:</strong></p><ol><li>Build a map of each Roman symbol to its integer value</li><li>Iterate through the string from left to right</li><li>If the current symbol is less than the next symbol, subtract it (subtraction rule)</li><li>Otherwise, add it to the total</li></ol><p><strong>Time Complexity:</strong> O(n) where n is the length of the string</p><p><strong>Space Complexity:</strong> O(1) since the symbol map has a fixed size of 7 entries</p><p><strong>Key Insights:</strong></p><ul><li>The subtraction rule only occurs when a smaller value appears before a larger one</li><li>Iterating left to right and comparing adjacent symbols handles all six subtraction cases automatically</li><li>No special casing needed — a single pass with the comparison rule covers everything</li></ul>",
-  "solution_code": "def romanToInt(s):\n    values = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}\n    total = 0\n    for i in range(len(s)):\n        if i + 1 < len(s) and values[s[i]] < values[s[i + 1]]:\n            total -= values[s[i]]\n        else:\n            total += values[s[i]]\n    return total",
+  "solution_text": "<h3>Roman to Integer</h3><p><strong>Algorithm:</strong></p><ol><li>Build a map of each Roman symbol to its integer value</li><li>Iterate through the string from left to right</li><li>If the current symbol is less than the next symbol, subtract it (subtraction rule)</li><li>Otherwise, add it to the total</li></ol><p><strong>Time Complexity:</strong> O(n) where n is the length of the string</p><p><strong>Space Complexity:</strong> O(1) since the symbol map has a fixed size of 7 entries</p><p><strong>Key Insights:</strong></p><ul><li>The subtraction rule only occurs when a smaller value appears before a larger one</li><li>Comparing each symbol with the one that follows it handles all six subtraction cases automatically</li></ul>",
+  "solution_code": "def romanToInt(s):\n    values = {'I': 1, 'V': 5, 'X': 10, 'L': 50,\n              'C': 100, 'D': 500, 'M': 1000}\n    total = 0\n    for i in range(len(s)):\n        if i + 1 < len(s) and values[s[i]] < values[s[i + 1]]:\n            total -= values[s[i]]\n        else:\n            total += values[s[i]]\n    return total",
   "prepare": "def prepare(test_case_input):\n    return (test_case_input['s'],)",
   "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
   "test_cases": [
-    {"id": 1, "input": {"s": "III"}, "output": 3},
-    {"id": 2, "input": {"s": "IV"}, "output": 4},
-    {"id": 3, "input": {"s": "IX"}, "output": 9},
-    {"id": 4, "input": {"s": "LVIII"}, "output": 58},
-    {"id": 5, "input": {"s": "MCMXCIV"}, "output": 1994},
-    {"id": 6, "input": {"s": "XL"}, "output": 40},
-    {"id": 7, "input": {"s": "XC"}, "output": 90},
-    {"id": 8, "input": {"s": "CD"}, "output": 400},
-    {"id": 9, "input": {"s": "CM"}, "output": 900},
-    {"id": 10, "input": {"s": "MMMDCCXLIX"}, "output": 3749}
+    {
+      "id": 1,
+      "input": {
+        "s": "III"
+      },
+      "output": 3
+    },
+    {
+      "id": 2,
+      "input": {
+        "s": "IV"
+      },
+      "output": 4
+    },
+    {
+      "id": 3,
+      "input": {
+        "s": "IX"
+      },
+      "output": 9
+    },
+    {
+      "id": 4,
+      "input": {
+        "s": "LVIII"
+      },
+      "output": 58
+    },
+    {
+      "id": 5,
+      "input": {
+        "s": "MCMXCIV"
+      },
+      "output": 1994
+    },
+    {
+      "id": 6,
+      "input": {
+        "s": "XL"
+      },
+      "output": 40
+    },
+    {
+      "id": 7,
+      "input": {
+        "s": "XC"
+      },
+      "output": 90
+    },
+    {
+      "id": 8,
+      "input": {
+        "s": "CD"
+      },
+      "output": 400
+    },
+    {
+      "id": 9,
+      "input": {
+        "s": "CM"
+      },
+      "output": 900
+    },
+    {
+      "id": 10,
+      "input": {
+        "s": "MMMDCCXLIX"
+      },
+      "output": 3749
+    }
   ]
 }

@@ -20,8 +20,8 @@
   "description": "<h2>Number of Equivalent Domino Pairs</h2><p>Given a list of <code>dominoes</code>, <code>dominoes[i] = [a, b]</code> is <strong>equivalent to</strong> <code>dominoes[j] = [c, d]</code> if and only if either (<code>a == c</code> and <code>b == d</code>), or (<code>a == d</code> and <code>b == c</code>) - that is, one domino can be rotated to be equal to another domino.</p>\n\n<p>Return <em>the number of pairs </em><code>(i, j)</code><em> for which </em><code>0 &lt;= i &lt; j &lt; dominoes.length</code><em>, and </em><code>dominoes[i]</code><em> is <strong>equivalent to</strong> </em><code>dominoes[j]</code>.</p>\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> dominoes = [[1,2],[2,1],[3,4],[5,6]]<br><strong>Output:</strong> 1</li><li><strong>Input:</strong> dominoes = [[1,2],[1,2],[1,1],[1,2],[2,2]]<br><strong>Output:</strong> 3</li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= dominoes.length &lt;= 4 * 10<sup>4</sup></code></li>\n\t<li><code>dominoes[i].length == 2</code></li>\n\t<li><code>1 &lt;= dominoes[i][j] &lt;= 9</code></li>\n</ul>\n",
   "entry_function": "numEquivDominoPairs",
   "template": "def numEquivDominoPairs(dominoes):\n    ",
-  "solution_text": "",
-  "solution_code": "",
+  "solution_text": "<h3>Number of Equivalent Domino Pairs</h3><p><strong>Algorithm:</strong></p><ol><li>Normalize each domino <code>[a, b]</code> to a canonical form by sorting its two values, so <code>[a, b]</code> and <code>[b, a]</code> collapse to the same key.</li><li>Sweep the array left to right, maintaining a hash map of how many times each canonical key has been seen so far.</li><li>Before inserting the current domino, add the current count to the answer \u2014 each earlier equivalent domino forms one new pair.</li></ol><p><strong>Time Complexity:</strong> O(n)</p><p><strong>Space Complexity:</strong> O(1) (at most 45 distinct keys since values are 1..9)</p><p><strong>Key Insight:</strong> counting the number of pairs among <code>k</code> equal items with <code>k*(k-1)/2</code> is equivalent to summing <code>0 + 1 + 2 + ... + (k-1)</code> incrementally as items are seen \u2014 the one-pass version avoids ever materialising the count.</p>",
+  "solution_code": "def numEquivDominoPairs(dominoes):\n    count = {}\n    pairs = 0\n    for a, b in dominoes:\n        key = (a, b) if a <= b else (b, a)\n        pairs += count.get(key, 0)\n        count[key] = count.get(key, 0) + 1\n    return pairs",
   "prepare": "def prepare(test_case_input):\n    return (test_case_input['dominoes'],)",
   "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
   "test_cases": [
@@ -76,6 +76,286 @@
         ]
       },
       "output": 3
+    },
+    {
+      "id": 3,
+      "input": {
+        "dominoes": [
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      "output": 0
+    },
+    {
+      "id": 4,
+      "input": {
+        "dominoes": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      "output": 3
+    },
+    {
+      "id": 5,
+      "input": {
+        "dominoes": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      },
+      "output": 1
+    },
+    {
+      "id": 6,
+      "input": {
+        "dominoes": [
+          [
+            3,
+            5
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            5,
+            3
+          ]
+        ]
+      },
+      "output": 6
+    },
+    {
+      "id": 7,
+      "input": {
+        "dominoes": [
+          [
+            9,
+            9
+          ],
+          [
+            9,
+            9
+          ],
+          [
+            9,
+            9
+          ],
+          [
+            9,
+            9
+          ]
+        ]
+      },
+      "output": 6
+    },
+    {
+      "id": 8,
+      "input": {
+        "dominoes": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            7,
+            8
+          ]
+        ]
+      },
+      "output": 0
+    },
+    {
+      "id": 9,
+      "input": {
+        "dominoes": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            8,
+            4
+          ],
+          [
+            9,
+            7
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            8,
+            4
+          ],
+          [
+            9,
+            7
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            4
+          ]
+        ]
+      },
+      "output": 13
+    },
+    {
+      "id": 10,
+      "input": {
+        "dominoes": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      },
+      "output": 6
     }
   ]
 }

@@ -16,8 +16,8 @@
   "description": "<h2>Apply Discount to Prices</h2><p>A <strong>sentence</strong> is a string of single-space separated words where each word can contain digits, lowercase letters, and the dollar sign <code>&#39;$&#39;</code>. A word represents a <strong>price</strong> if it is a sequence of digits preceded by a dollar sign.</p>\n\n<ul>\n\t<li>For example, <code>&quot;$100&quot;</code>, <code>&quot;$23&quot;</code>, and <code>&quot;$6&quot;</code> represent prices while <code>&quot;100&quot;</code>, <code>&quot;$&quot;</code>, and <code>&quot;$1e5&quot;</code> do not.</li>\n</ul>\n\n<p>You are given a string <code>sentence</code> representing a sentence and an integer <code>discount</code>. For each word representing a price, apply a discount of <code>discount%</code> on the price and <strong>update</strong> the word in the sentence. All updated prices should be represented with <strong>exactly two</strong> decimal places.</p>\n\n<p>Return <em>a string representing the modified sentence</em>.</p>\n\n<p>Note that all prices will contain <strong>at most</strong> <code>10</code> digits.</p>\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> sentence = &quot;there are $1 $2 and 5$ candies in the shop&quot;, discount = 50<br><strong>Output:</strong> &quot;there are $0.50 $1.00 and 5$ candies in the shop&quot;<br><strong>Explanation:</strong> <br>The words which represent prices are &quot;$1&quot; and &quot;$2&quot;. <br>- A 50% discount on &quot;$1&quot; yields &quot;$0.50&quot;, so &quot;$1&quot; is replaced by &quot;$0.50&quot;.<br>- A 50% discount on &quot;$2&quot; yields &quot;$1&quot;. Since we need to have exactly 2 decimal places after a price, we replace &quot;$2&quot; with &quot;$1.00&quot;.</li><li><strong>Input:</strong> sentence = &quot;1 2 $3 4 $5 $6 7 8$ $9 $10<h3>Constraints:</h3>quot;, discount = 100<br><strong>Output:</strong> &quot;1 2 $0.00 4 $0.00 $0.00 7 8$ $0.00 $10<h3>Constraints:</h3>quot;<br><strong>Explanation:</strong> <br>Applying a 100% discount on any price will result in 0.<br>The words representing prices are &quot;$3&quot;, &quot;$5&quot;, &quot;$6&quot;, and &quot;$9&quot;.<br>Each of them is replaced by &quot;$0.00&quot;.</li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= sentence.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>sentence</code> consists of lowercase English letters, digits, <code>&#39; &#39;</code>, and <code>&#39;$&#39;</code>.</li>\n\t<li><code>sentence</code> does not have leading or trailing spaces.</li>\n\t<li>All words in <code>sentence</code> are separated by a single space.</li>\n\t<li>All prices will be <strong>positive</strong> numbers without leading zeros.</li>\n\t<li>All prices will have <strong>at most</strong> <code>10</code> digits.</li>\n\t<li><code>0 &lt;= discount &lt;= 100</code></li>\n</ul>\n",
   "entry_function": "discountPrices",
   "template": "def discountPrices(sentence, discount):\n    ",
-  "solution_text": "",
-  "solution_code": "",
+  "solution_text": "<h3>Apply Discount to Prices</h3><p><strong>Algorithm:</strong></p><ol><li>Split the sentence by single spaces to get individual words.</li><li>For each word, treat it as a price only if it starts with <code>'$'</code> and every remaining character is a digit.</li><li>Compute the discounted amount in integer cents to avoid floating-point rounding surprises for prices with up to 10 digits: <code>cents = price * (100 - discount)</code>.</li><li>Format with exactly two decimals using <code>divmod</code>.</li><li>Join the words back with single spaces.</li></ol><p><strong>Time Complexity:</strong> O(n) in the length of the sentence.</p><p><strong>Space Complexity:</strong> O(n) for the split words and the output.</p><p><strong>Key Insight:</strong> doing the arithmetic in cents (<code>price * factor</code>, then <code>divmod(..., 100)</code>) is exact for the given constraints \u2014 using floats risks tiny rounding errors on large prices.</p>",
+  "solution_code": "def discountPrices(sentence, discount):\n    factor = 100 - discount\n    words = sentence.split(' ')\n    for i, w in enumerate(words):\n        if len(w) > 1 and w[0] == '$' and w[1:].isdigit():\n            price = int(w[1:])\n            cents = price * factor\n            dollars, c = divmod(cents, 100)\n            words[i] = f'${dollars}.{c:02d}'\n    return ' '.join(words)",
   "prepare": "def prepare(test_case_input):\n    return (test_case_input['sentence'], test_case_input['discount'])",
   "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
   "test_cases": [
@@ -36,6 +36,70 @@
         "discount": 100
       },
       "output": "1 2 $0.00 4 $0.00 $0.00 7 8$ $0.00 $10$"
+    },
+    {
+      "id": 3,
+      "input": {
+        "sentence": "$100",
+        "discount": 0
+      },
+      "output": "$100.00"
+    },
+    {
+      "id": 4,
+      "input": {
+        "sentence": "$100",
+        "discount": 100
+      },
+      "output": "$0.00"
+    },
+    {
+      "id": 5,
+      "input": {
+        "sentence": "buy $10 get one free",
+        "discount": 25
+      },
+      "output": "buy $7.50 get one free"
+    },
+    {
+      "id": 6,
+      "input": {
+        "sentence": "$1 $2 $3 $4",
+        "discount": 10
+      },
+      "output": "$0.90 $1.80 $2.70 $3.60"
+    },
+    {
+      "id": 7,
+      "input": {
+        "sentence": "no prices here",
+        "discount": 50
+      },
+      "output": "no prices here"
+    },
+    {
+      "id": 8,
+      "input": {
+        "sentence": "$abc $123abc $0 $99999",
+        "discount": 33
+      },
+      "output": "$abc $123abc $0.00 $66999.33"
+    },
+    {
+      "id": 9,
+      "input": {
+        "sentence": "$1000000000 huge $1",
+        "discount": 75
+      },
+      "output": "$250000000.00 huge $0.25"
+    },
+    {
+      "id": 10,
+      "input": {
+        "sentence": "mix $5 and words $50 done",
+        "discount": 20
+      },
+      "output": "mix $4.00 and words $40.00 done"
     }
   ]
 }
