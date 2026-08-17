@@ -14,8 +14,8 @@
   "description": "<h2>Detect Capital</h2><p>We define the usage of capitals in a word to be right when one of the following cases holds:</p>\n\n<ul>\n\t<li>All letters in this word are capitals, like <code>&quot;USA&quot;</code>.</li>\n\t<li>All letters in this word are not capitals, like <code>&quot;leetcode&quot;</code>.</li>\n\t<li>Only the first letter in this word is capital, like <code>&quot;Google&quot;</code>.</li>\n</ul>\n\n<p>Given a string <code>word</code>, return <code>true</code> if the usage of capitals in it is right.</p>\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> word = \"USA\"<br><strong>Output:</strong> true</li><li><strong>Input:</strong> word = \"FlaG\"<br><strong>Output:</strong> false</li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= word.length &lt;= 100</code></li>\n\t<li><code>word</code> consists of lowercase and uppercase English letters.</li>\n</ul>\n",
   "entry_function": "detectCapitalUse",
   "template": "def detectCapitalUse(word):\n    ",
-  "solution_text": "",
-  "solution_code": "",
+  "solution_text": "<h3>Detect Capital</h3><p>Count uppercase letters. Valid words have zero uppercase letters, all uppercase letters, or exactly one uppercase letter at index 0.</p><p><strong>Time:</strong> O(n). <strong>Space:</strong> O(1).</p>",
+  "solution_code": "def detectCapitalUse(word):\n    capitals = sum('A' <= ch <= 'Z' for ch in word)\n    return (capitals == 0 or capitals == len(word) or\n            (capitals == 1 and 'A' <= word[0] <= 'Z'))",
   "prepare": "def prepare(test_case_input):\n    return (test_case_input['word'],)",
   "verify": "def verify(actual_output, expected_output):\n    if isinstance(expected_output, str):\n        expected_output = expected_output.lower() == 'true'\n    passed = bool(actual_output) == bool(expected_output)\n    return [passed, 'true' if actual_output else 'false']",
   "test_cases": [
@@ -24,14 +24,70 @@
       "input": {
         "word": "USA"
       },
-      "output": "true"
+      "output": true
     },
     {
       "id": 2,
       "input": {
         "word": "FlaG"
       },
-      "output": "false"
+      "output": false
+    },
+    {
+      "id": 3,
+      "input": {
+        "word": "leetcode"
+      },
+      "output": true
+    },
+    {
+      "id": 4,
+      "input": {
+        "word": "Google"
+      },
+      "output": true
+    },
+    {
+      "id": 5,
+      "input": {
+        "word": "g"
+      },
+      "output": true
+    },
+    {
+      "id": 6,
+      "input": {
+        "word": "Z"
+      },
+      "output": true
+    },
+    {
+      "id": 7,
+      "input": {
+        "word": "mL"
+      },
+      "output": false
+    },
+    {
+      "id": 8,
+      "input": {
+        "word": "LeetCode"
+      },
+      "output": false
+    },
+    {
+      "id": 9,
+      "input": {
+        "word": "PYTHON"
+      },
+      "output": true
+    },
+    {
+      "id": 10,
+      "input": {
+        "word": "Python"
+      },
+      "output": true
     }
   ]
 }
