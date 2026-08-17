@@ -17,6 +17,102 @@
   ],
   "badge": "Summer 2026",
   "units": {
+    "week13": {
+      "title": "Week 13",
+      "description": "Week 13 — Digit Frequency Score, Detect Capital, Minimum Deletions to Make Array Beautiful, Decrease Elements To Make Array Zigzag, String Transformation, Delivering Boxes from Storage to Ports.",
+      "questions": [
+        {
+          "filename": "digit-frequency-score",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/digit-frequency-score/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Easy",
+            "Hash Table"
+          ]
+        },
+        {
+          "filename": "detect-capital",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/detect-capital/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Easy",
+            "String"
+          ]
+        },
+        {
+          "filename": "minimum-deletions-to-make-array-beautiful",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/minimum-deletions-to-make-array-beautiful/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Medium",
+            "Array"
+          ]
+        },
+        {
+          "filename": "decrease-elements-to-make-array-zigzag",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/decrease-elements-to-make-array-zigzag/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Medium",
+            "Array"
+          ]
+        },
+        {
+          "filename": "string-transformation",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/string-transformation/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Hard",
+            "Math"
+          ]
+        },
+        {
+          "filename": "delivering-boxes-from-storage-to-ports",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/delivering-boxes-from-storage-to-ports/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Hard",
+            "Array"
+          ]
+        }
+      ]
+    },
     "week12": {
       "title": "Week 12",
       "description": "Week 12 — Roman to Integer, Number of Equivalent Domino Pairs, Apply Discount to Prices, Group Anagrams, Reverse Nodes in k-Group, Building Boxes.",

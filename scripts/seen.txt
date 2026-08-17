@@ -41,3 +41,9 @@ apply-discount-to-prices
 group-anagrams
 reverse-nodes-in-k-group
 building-boxes
+digit-frequency-score
+detect-capital
+minimum-deletions-to-make-array-beautiful
+decrease-elements-to-make-array-zigzag
+string-transformation
+delivering-boxes-from-storage-to-ports

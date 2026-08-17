@@ -1,0 +1,40 @@
+{
+  "index": 303,
+  "filename": "digit-frequency-score",
+  "title": "Digit Frequency Score",
+  "difficulty": "Easy",
+  "tags": [
+    "Hash Table"
+  ],
+  "keywords": [
+    "digit",
+    "frequency",
+    "score",
+    "hash",
+    "table",
+    "math"
+  ],
+  "description": "<h2>Digit Frequency Score</h2><p>You are given an integer <code>n</code>.</p>\n\n<p>The <strong>score</strong> of <code>n</code> is defined as the <strong>sum</strong> of <code>d * freq(d)</code> over all <strong>distinct</strong> digits <code>d</code>, where <code>freq(d)</code> denotes the number of times the digit <code>d</code> appears in <code>n</code>.</p>\n\n<p>Return an integer denoting the score of <code>n</code>.</p>\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> n = 122<br><strong>Output:</strong> 5<br><strong>Explanation:</strong></p>\n\n<ul>\n\t<li>The digit 1 appears 1 time, contributing <code>1 * 1 = 1</code>.</li>\n\t<li>The digit 2 appears 2 times, contributing <code>2 * 2 = 4</code>.</li>\n\t<li>Thus, the score of <code>n</code> is <code>1 + 4 = 5</code>.</li>\n</ul></li><li><strong>Input:</strong> n = 101<br><strong>Output:</strong> 2<br><strong>Explanation:</strong></p>\n\n<ul>\n\t<li>The digit 0 appears 1 time, contributing <code>0 * 1 = 0</code>.</li>\n\t<li>The digit 1 appears 2 times, contributing <code>1 * 2 = 2</code>.</li>\n\t<li>Thus, the score of <code>n</code> is 2.</li>\n</ul></li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= n &lt;= 10<sup>9</sup></code></li>\n</ul>\n",
+  "entry_function": "digitFrequencyScore",
+  "template": "def digitFrequencyScore(n):\n    ",
+  "solution_text": "",
+  "solution_code": "",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['n'],)",
+  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "n": 122
+      },
+      "output": 5
+    },
+    {
+      "id": 2,
+      "input": {
+        "n": 101
+      },
+      "output": 2
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "index": 305,
+  "filename": "string-transformation",
+  "title": "String Transformation",
+  "difficulty": "Hard",
+  "tags": [
+    "Math"
+  ],
+  "keywords": [
+    "string",
+    "transformation",
+    "math",
+    "dynamic",
+    "programming",
+    "matching"
+  ],
+  "description": "<h2>String Transformation</h2><p>You are given two strings <code>s</code> and <code>t</code> of equal length <code>n</code>. You can perform the following operation on the string <code>s</code>:</p>\n\n<ul>\n\t<li>Remove a <strong>suffix</strong> of <code>s</code> of length <code>l</code> where <code>0 &lt; l &lt; n</code> and append it at the start of <code>s</code>.<br />\n\tFor example, let <code>s = &#39;abcd&#39;</code> then in one operation you can remove the suffix <code>&#39;cd&#39;</code> and append it in front of <code>s</code> making <code>s = &#39;cdab&#39;</code>.</li>\n</ul>\n\n<p>You are also given an integer <code>k</code>. Return <em>the number of ways in which </em><code>s</code> <em>can be transformed into </em><code>t</code><em> in <strong>exactly</strong> </em><code>k</code><em> operations.</em></p>\n\n<p>Since the answer can be large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.</p>\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> s = &quot;abcd&quot;, t = &quot;cdab&quot;, k = 2<br><strong>Output:</strong> 2<br><strong>Explanation:</strong> <br>First way:<br>In first operation, choose suffix from index = 3, so resulting s = &quot;dabc&quot;.<br>In second operation, choose suffix from index = 3, so resulting s = &quot;cdab&quot;.<br><br>Second way:<br>In first operation, choose suffix from index = 1, so resulting s = &quot;bcda&quot;.<br>In second operation, choose suffix from index = 1, so resulting s = &quot;cdab&quot;.</li><li><strong>Input:</strong> s = &quot;ababab&quot;, t = &quot;ababab&quot;, k = 1<br><strong>Output:</strong> 2<br><strong>Explanation:</strong> <br>First way:<br>Choose suffix from index = 2, so resulting s = &quot;ababab&quot;.<br><br>Second way:<br>Choose suffix from index = 4, so resulting s = &quot;ababab&quot;.</li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>2 &lt;= s.length &lt;= 5 * 10<sup>5</sup></code></li>\n\t<li><code>1 &lt;= k &lt;= 10<sup>15</sup></code></li>\n\t<li><code>s.length == t.length</code></li>\n\t<li><code>s</code> and <code>t</code> consist of only lowercase English alphabets.</li>\n</ul>\n",
+  "entry_function": "numberOfWays",
+  "template": "def numberOfWays(s, t, k):\n    ",
+  "solution_text": "",
+  "solution_code": "",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['s'], test_case_input['t'], test_case_input['k'])",
+  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "s": "abcd",
+        "t": "cdab",
+        "k": 2
+      },
+      "output": 2
+    },
+    {
+      "id": 2,
+      "input": {
+        "s": "ababab",
+        "t": "ababab",
+        "k": 1
+      },
+      "output": 2
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "index": 304,
+  "filename": "minimum-deletions-to-make-array-beautiful",
+  "title": "Minimum Deletions to Make Array Beautiful",
+  "difficulty": "Medium",
+  "tags": [
+    "Array"
+  ],
+  "keywords": [
+    "minimum",
+    "deletions",
+    "to",
+    "make",
+    "array",
+    "beautiful",
+    "stack",
+    "greedy"
+  ],
+  "description": "<h2>Minimum Deletions to Make Array Beautiful</h2><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code>. The array <code>nums</code> is <strong>beautiful</strong> if:</p>\n\n<ul>\n\t<li><code>nums.length</code> is even.</li>\n\t<li><code>nums[i] != nums[i + 1]</code> for all <code>i % 2 == 0</code>.</li>\n</ul>\n\n<p>Note that an empty array is considered beautiful.</p>\n\n<p>You can delete any number of elements from <code>nums</code>. When you delete an element, all the elements to the right of the deleted element will be <strong>shifted one unit to the left</strong> to fill the gap created and all the elements to the left of the deleted element will remain <strong>unchanged</strong>.</p>\n\n<p>Return <em>the <strong>minimum</strong> number of elements to delete from </em><code>nums</code><em> to make it </em><em>beautiful.</em></p>\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> nums = [1,1,2,3,5]<br><strong>Output:</strong> 1<br><strong>Explanation:</strong> You can delete either <code>nums[0]</code> or <code>nums[1]</code> to make <code>nums</code> = [1,2,3,5] which is beautiful. It can be proven you need at least 1 deletion to make <code>nums</code> beautiful.</li><li><strong>Input:</strong> nums = [1,1,2,2,3,3]<br><strong>Output:</strong> 2<br><strong>Explanation:</strong> You can delete <code>nums[0]</code> and <code>nums[5]</code> to make nums = [1,2,2,3] which is beautiful. It can be proven you need at least 2 deletions to make nums beautiful.</li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>0 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>\n</ul>\n",
+  "entry_function": "minDeletion",
+  "template": "def minDeletion(nums):\n    ",
+  "solution_text": "",
+  "solution_code": "",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['nums'],)",
+  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "nums": [
+          1,
+          1,
+          2,
+          3,
+          5
+        ]
+      },
+      "output": 1
+    },
+    {
+      "id": 2,
+      "input": {
+        "nums": [
+          1,
+          1,
+          2,
+          2,
+          3,
+          3
+        ]
+      },
+      "output": 2
+    }
+  ]
+}

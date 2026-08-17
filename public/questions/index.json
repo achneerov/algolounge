@@ -4826,8 +4826,122 @@
         "table",
         "counting"
       ]
+    },
+    {
+      "index": 300,
+      "filename": "decrease-elements-to-make-array-zigzag",
+      "title": "Decrease Elements To Make Array Zigzag",
+      "difficulty": "Medium",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "decrease",
+        "elements",
+        "to",
+        "make",
+        "array",
+        "zigzag",
+        "greedy"
+      ]
+    },
+    {
+      "index": 301,
+      "filename": "delivering-boxes-from-storage-to-ports",
+      "title": "Delivering Boxes from Storage to Ports",
+      "difficulty": "Hard",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "delivering",
+        "boxes",
+        "from",
+        "storage",
+        "to",
+        "ports",
+        "array",
+        "dynamic",
+        "programming",
+        "segment",
+        "tree",
+        "queue",
+        "heap",
+        "(priority",
+        "queue)",
+        "prefix",
+        "sum",
+        "monotonic"
+      ]
+    },
+    {
+      "index": 302,
+      "filename": "detect-capital",
+      "title": "Detect Capital",
+      "difficulty": "Easy",
+      "tags": [
+        "String"
+      ],
+      "keywords": [
+        "detect",
+        "capital",
+        "string"
+      ]
+    },
+    {
+      "index": 303,
+      "filename": "digit-frequency-score",
+      "title": "Digit Frequency Score",
+      "difficulty": "Easy",
+      "tags": [
+        "Hash Table"
+      ],
+      "keywords": [
+        "digit",
+        "frequency",
+        "score",
+        "hash",
+        "table",
+        "math"
+      ]
+    },
+    {
+      "index": 304,
+      "filename": "minimum-deletions-to-make-array-beautiful",
+      "title": "Minimum Deletions to Make Array Beautiful",
+      "difficulty": "Medium",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "minimum",
+        "deletions",
+        "to",
+        "make",
+        "array",
+        "beautiful",
+        "stack",
+        "greedy"
+      ]
+    },
+    {
+      "index": 305,
+      "filename": "string-transformation",
+      "title": "String Transformation",
+      "difficulty": "Hard",
+      "tags": [
+        "Math"
+      ],
+      "keywords": [
+        "string",
+        "transformation",
+        "math",
+        "dynamic",
+        "programming",
+        "matching"
+      ]
     }
   ],
-  "lastUpdated": "2026-08-11T19:52:25.635Z",
-  "totalQuestions": 244
+  "lastUpdated": "2026-08-17T06:33:19.526Z",
+  "totalQuestions": 250
 }
