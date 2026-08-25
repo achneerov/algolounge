@@ -1,0 +1,39 @@
+{
+  "index": 306,
+  "filename": "defanging-an-ip-address",
+  "title": "Defanging an IP Address",
+  "difficulty": "Easy",
+  "tags": [
+    "String"
+  ],
+  "keywords": [
+    "defanging",
+    "an",
+    "ip",
+    "address",
+    "string"
+  ],
+  "description": "<h2>Defanging an IP Address</h2><p>Given a valid (IPv4) IP <code>address</code>, return a defanged version of that IP address.</p>\r\n\r\n<p>A <em>defanged&nbsp;IP address</em>&nbsp;replaces every period <code>&quot;.&quot;</code> with <code>&quot;[.]&quot;</code>.</p>\r\n\r\n\r\n\r\n\r\n<h3>Examples:</h3><ul><li><strong>Input:</strong> address = \"1.1.1.1\"<br><strong>Output:</strong> \"1[.]1[.]1[.]1\"</li><li><strong>Input:</strong> address = \"255.100.50.0\"<br><strong>Output:</strong> \"255[.]100[.]50[.]0\"</li></ul><h3>Constraints:</h3>\r\n\r\n<ul>\r\n\t<li>The given <code>address</code> is a valid IPv4 address.</li>\r\n</ul>",
+  "entry_function": "defangIPaddr",
+  "template": "def defangIPaddr(address):\n    ",
+  "solution_text": "",
+  "solution_code": "",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['address'],)",
+  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "address": "1.1.1.1"
+      },
+      "output": "1[.]1[.]1[.]1"
+    },
+    {
+      "id": 2,
+      "input": {
+        "address": "255.100.50.0"
+      },
+      "output": "255[.]100[.]50[.]0"
+    }
+  ]
+}

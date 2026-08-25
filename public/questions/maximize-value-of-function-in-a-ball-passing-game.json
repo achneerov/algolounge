@@ -1,0 +1,60 @@
+{
+  "index": 308,
+  "filename": "maximize-value-of-function-in-a-ball-passing-game",
+  "title": "Maximize Value of Function in a Ball Passing Game",
+  "difficulty": "Hard",
+  "tags": [
+    "Array"
+  ],
+  "keywords": [
+    "maximize",
+    "value",
+    "of",
+    "function",
+    "in",
+    "a",
+    "ball",
+    "passing",
+    "game",
+    "array",
+    "dynamic",
+    "programming",
+    "bit",
+    "manipulation"
+  ],
+  "description": "<h2>Maximize Value of Function in a Ball Passing Game</h2><p>You are given an integer array <code>receiver</code> of length <code>n</code> and an integer <code>k</code>. <code>n</code> players are playing a ball-passing game.</p>\n\n<p>You choose the starting player, <code>i</code>. The game proceeds as follows: player <code>i</code> passes the ball to player <code>receiver[i]</code>, who then passes it to <code>receiver[receiver[i]]</code>, and so on, for <code>k</code> passes in total. The game&#39;s score is the sum of the indices of the players who touched the ball, including repetitions, i.e. <code>i + receiver[i] + receiver[receiver[i]] + ... + receiver<sup>(k)</sup>[i]</code>.</p>\n\n<p>Return&nbsp;the <strong>maximum</strong>&nbsp;possible score.</p>\n\n<p><strong>Notes:</strong></p>\n\n<ul>\n\t<li><code>receiver</code> may contain duplicates.</li>\n\t<li><code>receiver[i]</code> may be equal to <code>i</code>.</li>\n</ul>\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> receiver = [2,0,1], k = 4<br><strong>Output:</strong> 6<br><strong>Explanation:</strong></p>\n\n<p>Starting with player <code>i = 2</code> the initial score is 2:</p>\n\n<table>\n\t<tbody>\n\t\t<tr>\n\t\t\t<th>Pass</th>\n\t\t\t<th>Sender Index</th>\n\t\t\t<th>Receiver Index</th>\n\t\t\t<th>Score</th>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>1</td>\n\t\t\t<td>2</td>\n\t\t\t<td>1</td>\n\t\t\t<td>3</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>2</td>\n\t\t\t<td>1</td>\n\t\t\t<td>0</td>\n\t\t\t<td>3</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>3</td>\n\t\t\t<td>0</td>\n\t\t\t<td>2</td>\n\t\t\t<td>5</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>4</td>\n\t\t\t<td>2</td>\n\t\t\t<td>1</td>\n\t\t\t<td>6</td>\n\t\t</tr>\n\t</tbody>\n</table></li><li><strong>Input:</strong> receiver = [1,1,1,2,3], k = 3<br><strong>Output:</strong> 10<br><strong>Explanation:</strong></p>\n\n<p>Starting with player <code>i = 4</code> the initial score is 4:</p>\n\n<table>\n\t<tbody>\n\t\t<tr>\n\t\t\t<th>Pass</th>\n\t\t\t<th>Sender Index</th>\n\t\t\t<th>Receiver Index</th>\n\t\t\t<th>Score</th>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>1</td>\n\t\t\t<td>4</td>\n\t\t\t<td>3</td>\n\t\t\t<td>7</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>2</td>\n\t\t\t<td>3</td>\n\t\t\t<td>2</td>\n\t\t\t<td>9</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>3</td>\n\t\t\t<td>2</td>\n\t\t\t<td>1</td>\n\t\t\t<td>10</td>\n\t\t</tr>\n\t</tbody>\n</table></li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= receiver.length == n &lt;= 10<sup>5</sup></code></li>\n\t<li><code>0 &lt;= receiver[i] &lt;= n - 1</code></li>\n\t<li><code>1 &lt;= k &lt;= 10<sup>10</sup></code></li>\n</ul>\n",
+  "entry_function": "getMaxFunctionValue",
+  "template": "def getMaxFunctionValue(receiver, k):\n    ",
+  "solution_text": "",
+  "solution_code": "",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['receiver'], test_case_input['k'])",
+  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "receiver": [
+          2,
+          0,
+          1
+        ],
+        "k": 4
+      },
+      "output": 6
+    },
+    {
+      "id": 2,
+      "input": {
+        "receiver": [
+          1,
+          1,
+          1,
+          2,
+          3
+        ],
+        "k": 3
+      },
+      "output": 10
+    }
+  ]
+}

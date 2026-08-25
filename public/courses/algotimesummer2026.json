@@ -17,6 +17,102 @@
   ],
   "badge": "Summer 2026",
   "units": {
+    "week14": {
+      "title": "Week 14",
+      "description": "Week 14 — Defanging an IP Address, Maximize Pair Strength Using GCD, Number of Provinces, Sort Matrix by Diagonals, Maximum Score with Co-Prime Element, Maximize Value of Function in a Ball Passing Game.",
+      "questions": [
+        {
+          "filename": "defanging-an-ip-address",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/defanging-an-ip-address/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Easy",
+            "String"
+          ]
+        },
+        {
+          "filename": "maximize-pair-strength-using-gcd",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/maximize-pair-strength-using-gcd/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Easy",
+            "Array"
+          ]
+        },
+        {
+          "filename": "number-of-provinces",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/number-of-provinces/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Medium",
+            "Depth-First Search"
+          ]
+        },
+        {
+          "filename": "sort-matrix-by-diagonals",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/sort-matrix-by-diagonals/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Medium",
+            "Array"
+          ]
+        },
+        {
+          "filename": "maximum-score-with-co-prime-element",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/maximum-score-with-co-prime-element/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Hard",
+            "Array"
+          ]
+        },
+        {
+          "filename": "maximize-value-of-function-in-a-ball-passing-game",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/maximize-value-of-function-in-a-ball-passing-game/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Hard",
+            "Array"
+          ]
+        }
+      ]
+    },
     "week13": {
       "title": "Week 13",
       "description": "Week 13 — Digit Frequency Score, Detect Capital, Minimum Deletions to Make Array Beautiful, Decrease Elements To Make Array Zigzag, String Transformation, Delivering Boxes from Storage to Ports.",

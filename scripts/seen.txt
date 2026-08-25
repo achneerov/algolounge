@@ -47,3 +47,9 @@ minimum-deletions-to-make-array-beautiful
 decrease-elements-to-make-array-zigzag
 string-transformation
 delivering-boxes-from-storage-to-ports
+defanging-an-ip-address
+maximize-pair-strength-using-gcd
+number-of-provinces
+sort-matrix-by-diagonals
+maximum-score-with-co-prime-element
+maximize-value-of-function-in-a-ball-passing-game

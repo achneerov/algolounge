@@ -4940,8 +4940,132 @@
         "programming",
         "matching"
       ]
+    },
+    {
+      "index": 306,
+      "filename": "defanging-an-ip-address",
+      "title": "Defanging an IP Address",
+      "difficulty": "Easy",
+      "tags": [
+        "String"
+      ],
+      "keywords": [
+        "defanging",
+        "an",
+        "ip",
+        "address",
+        "string"
+      ]
+    },
+    {
+      "index": 307,
+      "filename": "maximize-pair-strength-using-gcd",
+      "title": "Maximize Pair Strength Using GCD",
+      "difficulty": "Easy",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "maximize",
+        "pair",
+        "strength",
+        "using",
+        "gcd",
+        "array",
+        "math",
+        "enumeration",
+        "number",
+        "theory"
+      ]
+    },
+    {
+      "index": 308,
+      "filename": "maximize-value-of-function-in-a-ball-passing-game",
+      "title": "Maximize Value of Function in a Ball Passing Game",
+      "difficulty": "Hard",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "maximize",
+        "value",
+        "of",
+        "function",
+        "in",
+        "a",
+        "ball",
+        "passing",
+        "game",
+        "array",
+        "dynamic",
+        "programming",
+        "bit",
+        "manipulation"
+      ]
+    },
+    {
+      "index": 309,
+      "filename": "maximum-score-with-co-prime-element",
+      "title": "Maximum Score with Co-Prime Element",
+      "difficulty": "Hard",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "maximum",
+        "score",
+        "with",
+        "co",
+        "prime",
+        "element",
+        "array",
+        "hash",
+        "table",
+        "math",
+        "combinatorics",
+        "enumeration",
+        "number",
+        "theory"
+      ]
+    },
+    {
+      "index": 310,
+      "filename": "number-of-provinces",
+      "title": "Number of Provinces",
+      "difficulty": "Medium",
+      "tags": [
+        "Depth-First Search"
+      ],
+      "keywords": [
+        "number",
+        "of",
+        "provinces",
+        "depth-first",
+        "search",
+        "breadth-first",
+        "union-find",
+        "graph",
+        "theory"
+      ]
+    },
+    {
+      "index": 311,
+      "filename": "sort-matrix-by-diagonals",
+      "title": "Sort Matrix by Diagonals",
+      "difficulty": "Medium",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "sort",
+        "matrix",
+        "by",
+        "diagonals",
+        "array",
+        "sorting"
+      ]
     }
   ],
-  "lastUpdated": "2026-08-17T06:33:19.526Z",
-  "totalQuestions": 250
+  "lastUpdated": "2026-08-25T02:54:31.312Z",
+  "totalQuestions": 256
 }

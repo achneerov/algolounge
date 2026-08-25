@@ -1,0 +1,75 @@
+{
+  "index": 310,
+  "filename": "number-of-provinces",
+  "title": "Number of Provinces",
+  "difficulty": "Medium",
+  "tags": [
+    "Depth-First Search"
+  ],
+  "keywords": [
+    "number",
+    "of",
+    "provinces",
+    "depth-first",
+    "search",
+    "breadth-first",
+    "union-find",
+    "graph",
+    "theory"
+  ],
+  "description": "<h2>Number of Provinces</h2><p>There are <code>n</code> cities. Some of them are connected, while some are not. If city <code>a</code> is connected directly with city <code>b</code>, and city <code>b</code> is connected directly with city <code>c</code>, then city <code>a</code> is connected indirectly with city <code>c</code>.</p>\n\n<p>A <strong>province</strong> is a group of directly or indirectly connected cities and no other cities outside of the group.</p>\n\n<p>You are given an <code>n x n</code> matrix <code>isConnected</code> where <code>isConnected[i][j] = 1</code> if the <code>i<sup>th</sup></code> city and the <code>j<sup>th</sup></code> city are directly connected, and <code>isConnected[i][j] = 0</code> otherwise.</p>\n\n<p>Return <em>the total number of <strong>provinces</strong></em>.</p>\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/12/24/graph1.jpg\" style=\"width: 222px; height: 142px;\" />\n<strong>Input:</strong> isConnected = [[1,1,0],[1,1,0],[0,0,1]]<br><strong>Output:</strong> 2</li><li><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/12/24/graph2.jpg\" style=\"width: 222px; height: 142px;\" />\n<strong>Input:</strong> isConnected = [[1,0,0],[0,1,0],[0,0,1]]<br><strong>Output:</strong> 3</li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= n &lt;= 200</code></li>\n\t<li><code>n == isConnected.length</code></li>\n\t<li><code>n == isConnected[i].length</code></li>\n\t<li><code>isConnected[i][j]</code> is <code>1</code> or <code>0</code>.</li>\n\t<li><code>isConnected[i][i] == 1</code></li>\n\t<li><code>isConnected[i][j] == isConnected[j][i]</code></li>\n</ul>\n",
+  "entry_function": "findCircleNum",
+  "template": "def findCircleNum(isConnected):\n    ",
+  "solution_text": "",
+  "solution_code": "",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['isConnected'],)",
+  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "isConnected": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ]
+      },
+      "output": 2
+    },
+    {
+      "id": 2,
+      "input": {
+        "isConnected": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ]
+      },
+      "output": 3
+    }
+  ]
+}
