@@ -21,8 +21,8 @@
   "description": "<h2>Maximize Pair Strength Using GCD</h2><p>You are given an integer array <code>nums</code>.</p>\n\n<p>Choose exactly one pair of distinct indices <code>i</code> and <code>j</code>. The strength of the pair is defined as <code>(nums[i] * nums[j]) / <span data-keyword=\"gcd-function\">gcd(nums[i], nums[j])</span><sup>2</sup></code>.</p>\n\n<p>Return the maximum strength over all possible pairs.</p>\n\n\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> nums = [2,3,5]<br><strong>Output:</strong> 15<br><strong>Explanation:</strong></p>\n\n<p>Choosing <code>i = 1</code> and <code>j = 2</code> gives strength <code>(3 * 5) / gcd(3, 5)<sup>2</sup> = 15 / 1 = 15</code>, which is the maximum over all pairs.</p></li><li><strong>Input:</strong> nums = [4,6,8]<br><strong>Output:</strong> 12<br><strong>Explanation:</strong></p>\n\n<p>Choosing <code>i = 1</code> and <code>j = 2</code> gives strength <code>(6 * 8) / gcd(6, 8)<sup>2</sup> = 48 / 4 = 12</code>, which is the maximum over all pairs.</p></li><li><strong>Input:</strong> nums = [3,3]<br><strong>Output:</strong> 1<br><strong>Explanation:</strong></p>\n\n<p>Choosing <code>i = 0</code> and <code>j = 1</code> gives strength <code>(3 * 3) / gcd(3, 3)<sup>2</sup> = 9 / 9 = 1</code>, the maximum over all pairs.</p></li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>2 &lt;= nums.length &lt;= 2000</code></li>\n\t<li><code>1 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>\n</ul>\n",
   "entry_function": "maxPairStrength",
   "template": "def maxPairStrength(nums):\n    ",
-  "solution_text": "",
-  "solution_code": "",
+  "solution_text": "<h3>Enumerate Every Pair</h3><p>Evaluate the strength formula for each pair of distinct indices and retain the maximum. Integer division is exact because the square of the GCD divides the product.</p><p><strong>Time:</strong> O(n<sup>2</sup> log V), where V is the largest value. <strong>Space:</strong> O(1).</p>",
+  "solution_code": "def maxPairStrength(nums):\n    from math import gcd\n    best = 0\n    for i in range(len(nums)):\n        for j in range(i + 1, len(nums)):\n            common = gcd(nums[i], nums[j])\n            best = max(best, nums[i] * nums[j] // (common * common))\n    return best",
   "prepare": "def prepare(test_case_input):\n    return (test_case_input['nums'],)",
   "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
   "test_cases": [
@@ -57,6 +57,81 @@
         ]
       },
       "output": 1
+    },
+    {
+      "id": 4,
+      "input": {
+        "nums": [
+          1,
+          1
+        ]
+      },
+      "output": 1
+    },
+    {
+      "id": 5,
+      "input": {
+        "nums": [
+          1,
+          100000
+        ]
+      },
+      "output": 100000
+    },
+    {
+      "id": 6,
+      "input": {
+        "nums": [
+          6,
+          10,
+          15
+        ]
+      },
+      "output": 15
+    },
+    {
+      "id": 7,
+      "input": {
+        "nums": [
+          12,
+          18,
+          25
+        ]
+      },
+      "output": 450
+    },
+    {
+      "id": 8,
+      "input": {
+        "nums": [
+          8,
+          12,
+          16,
+          18
+        ]
+      },
+      "output": 72
+    },
+    {
+      "id": 9,
+      "input": {
+        "nums": [
+          100000,
+          99999
+        ]
+      },
+      "output": 9999900000
+    },
+    {
+      "id": 10,
+      "input": {
+        "nums": [
+          99991,
+          99991,
+          2
+        ]
+      },
+      "output": 199982
     }
   ]
 }

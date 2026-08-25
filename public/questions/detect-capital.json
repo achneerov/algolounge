@@ -24,70 +24,70 @@
       "input": {
         "word": "USA"
       },
-      "output": true
+      "output": "true"
     },
     {
       "id": 2,
       "input": {
         "word": "FlaG"
       },
-      "output": false
+      "output": "false"
     },
     {
       "id": 3,
       "input": {
         "word": "leetcode"
       },
-      "output": true
+      "output": "true"
     },
     {
       "id": 4,
       "input": {
         "word": "Google"
       },
-      "output": true
+      "output": "true"
     },
     {
       "id": 5,
       "input": {
         "word": "g"
       },
-      "output": true
+      "output": "true"
     },
     {
       "id": 6,
       "input": {
         "word": "Z"
       },
-      "output": true
+      "output": "true"
     },
     {
       "id": 7,
       "input": {
         "word": "mL"
       },
-      "output": false
+      "output": "false"
     },
     {
       "id": 8,
       "input": {
         "word": "LeetCode"
       },
-      "output": false
+      "output": "false"
     },
     {
       "id": 9,
       "input": {
         "word": "PYTHON"
       },
-      "output": true
+      "output": "true"
     },
     {
       "id": 10,
       "input": {
         "word": "Python"
       },
-      "output": true
+      "output": "true"
     }
   ]
 }

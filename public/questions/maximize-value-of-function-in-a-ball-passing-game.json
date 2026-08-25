@@ -25,8 +25,8 @@
   "description": "<h2>Maximize Value of Function in a Ball Passing Game</h2><p>You are given an integer array <code>receiver</code> of length <code>n</code> and an integer <code>k</code>. <code>n</code> players are playing a ball-passing game.</p>\n\n<p>You choose the starting player, <code>i</code>. The game proceeds as follows: player <code>i</code> passes the ball to player <code>receiver[i]</code>, who then passes it to <code>receiver[receiver[i]]</code>, and so on, for <code>k</code> passes in total. The game&#39;s score is the sum of the indices of the players who touched the ball, including repetitions, i.e. <code>i + receiver[i] + receiver[receiver[i]] + ... + receiver<sup>(k)</sup>[i]</code>.</p>\n\n<p>Return&nbsp;the <strong>maximum</strong>&nbsp;possible score.</p>\n\n<p><strong>Notes:</strong></p>\n\n<ul>\n\t<li><code>receiver</code> may contain duplicates.</li>\n\t<li><code>receiver[i]</code> may be equal to <code>i</code>.</li>\n</ul>\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> receiver = [2,0,1], k = 4<br><strong>Output:</strong> 6<br><strong>Explanation:</strong></p>\n\n<p>Starting with player <code>i = 2</code> the initial score is 2:</p>\n\n<table>\n\t<tbody>\n\t\t<tr>\n\t\t\t<th>Pass</th>\n\t\t\t<th>Sender Index</th>\n\t\t\t<th>Receiver Index</th>\n\t\t\t<th>Score</th>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>1</td>\n\t\t\t<td>2</td>\n\t\t\t<td>1</td>\n\t\t\t<td>3</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>2</td>\n\t\t\t<td>1</td>\n\t\t\t<td>0</td>\n\t\t\t<td>3</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>3</td>\n\t\t\t<td>0</td>\n\t\t\t<td>2</td>\n\t\t\t<td>5</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>4</td>\n\t\t\t<td>2</td>\n\t\t\t<td>1</td>\n\t\t\t<td>6</td>\n\t\t</tr>\n\t</tbody>\n</table></li><li><strong>Input:</strong> receiver = [1,1,1,2,3], k = 3<br><strong>Output:</strong> 10<br><strong>Explanation:</strong></p>\n\n<p>Starting with player <code>i = 4</code> the initial score is 4:</p>\n\n<table>\n\t<tbody>\n\t\t<tr>\n\t\t\t<th>Pass</th>\n\t\t\t<th>Sender Index</th>\n\t\t\t<th>Receiver Index</th>\n\t\t\t<th>Score</th>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>1</td>\n\t\t\t<td>4</td>\n\t\t\t<td>3</td>\n\t\t\t<td>7</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>2</td>\n\t\t\t<td>3</td>\n\t\t\t<td>2</td>\n\t\t\t<td>9</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>3</td>\n\t\t\t<td>2</td>\n\t\t\t<td>1</td>\n\t\t\t<td>10</td>\n\t\t</tr>\n\t</tbody>\n</table></li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= receiver.length == n &lt;= 10<sup>5</sup></code></li>\n\t<li><code>0 &lt;= receiver[i] &lt;= n - 1</code></li>\n\t<li><code>1 &lt;= k &lt;= 10<sup>10</sup></code></li>\n</ul>\n",
   "entry_function": "getMaxFunctionValue",
   "template": "def getMaxFunctionValue(receiver, k):\n    ",
-  "solution_text": "",
-  "solution_code": "",
+  "solution_text": "<h3>Binary Lifting</h3><p>Precompute, for every player and power of two, both the destination after that many passes and the sum of receiver indices encountered. Decompose k into powers of two to score each starting player in O(log k).</p><p><strong>Time:</strong> O(n log k). <strong>Space:</strong> O(n log k).</p>",
+  "solution_code": "def getMaxFunctionValue(receiver, k):\n    n = len(receiver)\n    levels = k.bit_length()\n    jump = [receiver[:]]\n    total = [[receiver[i] for i in range(n)]]\n\n    for _ in range(1, levels):\n        previous_jump = jump[-1]\n        previous_total = total[-1]\n        jump.append([previous_jump[previous_jump[i]] for i in range(n)])\n        total.append([\n            previous_total[i] + previous_total[previous_jump[i]]\n            for i in range(n)\n        ])\n\n    answer = 0\n    for start in range(n):\n        node = start\n        score = start\n        passes = k\n        bit = 0\n        while passes:\n            if passes & 1:\n                score += total[bit][node]\n                node = jump[bit][node]\n            passes >>= 1\n            bit += 1\n        answer = max(answer, score)\n    return answer",
   "prepare": "def prepare(test_case_input):\n    return (test_case_input['receiver'], test_case_input['k'])",
   "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
   "test_cases": [
@@ -55,6 +55,106 @@
         "k": 3
       },
       "output": 10
+    },
+    {
+      "id": 3,
+      "input": {
+        "receiver": [
+          0
+        ],
+        "k": 1
+      },
+      "output": 0
+    },
+    {
+      "id": 4,
+      "input": {
+        "receiver": [
+          0
+        ],
+        "k": 10000000000
+      },
+      "output": 0
+    },
+    {
+      "id": 5,
+      "input": {
+        "receiver": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "k": 10000000000
+      },
+      "output": 30000000003
+    },
+    {
+      "id": 6,
+      "input": {
+        "receiver": [
+          1,
+          2,
+          3,
+          3
+        ],
+        "k": 5
+      },
+      "output": 18
+    },
+    {
+      "id": 7,
+      "input": {
+        "receiver": [
+          1,
+          2,
+          0
+        ],
+        "k": 1
+      },
+      "output": 3
+    },
+    {
+      "id": 8,
+      "input": {
+        "receiver": [
+          1,
+          2,
+          0
+        ],
+        "k": 2
+      },
+      "output": 3
+    },
+    {
+      "id": 9,
+      "input": {
+        "receiver": [
+          1,
+          0,
+          3,
+          2,
+          5,
+          4
+        ],
+        "k": 7
+      },
+      "output": 36
+    },
+    {
+      "id": 10,
+      "input": {
+        "receiver": [
+          0,
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "k": 10
+      },
+      "output": 15
     }
   ]
 }

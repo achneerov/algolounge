@@ -17,8 +17,8 @@
   "description": "<h2>Sort Matrix by Diagonals</h2><p>You are given an <code>n x n</code> square matrix of integers <code>grid</code>. Return the matrix such that:</p>\n\n<ul>\n\t<li>The diagonals in the <strong>bottom-left triangle</strong> (including the middle diagonal) are sorted in <strong>non-increasing order</strong>.</li>\n\t<li>The diagonals in the <strong>top-right triangle</strong> are sorted in <strong>non-decreasing order</strong>.</li>\n</ul>\n\n\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> grid = [[1,7,3],[9,8,2],[4,5,6]]<br><strong>Output:</strong> [[8,2,3],[9,6,7],[4,5,1]]<br><strong>Explanation:</strong></p>\n\n<p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2024/12/29/4052example1drawio.png\" style=\"width: 461px; height: 181px;\" /></p>\n\n<p>The diagonals with a black arrow (bottom-left triangle) should be sorted in non-increasing order:</p>\n\n<ul>\n\t<li><code>[1, 8, 6]</code> becomes <code>[8, 6, 1]</code>.</li>\n\t<li><code>[9, 5]</code> and <code>[4]</code> remain unchanged.</li>\n</ul>\n\n<p>The diagonals with a blue arrow (top-right triangle) should be sorted in non-decreasing order:</p>\n\n<ul>\n\t<li><code>[7, 2]</code> becomes <code>[2, 7]</code>.</li>\n\t<li><code>[3]</code> remains unchanged.</li>\n</ul></li><li><strong>Input:</strong> grid = [[0,1],[1,2]]<br><strong>Output:</strong> [[2,1],[1,0]]<br><strong>Explanation:</strong></p>\n\n<p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2024/12/29/4052example2adrawio.png\" style=\"width: 383px; height: 141px;\" /></p>\n\n<p>The diagonals with a black arrow must be non-increasing, so <code>[0, 2]</code> is changed to <code>[2, 0]</code>. The other diagonals are already in the correct order.</p></li><li><strong>Input:</strong> grid = [[1]]<br><strong>Output:</strong> [[1]]<br><strong>Explanation:</strong></p>\n\n<p>Diagonals with exactly one element are already in order, so no changes are needed.</p></li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>grid.length == grid[i].length == n</code></li>\n\t<li><code>1 &lt;= n &lt;= 10</code></li>\n\t<li><code>-10<sup>5</sup> &lt;= grid[i][j] &lt;= 10<sup>5</sup></code></li>\n</ul>\n",
   "entry_function": "sortMatrix",
   "template": "def sortMatrix(grid):\n    ",
-  "solution_text": "",
-  "solution_code": "",
+  "solution_text": "<h3>Sort Each Diagonal Independently</h3><p>Every diagonal begins either in the first column or the first row. Collect its values, sort first-column diagonals in descending order and first-row diagonals in ascending order, then write them back.</p><p><strong>Time:</strong> O(n<sup>2</sup> log n). <strong>Space:</strong> O(n) for one diagonal.</p>",
+  "solution_code": "def sortMatrix(grid):\n    n = len(grid)\n\n    def sort_diagonal(start_row, start_col, descending):\n        row, col = start_row, start_col\n        values = []\n        while row < n and col < n:\n            values.append(grid[row][col])\n            row += 1\n            col += 1\n        values.sort(reverse=descending)\n        row, col = start_row, start_col\n        for value in values:\n            grid[row][col] = value\n            row += 1\n            col += 1\n\n    for row in range(n):\n        sort_diagonal(row, 0, True)\n    for col in range(1, n):\n        sort_diagonal(0, col, False)\n    return grid",
   "prepare": "def prepare(test_case_input):\n    return (test_case_input['grid'],)",
   "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
   "test_cases": [
@@ -98,6 +98,341 @@
       "output": [
         [
           1
+        ]
+      ]
+    },
+    {
+      "id": 4,
+      "input": {
+        "grid": [
+          [
+            -1,
+            -9,
+            3
+          ],
+          [
+            4,
+            -5,
+            2
+          ],
+          [
+            7,
+            8,
+            0
+          ]
+        ]
+      },
+      "output": [
+        [
+          0,
+          -9,
+          3
+        ],
+        [
+          8,
+          -1,
+          2
+        ],
+        [
+          7,
+          4,
+          -5
+        ]
+      ]
+    },
+    {
+      "id": 5,
+      "input": {
+        "grid": [
+          [
+            4,
+            3,
+            2,
+            1
+          ],
+          [
+            8,
+            7,
+            6,
+            5
+          ],
+          [
+            12,
+            11,
+            10,
+            9
+          ],
+          [
+            16,
+            15,
+            14,
+            13
+          ]
+        ]
+      },
+      "output": [
+        [
+          13,
+          3,
+          2,
+          1
+        ],
+        [
+          14,
+          10,
+          6,
+          5
+        ],
+        [
+          15,
+          11,
+          7,
+          9
+        ],
+        [
+          16,
+          12,
+          8,
+          4
+        ]
+      ]
+    },
+    {
+      "id": 6,
+      "input": {
+        "grid": [
+          [
+            9,
+            1,
+            2
+          ],
+          [
+            8,
+            7,
+            3
+          ],
+          [
+            6,
+            5,
+            4
+          ]
+        ]
+      },
+      "output": [
+        [
+          9,
+          1,
+          2
+        ],
+        [
+          8,
+          7,
+          3
+        ],
+        [
+          6,
+          5,
+          4
+        ]
+      ]
+    },
+    {
+      "id": 7,
+      "input": {
+        "grid": [
+          [
+            5,
+            5,
+            5
+          ],
+          [
+            5,
+            5,
+            5
+          ],
+          [
+            5,
+            5,
+            5
+          ]
+        ]
+      },
+      "output": [
+        [
+          5,
+          5,
+          5
+        ],
+        [
+          5,
+          5,
+          5
+        ],
+        [
+          5,
+          5,
+          5
+        ]
+      ]
+    },
+    {
+      "id": 8,
+      "input": {
+        "grid": [
+          [
+            100000,
+            -100000
+          ],
+          [
+            -99999,
+            99999
+          ]
+        ]
+      },
+      "output": [
+        [
+          100000,
+          -100000
+        ],
+        [
+          -99999,
+          99999
+        ]
+      ]
+    },
+    {
+      "id": 9,
+      "input": {
+        "grid": [
+          [
+            3,
+            8,
+            4,
+            1,
+            9
+          ],
+          [
+            7,
+            2,
+            6,
+            5,
+            0
+          ],
+          [
+            4,
+            9,
+            1,
+            8,
+            3
+          ],
+          [
+            6,
+            0,
+            7,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            9,
+            4,
+            8
+          ]
+        ]
+      },
+      "output": [
+        [
+          8,
+          5,
+          3,
+          0,
+          9
+        ],
+        [
+          9,
+          3,
+          6,
+          4,
+          1
+        ],
+        [
+          9,
+          7,
+          2,
+          8,
+          5
+        ],
+        [
+          6,
+          4,
+          7,
+          2,
+          8
+        ],
+        [
+          1,
+          3,
+          0,
+          4,
+          1
+        ]
+      ]
+    },
+    {
+      "id": 10,
+      "input": {
+        "grid": [
+          [
+            2,
+            -1,
+            4,
+            0
+          ],
+          [
+            3,
+            2,
+            -2,
+            5
+          ],
+          [
+            1,
+            7,
+            2,
+            -3
+          ],
+          [
+            6,
+            8,
+            9,
+            2
+          ]
+        ]
+      },
+      "output": [
+        [
+          2,
+          -3,
+          4,
+          0
+        ],
+        [
+          9,
+          2,
+          -2,
+          5
+        ],
+        [
+          8,
+          7,
+          2,
+          -1
+        ],
+        [
+          6,
+          1,
+          3,
+          2
         ]
       ]
     }
