@@ -109,6 +109,17 @@ async function initPyodide(): Promise<PyodideInterface> {
   return pyodide!;
 }
 
+// JSON is a subset of Python literals except null/true/false — map those, JSON.stringify the rest.
+function toPyLiteral(v: any): string {
+  if (v === null || v === undefined) return 'None';
+  if (typeof v === 'boolean') return v ? 'True' : 'False';
+  if (Array.isArray(v)) return `[${v.map(toPyLiteral).join(', ')}]`;
+  if (typeof v === 'object') {
+    return `{${Object.entries(v).map(([k, x]) => `${JSON.stringify(k)}: ${toPyLiteral(x)}`).join(', ')}}`;
+  }
+  return JSON.stringify(v);
+}
+
 async function executeCode(
   code: string,
   testCases: any[],
@@ -148,7 +159,7 @@ sys.stdout = test_output
         let outputStr: string = '';
 
         // Use prepare/verify flow (required for all questions)
-        const inputString = JSON.stringify(testCase.input).replace(/null/g, 'None');
+        const inputString = toPyLiteral(testCase.input);
 
         // Call user function with prepared input (unpack tuple from prepare)
         const result = pyodideInstance.runPython(`
@@ -162,7 +173,7 @@ _test_result
 
         // Call verify function to check result and get output string
         // Check how many parameters verify accepts for backward compatibility
-        const outputString = JSON.stringify(testCase.output).replace(/null/g, 'None');
+        const outputString = toPyLiteral(testCase.output);
         const verifyResult = pyodideInstance.runPython(`
 import inspect
 _verify_sig = inspect.signature(verify)
