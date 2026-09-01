@@ -53,3 +53,9 @@ number-of-provinces
 sort-matrix-by-diagonals
 maximum-score-with-co-prime-element
 maximize-value-of-function-in-a-ball-passing-game
+largest-integer-with-given-digit-sum
+remove-digit-from-number-to-maximize-result
+count-valid-sequences
+count-number-of-homogenous-substrings
+longest-common-prefix-of-k-strings-after-removal
+check-if-digits-are-equal-in-string-after-operations-ii

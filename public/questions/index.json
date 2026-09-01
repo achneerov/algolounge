@@ -5064,8 +5064,129 @@
         "array",
         "sorting"
       ]
+    },
+    {
+      "index": 312,
+      "filename": "check-if-digits-are-equal-in-string-after-operations-ii",
+      "title": "Check If Digits Are Equal in String After Operations II",
+      "difficulty": "Hard",
+      "tags": [
+        "Math"
+      ],
+      "keywords": [
+        "check",
+        "if",
+        "digits",
+        "are",
+        "equal",
+        "in",
+        "string",
+        "after",
+        "operations",
+        "ii",
+        "math",
+        "combinatorics",
+        "number",
+        "theory"
+      ]
+    },
+    {
+      "index": 313,
+      "filename": "count-number-of-homogenous-substrings",
+      "title": "Count Number of Homogenous Substrings",
+      "difficulty": "Medium",
+      "tags": [
+        "Math"
+      ],
+      "keywords": [
+        "count",
+        "number",
+        "of",
+        "homogenous",
+        "substrings",
+        "math",
+        "string"
+      ]
+    },
+    {
+      "index": 314,
+      "filename": "count-valid-sequences",
+      "title": "Count Valid Sequences",
+      "difficulty": "Medium",
+      "tags": [
+        "Math"
+      ],
+      "keywords": [
+        "count",
+        "valid",
+        "sequences",
+        "math",
+        "combinatorics"
+      ]
+    },
+    {
+      "index": 315,
+      "filename": "largest-integer-with-given-digit-sum",
+      "title": "Largest Integer With Given Digit Sum",
+      "difficulty": "Easy",
+      "tags": [
+        "Math"
+      ],
+      "keywords": [
+        "largest",
+        "integer",
+        "with",
+        "given",
+        "digit",
+        "sum",
+        "math",
+        "greedy"
+      ]
+    },
+    {
+      "index": 316,
+      "filename": "longest-common-prefix-of-k-strings-after-removal",
+      "title": "Longest Common Prefix of K Strings After Removal",
+      "difficulty": "Hard",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "longest",
+        "common",
+        "prefix",
+        "of",
+        "k",
+        "strings",
+        "after",
+        "removal",
+        "array",
+        "string",
+        "trie"
+      ]
+    },
+    {
+      "index": 317,
+      "filename": "remove-digit-from-number-to-maximize-result",
+      "title": "Remove Digit From Number to Maximize Result",
+      "difficulty": "Easy",
+      "tags": [
+        "String"
+      ],
+      "keywords": [
+        "remove",
+        "digit",
+        "from",
+        "number",
+        "to",
+        "maximize",
+        "result",
+        "string",
+        "greedy",
+        "enumeration"
+      ]
     }
   ],
-  "lastUpdated": "2026-08-25T02:54:31.312Z",
-  "totalQuestions": 256
+  "lastUpdated": "2026-09-01T18:07:17.645Z",
+  "totalQuestions": 262
 }

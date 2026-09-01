@@ -17,6 +17,102 @@
   ],
   "badge": "Summer 2026",
   "units": {
+    "week15": {
+      "title": "Week 15",
+      "description": "Week 15 — Largest Integer With Given Digit Sum, Remove Digit From Number to Maximize Result, Count Valid Sequences, Count Number of Homogenous Substrings, Longest Common Prefix of K Strings After Removal, Check If Digits Are Equal in String After Operations II.",
+      "questions": [
+        {
+          "filename": "largest-integer-with-given-digit-sum",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/largest-integer-with-given-digit-sum/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Easy",
+            "Math"
+          ]
+        },
+        {
+          "filename": "remove-digit-from-number-to-maximize-result",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/remove-digit-from-number-to-maximize-result/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Easy",
+            "String"
+          ]
+        },
+        {
+          "filename": "count-valid-sequences",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/count-valid-sequences/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Medium",
+            "Math"
+          ]
+        },
+        {
+          "filename": "count-number-of-homogenous-substrings",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/count-number-of-homogenous-substrings/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Medium",
+            "Math"
+          ]
+        },
+        {
+          "filename": "longest-common-prefix-of-k-strings-after-removal",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/longest-common-prefix-of-k-strings-after-removal/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Hard",
+            "Array"
+          ]
+        },
+        {
+          "filename": "check-if-digits-are-equal-in-string-after-operations-ii",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/check-if-digits-are-equal-in-string-after-operations-ii/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Hard",
+            "Math"
+          ]
+        }
+      ]
+    },
     "week14": {
       "title": "Week 14",
       "description": "Week 14 — Defanging an IP Address, Maximize Pair Strength Using GCD, Number of Provinces, Sort Matrix by Diagonals, Maximum Score with Co-Prime Element, Maximize Value of Function in a Ball Passing Game.",

@@ -1,0 +1,67 @@
+{
+  "index": 316,
+  "filename": "longest-common-prefix-of-k-strings-after-removal",
+  "title": "Longest Common Prefix of K Strings After Removal",
+  "difficulty": "Hard",
+  "tags": [
+    "Array"
+  ],
+  "keywords": [
+    "longest",
+    "common",
+    "prefix",
+    "of",
+    "k",
+    "strings",
+    "after",
+    "removal",
+    "array",
+    "string",
+    "trie"
+  ],
+  "description": "<h2>Longest Common Prefix of K Strings After Removal</h2><p>You are given an array of strings <code>words</code> and an integer <code>k</code>.</p>\n\n<p>For each index <code>i</code> in the range <code>[0, words.length - 1]</code>, find the <strong>length</strong> of the <strong>longest common <span data-keyword=\"string-prefix\">prefix</span></strong> among any <code>k</code> strings (selected at <strong>distinct indices</strong>) from the remaining array after removing the <code>i<sup>th</sup></code> element.</p>\n\n<p>Return an array <code>answer</code>, where <code>answer[i]</code> is the answer for <code>i<sup>th</sup></code> element. If removing the <code>i<sup>th</sup></code> element leaves the array with fewer than <code>k</code> strings, <code>answer[i]</code> is 0.</p>\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> words = [&quot;jump&quot;,&quot;run&quot;,&quot;run&quot;,&quot;jump&quot;,&quot;run&quot;], k = 2<br><strong>Output:</strong> [3,4,4,3,4]<br><strong>Explanation:</strong></p>\n\n<ul>\n\t<li>Removing index 0 (<code>&quot;jump&quot;</code>):\n\n\t<ul>\n\t\t<li><code>words</code> becomes: <code>[&quot;run&quot;, &quot;run&quot;, &quot;jump&quot;, &quot;run&quot;]</code>. <code>&quot;run&quot;</code> occurs 3 times. Choosing any two gives the longest common prefix <code>&quot;run&quot;</code> (length 3).</li>\n\t</ul>\n\t</li>\n\t<li>Removing index 1 (<code>&quot;run&quot;</code>):\n\t<ul>\n\t\t<li><code>words</code> becomes: <code>[&quot;jump&quot;, &quot;run&quot;, &quot;jump&quot;, &quot;run&quot;]</code>. <code>&quot;jump&quot;</code> occurs twice. Choosing these two gives the longest common prefix <code>&quot;jump&quot;</code> (length 4).</li>\n\t</ul>\n\t</li>\n\t<li>Removing index 2 (<code>&quot;run&quot;</code>):\n\t<ul>\n\t\t<li><code>words</code> becomes: <code>[&quot;jump&quot;, &quot;run&quot;, &quot;jump&quot;, &quot;run&quot;]</code>. <code>&quot;jump&quot;</code> occurs twice. Choosing these two gives the longest common prefix <code>&quot;jump&quot;</code> (length 4).</li>\n\t</ul>\n\t</li>\n\t<li>Removing index 3 (<code>&quot;jump&quot;</code>):\n\t<ul>\n\t\t<li><code>words</code> becomes: <code>[&quot;jump&quot;, &quot;run&quot;, &quot;run&quot;, &quot;run&quot;]</code>. <code>&quot;run&quot;</code> occurs 3 times. Choosing any two gives the longest common prefix <code>&quot;run&quot;</code> (length 3).</li>\n\t</ul>\n\t</li>\n\t<li>Removing index 4 (&quot;run&quot;):\n\t<ul>\n\t\t<li><code>words</code> becomes: <code>[&quot;jump&quot;, &quot;run&quot;, &quot;run&quot;, &quot;jump&quot;]</code>. <code>&quot;jump&quot;</code> occurs twice. Choosing these two gives the longest common prefix <code>&quot;jump&quot;</code> (length 4).</li>\n\t</ul>\n\t</li>\n</ul></li><li><strong>Input:</strong> words = [&quot;dog&quot;,&quot;racer&quot;,&quot;car&quot;], k = 2<br><strong>Output:</strong> [0,0,0]<br><strong>Explanation:</strong></p>\n\n<ul>\n\t<li>Removing any index results in an answer of 0.</li>\n</ul></li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= k &lt;= words.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>1 &lt;= words[i].length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>words[i]</code> consists of lowercase English letters.</li>\n\t<li>The sum of <code>words[i].length</code> is smaller than or equal <code>10<sup>5</sup></code>.</li>\n</ul>\n",
+  "entry_function": "longestCommonPrefix",
+  "template": "def longestCommonPrefix(words, k):\n    ",
+  "solution_text": "",
+  "solution_code": "",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['words'], test_case_input['k'])",
+  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "words": [
+          "jump",
+          "run",
+          "run",
+          "jump",
+          "run"
+        ],
+        "k": 2
+      },
+      "output": [
+        3,
+        4,
+        4,
+        3,
+        4
+      ]
+    },
+    {
+      "id": 2,
+      "input": {
+        "words": [
+          "dog",
+          "racer",
+          "car"
+        ],
+        "k": 2
+      },
+      "output": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

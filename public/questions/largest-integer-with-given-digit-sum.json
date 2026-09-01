@@ -1,0 +1,52 @@
+{
+  "index": 315,
+  "filename": "largest-integer-with-given-digit-sum",
+  "title": "Largest Integer With Given Digit Sum",
+  "difficulty": "Easy",
+  "tags": [
+    "Math"
+  ],
+  "keywords": [
+    "largest",
+    "integer",
+    "with",
+    "given",
+    "digit",
+    "sum",
+    "math",
+    "greedy"
+  ],
+  "description": "<h2>Largest Integer With Given Digit Sum</h2><p>You are given two non-negative integers <code>n</code> and <code>s</code>.</p>\n\n<p>Return the <strong>largest</strong> integer that has <strong>at most</strong> <code>n</code> digits and whose sum of digits is <code>s</code>. If no such integer exists, return -1.</p>\n\n\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> n = 2, s = 9<br><strong>Output:</strong> 90<br><strong>Explanation:</strong></p>\n\n<p>The largest integer with at most 2 digits that has a sum of digits of 9 is 90.</p></li><li><strong>Input:</strong> n = 2, s = 19<br><strong>Output:</strong> -1<br><strong>Explanation:</strong></p>\n\n<p>There is no integer with at most 2 digits that has a sum of digits of 19, so the answer is -1.</p></li><li><strong>Input:</strong> n = 5, s = 0<br><strong>Output:</strong> 0<br><strong>Explanation:</strong></p>\n\n<p>The only non-negative integer whose digits sum to 0 is 0.</p></li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= n &lt;= 5</code></li>\n\t<li><code>0 &lt;= s &lt;= 100</code></li>\n</ul>\n",
+  "entry_function": "largestInteger",
+  "template": "def largestInteger(n, s):\n    ",
+  "solution_text": "",
+  "solution_code": "",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['n'], test_case_input['s'])",
+  "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "n": 2,
+        "s": 9
+      },
+      "output": 90
+    },
+    {
+      "id": 2,
+      "input": {
+        "n": 2,
+        "s": 19
+      },
+      "output": -1
+    },
+    {
+      "id": 3,
+      "input": {
+        "n": 5,
+        "s": 0
+      },
+      "output": 0
+    }
+  ]
+}
