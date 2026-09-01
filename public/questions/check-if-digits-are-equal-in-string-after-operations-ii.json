@@ -25,8 +25,8 @@
   "description": "<h2>Check If Digits Are Equal in String After Operations II</h2><p>You are given a string <code>s</code> consisting of digits. Perform the following operation repeatedly until the string has <strong>exactly</strong> two digits:</p>\n\n<ul>\n\t<li>For each pair of consecutive digits in <code>s</code>, starting from the first digit, calculate a new digit as the sum of the two digits <strong>modulo</strong> 10.</li>\n\t<li>Replace <code>s</code> with the sequence of newly calculated digits, <em>maintaining the order</em> in which they are computed.</li>\n</ul>\n\n<p>Return <code>true</code> if the final two digits in <code>s</code> are the <strong>same</strong>; otherwise, return <code>false</code>.</p>\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> s = &quot;3902&quot;<br><strong>Output:</strong> true<br><strong>Explanation:</strong></p>\n\n<ul>\n\t<li>Initially, <code>s = &quot;3902&quot;</code></li>\n\t<li>First operation:\n\t<ul>\n\t\t<li><code>(s[0] + s[1]) % 10 = (3 + 9) % 10 = 2</code></li>\n\t\t<li><code>(s[1] + s[2]) % 10 = (9 + 0) % 10 = 9</code></li>\n\t\t<li><code>(s[2] + s[3]) % 10 = (0 + 2) % 10 = 2</code></li>\n\t\t<li><code>s</code> becomes <code>&quot;292&quot;</code></li>\n\t</ul>\n\t</li>\n\t<li>Second operation:\n\t<ul>\n\t\t<li><code>(s[0] + s[1]) % 10 = (2 + 9) % 10 = 1</code></li>\n\t\t<li><code>(s[1] + s[2]) % 10 = (9 + 2) % 10 = 1</code></li>\n\t\t<li><code>s</code> becomes <code>&quot;11&quot;</code></li>\n\t</ul>\n\t</li>\n\t<li>Since the digits in <code>&quot;11&quot;</code> are the same, the output is <code>true</code>.</li>\n</ul></li><li><strong>Input:</strong> s = &quot;34789&quot;<br><strong>Output:</strong> false<br><strong>Explanation:</strong></p>\n\n<ul>\n\t<li>Initially, <code>s = &quot;34789&quot;</code>.</li>\n\t<li>After the first operation, <code>s = &quot;7157&quot;</code>.</li>\n\t<li>After the second operation, <code>s = &quot;862&quot;</code>.</li>\n\t<li>After the third operation, <code>s = &quot;48&quot;</code>.</li>\n\t<li>Since <code>&#39;4&#39; != &#39;8&#39;</code>, the output is <code>false</code>.</li>\n</ul></li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>3 &lt;= s.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>s</code> consists of only digits.</li>\n</ul>\n",
   "entry_function": "hasSameDigits",
   "template": "def hasSameDigits(s):\n    ",
-  "solution_text": "",
-  "solution_code": "",
+  "solution_text": "<h3>Turn the Repeated Operations Into One Formula</h3><p>Adding adjacent values repeatedly creates the same coefficients as Pascal's triangle. After n-2 operations, the first final digit is the weighted sum of s[0] through s[n-2], and the second uses s[1] through s[n-1]. The weights are C(n-2, i).</p><p>We only need to know whether the difference of those sums is 0 modulo 10. Directly building huge binomial coefficients would be too slow, so calculate each coefficient modulo 2 and modulo 5:</p><ul><li>Modulo 2, a coefficient is odd when every 1-bit in i also appears in n-2.</li><li>Modulo 5, Lucas' theorem breaks one large combination into tiny combinations of base-5 digits. The code stores those tiny answers in a 5-by-5 table.</li></ul><p>The Chinese Remainder Theorem combines the two small remainders into the coefficient modulo 10. The comments in the code show each of these steps.</p><p><strong>Time:</strong> O(n log n). <strong>Space:</strong> O(1).</p>",
+  "solution_code": "def hasSameDigits(s):\n    # C(n, r) modulo 5 for the tiny base-5 digits 0 through 4.\n    small_choose_mod5 = (\n        (1, 0, 0, 0, 0),\n        (1, 1, 0, 0, 0),\n        (1, 2, 1, 0, 0),\n        (1, 3, 3, 1, 0),\n        (1, 4, 1, 4, 1),\n    )\n    row = len(s) - 2\n    difference = 0\n    for column in range(row + 1):\n        # Lucas' theorem: split row and column into base-5 digits and\n        # multiply the small combinations to get C(row, column) mod 5.\n        upper = row\n        lower = column\n        coefficient_mod5 = 1\n        while upper or lower:\n            upper_digit = upper % 5\n            lower_digit = lower % 5\n            if lower_digit > upper_digit:\n                coefficient_mod5 = 0\n                break\n            coefficient_mod5 = (\n                coefficient_mod5 * small_choose_mod5[upper_digit][lower_digit]\n            ) % 5\n            upper //= 5\n            lower //= 5\n\n        # In modulo 2, a binomial coefficient is odd exactly when every set\n        # bit of column is also a set bit of row.\n        coefficient_mod2 = 1 if (column | row) == row else 0\n\n        # 5*r2 + 6*r5 has residue r2 mod 2 and r5 mod 5, so it is the\n        # binomial coefficient modulo 10 (Chinese Remainder Theorem).\n        coefficient_mod10 = (5 * coefficient_mod2 + 6 * coefficient_mod5) % 10\n        difference += coefficient_mod10 * (ord(s[column]) - ord(s[column + 1]))\n    return difference % 10 == 0",
   "prepare": "def prepare(test_case_input):\n    return (test_case_input['s'],)",
   "verify": "def verify(actual_output, expected_output):\n    if isinstance(expected_output, str):\n        expected_output = expected_output.lower() == 'true'\n    passed = bool(actual_output) == bool(expected_output)\n    return [passed, 'true' if actual_output else 'false']",
   "test_cases": [
@@ -43,6 +43,62 @@
         "s": "34789"
       },
       "output": "false"
+    },
+    {
+      "id": 3,
+      "input": {
+        "s": "111"
+      },
+      "output": "true"
+    },
+    {
+      "id": 4,
+      "input": {
+        "s": "123"
+      },
+      "output": "false"
+    },
+    {
+      "id": 5,
+      "input": {
+        "s": "000"
+      },
+      "output": "true"
+    },
+    {
+      "id": 6,
+      "input": {
+        "s": "1010"
+      },
+      "output": "true"
+    },
+    {
+      "id": 7,
+      "input": {
+        "s": "9999"
+      },
+      "output": "true"
+    },
+    {
+      "id": 8,
+      "input": {
+        "s": "12345"
+      },
+      "output": "false"
+    },
+    {
+      "id": 9,
+      "input": {
+        "s": "31415926"
+      },
+      "output": "false"
+    },
+    {
+      "id": 10,
+      "input": {
+        "s": "0101010101010101010101010101010101010101"
+      },
+      "output": "true"
     }
   ]
 }

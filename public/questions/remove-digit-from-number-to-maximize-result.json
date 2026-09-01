@@ -21,8 +21,8 @@
   "description": "<h2>Remove Digit From Number to Maximize Result</h2><p>You are given a string <code>number</code> representing a <strong>positive integer</strong> and a character <code>digit</code>.</p>\n\n<p>Return <em>the resulting string after removing <strong>exactly one occurrence</strong> of </em><code>digit</code><em> from </em><code>number</code><em> such that the value of the resulting string in <strong>decimal</strong> form is <strong>maximized</strong></em>. The test cases are generated such that <code>digit</code> occurs at least once in <code>number</code>.</p>\n\n\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> number = &quot;123&quot;, digit = &quot;3&quot;<br><strong>Output:</strong> &quot;12&quot;<br><strong>Explanation:</strong> There is only one &#39;3&#39; in &quot;123&quot;. After removing &#39;3&#39;, the result is &quot;12&quot;.</li><li><strong>Input:</strong> number = &quot;1231&quot;, digit = &quot;1&quot;<br><strong>Output:</strong> &quot;231&quot;<br><strong>Explanation:</strong> We can remove the first &#39;1&#39; to get &quot;231&quot; or remove the second &#39;1&#39; to get &quot;123&quot;.<br>Since 231 &gt; 123, we return &quot;231&quot;.</li><li><strong>Input:</strong> number = &quot;551&quot;, digit = &quot;5&quot;<br><strong>Output:</strong> &quot;51&quot;<br><strong>Explanation:</strong> We can remove either the first or second &#39;5&#39; from &quot;551&quot;.<br>Both result in the string &quot;51&quot;.</li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>2 &lt;= number.length &lt;= 100</code></li>\n\t<li><code>number</code> consists of digits from <code>&#39;1&#39;</code> to <code>&#39;9&#39;</code>.</li>\n\t<li><code>digit</code> is a digit from <code>&#39;1&#39;</code> to <code>&#39;9&#39;</code>.</li>\n\t<li><code>digit</code> occurs at least once in <code>number</code>.</li>\n</ul>\n",
   "entry_function": "removeDigit",
   "template": "def removeDigit(number, digit):\n    ",
-  "solution_text": "",
-  "solution_code": "",
+  "solution_text": "<h3>Remove at the First Helpful Position</h3><p>Every possible answer has the same length, so compare candidates from left to right. If an occurrence of digit is followed by a larger digit, removing it moves that larger digit left and immediately makes the answer better. The first such position is best because earlier positions matter more.</p><p>If this never happens, the digits never improve by moving left, so remove the last occurrence and keep the earlier prefix unchanged.</p><p><strong>Time:</strong> O(n). <strong>Space:</strong> O(n) for the returned string.</p>",
+  "solution_code": "def removeDigit(number, digit):\n    last = -1\n    for i, value in enumerate(number):\n        if value != digit:\n            continue\n        last = i\n\n        # Removing here moves the next digit one place left. If that next\n        # digit is larger, this is the earliest (and best) improvement.\n        if i + 1 < len(number) and number[i + 1] > value:\n            return number[:i] + number[i + 1:]\n\n    # No occurrence gave an improvement, so keep earlier digits unchanged\n    # for as long as possible by removing the final occurrence.\n    return number[:last] + number[last + 1:]",
   "prepare": "def prepare(test_case_input):\n    return (test_case_input['number'], test_case_input['digit'])",
   "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
   "test_cases": [
@@ -49,6 +49,62 @@
         "digit": "5"
       },
       "output": "51"
+    },
+    {
+      "id": 4,
+      "input": {
+        "number": "12345",
+        "digit": "1"
+      },
+      "output": "2345"
+    },
+    {
+      "id": 5,
+      "input": {
+        "number": "987654",
+        "digit": "4"
+      },
+      "output": "98765"
+    },
+    {
+      "id": 6,
+      "input": {
+        "number": "76557",
+        "digit": "5"
+      },
+      "output": "7657"
+    },
+    {
+      "id": 7,
+      "input": {
+        "number": "919191",
+        "digit": "9"
+      },
+      "output": "91911"
+    },
+    {
+      "id": 8,
+      "input": {
+        "number": "112",
+        "digit": "1"
+      },
+      "output": "12"
+    },
+    {
+      "id": 9,
+      "input": {
+        "number": "999",
+        "digit": "9"
+      },
+      "output": "99"
+    },
+    {
+      "id": 10,
+      "input": {
+        "number": "6786876",
+        "digit": "6"
+      },
+      "output": "786876"
     }
   ]
 }

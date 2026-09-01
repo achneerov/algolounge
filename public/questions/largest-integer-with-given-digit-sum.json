@@ -19,8 +19,8 @@
   "description": "<h2>Largest Integer With Given Digit Sum</h2><p>You are given two non-negative integers <code>n</code> and <code>s</code>.</p>\n\n<p>Return the <strong>largest</strong> integer that has <strong>at most</strong> <code>n</code> digits and whose sum of digits is <code>s</code>. If no such integer exists, return -1.</p>\n\n\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> n = 2, s = 9<br><strong>Output:</strong> 90<br><strong>Explanation:</strong></p>\n\n<p>The largest integer with at most 2 digits that has a sum of digits of 9 is 90.</p></li><li><strong>Input:</strong> n = 2, s = 19<br><strong>Output:</strong> -1<br><strong>Explanation:</strong></p>\n\n<p>There is no integer with at most 2 digits that has a sum of digits of 19, so the answer is -1.</p></li><li><strong>Input:</strong> n = 5, s = 0<br><strong>Output:</strong> 0<br><strong>Explanation:</strong></p>\n\n<p>The only non-negative integer whose digits sum to 0 is 0.</p></li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= n &lt;= 5</code></li>\n\t<li><code>0 &lt;= s &lt;= 100</code></li>\n</ul>\n",
   "entry_function": "largestInteger",
   "template": "def largestInteger(n, s):\n    ",
-  "solution_text": "",
-  "solution_code": "",
+  "solution_text": "<h3>Put the Largest Digits First</h3><p>The leftmost digit has the greatest effect on a number's value. We therefore put as much of the required sum as possible into that digit (at most 9), then repeat for each position to its right. For example, n = 4 and s = 20 becomes 9, 9, 2, 0, so the answer is 9920.</p><p>If s is greater than 9n, even n digits of 9 are not enough, so the answer is -1. If s is zero, the answer is simply 0.</p><p><strong>Time:</strong> O(n). <strong>Space:</strong> O(n).</p>",
+  "solution_code": "def largestInteger(n, s):\n    # No n-digit number can have a digit sum larger than 9 * n.\n    if s > 9 * n:\n        return -1\n    if s == 0:\n        return 0\n\n    # The leftmost digits affect the value most, so fill them first.\n    digits = []\n    for _ in range(n):\n        digit = min(9, s)\n        digits.append(str(digit))\n        s -= digit\n    return int(''.join(digits))",
   "prepare": "def prepare(test_case_input):\n    return (test_case_input['n'], test_case_input['s'])",
   "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
   "test_cases": [
@@ -47,6 +47,62 @@
         "s": 0
       },
       "output": 0
+    },
+    {
+      "id": 4,
+      "input": {
+        "n": 1,
+        "s": 1
+      },
+      "output": 1
+    },
+    {
+      "id": 5,
+      "input": {
+        "n": 1,
+        "s": 9
+      },
+      "output": 9
+    },
+    {
+      "id": 6,
+      "input": {
+        "n": 1,
+        "s": 10
+      },
+      "output": -1
+    },
+    {
+      "id": 7,
+      "input": {
+        "n": 5,
+        "s": 45
+      },
+      "output": 99999
+    },
+    {
+      "id": 8,
+      "input": {
+        "n": 5,
+        "s": 44
+      },
+      "output": 99998
+    },
+    {
+      "id": 9,
+      "input": {
+        "n": 3,
+        "s": 1
+      },
+      "output": 100
+    },
+    {
+      "id": 10,
+      "input": {
+        "n": 4,
+        "s": 20
+      },
+      "output": 9920
     }
   ]
 }

@@ -22,8 +22,8 @@
   "description": "<h2>Longest Common Prefix of K Strings After Removal</h2><p>You are given an array of strings <code>words</code> and an integer <code>k</code>.</p>\n\n<p>For each index <code>i</code> in the range <code>[0, words.length - 1]</code>, find the <strong>length</strong> of the <strong>longest common <span data-keyword=\"string-prefix\">prefix</span></strong> among any <code>k</code> strings (selected at <strong>distinct indices</strong>) from the remaining array after removing the <code>i<sup>th</sup></code> element.</p>\n\n<p>Return an array <code>answer</code>, where <code>answer[i]</code> is the answer for <code>i<sup>th</sup></code> element. If removing the <code>i<sup>th</sup></code> element leaves the array with fewer than <code>k</code> strings, <code>answer[i]</code> is 0.</p>\n\n\n\n\n\n\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> words = [&quot;jump&quot;,&quot;run&quot;,&quot;run&quot;,&quot;jump&quot;,&quot;run&quot;], k = 2<br><strong>Output:</strong> [3,4,4,3,4]<br><strong>Explanation:</strong></p>\n\n<ul>\n\t<li>Removing index 0 (<code>&quot;jump&quot;</code>):\n\n\t<ul>\n\t\t<li><code>words</code> becomes: <code>[&quot;run&quot;, &quot;run&quot;, &quot;jump&quot;, &quot;run&quot;]</code>. <code>&quot;run&quot;</code> occurs 3 times. Choosing any two gives the longest common prefix <code>&quot;run&quot;</code> (length 3).</li>\n\t</ul>\n\t</li>\n\t<li>Removing index 1 (<code>&quot;run&quot;</code>):\n\t<ul>\n\t\t<li><code>words</code> becomes: <code>[&quot;jump&quot;, &quot;run&quot;, &quot;jump&quot;, &quot;run&quot;]</code>. <code>&quot;jump&quot;</code> occurs twice. Choosing these two gives the longest common prefix <code>&quot;jump&quot;</code> (length 4).</li>\n\t</ul>\n\t</li>\n\t<li>Removing index 2 (<code>&quot;run&quot;</code>):\n\t<ul>\n\t\t<li><code>words</code> becomes: <code>[&quot;jump&quot;, &quot;run&quot;, &quot;jump&quot;, &quot;run&quot;]</code>. <code>&quot;jump&quot;</code> occurs twice. Choosing these two gives the longest common prefix <code>&quot;jump&quot;</code> (length 4).</li>\n\t</ul>\n\t</li>\n\t<li>Removing index 3 (<code>&quot;jump&quot;</code>):\n\t<ul>\n\t\t<li><code>words</code> becomes: <code>[&quot;jump&quot;, &quot;run&quot;, &quot;run&quot;, &quot;run&quot;]</code>. <code>&quot;run&quot;</code> occurs 3 times. Choosing any two gives the longest common prefix <code>&quot;run&quot;</code> (length 3).</li>\n\t</ul>\n\t</li>\n\t<li>Removing index 4 (&quot;run&quot;):\n\t<ul>\n\t\t<li><code>words</code> becomes: <code>[&quot;jump&quot;, &quot;run&quot;, &quot;run&quot;, &quot;jump&quot;]</code>. <code>&quot;jump&quot;</code> occurs twice. Choosing these two gives the longest common prefix <code>&quot;jump&quot;</code> (length 4).</li>\n\t</ul>\n\t</li>\n</ul></li><li><strong>Input:</strong> words = [&quot;dog&quot;,&quot;racer&quot;,&quot;car&quot;], k = 2<br><strong>Output:</strong> [0,0,0]<br><strong>Explanation:</strong></p>\n\n<ul>\n\t<li>Removing any index results in an answer of 0.</li>\n</ul></li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= k &lt;= words.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>1 &lt;= words[i].length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>words[i]</code> consists of lowercase English letters.</li>\n\t<li>The sum of <code>words[i].length</code> is smaller than or equal <code>10<sup>5</sup></code>.</li>\n</ul>\n",
   "entry_function": "longestCommonPrefix",
   "template": "def longestCommonPrefix(words, k):\n    ",
-  "solution_text": "",
-  "solution_code": "",
+  "solution_text": "<h3>Store Shared Prefixes in a Trie</h3><p>A trie stores one character per edge, so every trie node represents a prefix. While inserting the words, count how many words pass through each node. A node is usable when its count is at least k, and its depth is the prefix length.</p><ol><li>Count how many usable trie nodes exist at every depth.</li><li>Use a segment tree to quickly ask for the greatest depth whose usable-node count is not zero.</li><li>When removing a word, inspect only the nodes on that word's trie path. Nodes with a count above k stay usable, while nodes with a count exactly equal to k become unusable.</li><li>Temporarily update those depths, read the segment tree's maximum, and then restore them before processing the next word.</li></ol><p>This avoids rebuilding the trie for every removal. The segment tree is simply a structure that stores the maximum of a range; its root always holds the largest currently valid prefix length.</p><p><strong>Time:</strong> O(L log L), where L is the total length of all words. <strong>Space:</strong> O(L).</p>",
+  "solution_code": "def longestCommonPrefix(words, k):\n    # After any removal, too few words would remain.\n    if len(words) - 1 < k:\n        return [0] * len(words)\n\n    # Step 1: Build a trie. count[node] is the number of words that contain\n    # the prefix represented by that node.\n    children = [{}]\n    count = [0]\n    depth = [0]\n    for word in words:\n        node = 0\n        for character in word:\n            next_node = children[node].get(character)\n            if next_node is None:\n                next_node = len(children)\n                children[node][character] = next_node\n                children.append({})\n                count.append(0)\n                depth.append(depth[node] + 1)\n            node = next_node\n            count[node] += 1\n\n    # Step 2: At each prefix length, count trie nodes shared by at least k\n    # words. Any such node is a possible common prefix.\n    max_depth = max(map(len, words))\n    valid_at_depth = [0] * (max_depth + 1)\n    for node in range(1, len(children)):\n        if count[node] >= k:\n            valid_at_depth[depth[node]] += 1\n\n    # Step 3: Build a segment tree whose root stores the largest depth that\n    # still has at least one valid prefix.\n    size = 1\n    while size <= max_depth:\n        size *= 2\n    tree = [-1] * (2 * size)\n    for current_depth in range(1, max_depth + 1):\n        if valid_at_depth[current_depth]:\n            tree[size + current_depth] = current_depth\n    for node in range(size - 1, 0, -1):\n        tree[node] = max(tree[2 * node], tree[2 * node + 1])\n\n    def update(current_depth):\n        node = size + current_depth\n        tree[node] = current_depth if valid_at_depth[current_depth] else -1\n        node //= 2\n        while node:\n            tree[node] = max(tree[2 * node], tree[2 * node + 1])\n            node //= 2\n\n    # Step 4: Remove one word temporarily. A prefix can stop being valid only\n    # when it is on this word's path and its original count was exactly k.\n    answer = []\n    for word in words:\n        node = 0\n        fragile_depths = []\n        for character in word:\n            node = children[node][character]\n            if count[node] == k:\n                fragile_depths.append(depth[node])\n\n        for current_depth in fragile_depths:\n            valid_at_depth[current_depth] -= 1\n            update(current_depth)\n        answer.append(max(0, tree[1]))\n\n        # Restore the temporarily removed word before trying the next index.\n        for current_depth in fragile_depths:\n            valid_at_depth[current_depth] += 1\n            update(current_depth)\n    return answer",
   "prepare": "def prepare(test_case_input):\n    return (test_case_input['words'], test_case_input['k'])",
   "verify": "def verify(actual_output, expected_output):\n    passed = actual_output == expected_output\n    return [passed, str(actual_output)]",
   "test_cases": [
@@ -61,6 +61,142 @@
         0,
         0,
         0
+      ]
+    },
+    {
+      "id": 3,
+      "input": {
+        "words": [
+          "solo"
+        ],
+        "k": 1
+      },
+      "output": [
+        0
+      ]
+    },
+    {
+      "id": 4,
+      "input": {
+        "words": [
+          "a",
+          "ab",
+          "abc"
+        ],
+        "k": 1
+      },
+      "output": [
+        3,
+        3,
+        2
+      ]
+    },
+    {
+      "id": 5,
+      "input": {
+        "words": [
+          "same",
+          "same",
+          "same"
+        ],
+        "k": 2
+      },
+      "output": [
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "id": 6,
+      "input": {
+        "words": [
+          "flower",
+          "flow",
+          "flight"
+        ],
+        "k": 2
+      },
+      "output": [
+        2,
+        2,
+        4
+      ]
+    },
+    {
+      "id": 7,
+      "input": {
+        "words": [
+          "apple",
+          "ape",
+          "april",
+          "banana"
+        ],
+        "k": 2
+      },
+      "output": [
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "id": 8,
+      "input": {
+        "words": [
+          "aa",
+          "aaa",
+          "aaaa",
+          "b"
+        ],
+        "k": 3
+      },
+      "output": [
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "id": 9,
+      "input": {
+        "words": [
+          "cat",
+          "car",
+          "cart",
+          "dog",
+          "dove"
+        ],
+        "k": 2
+      },
+      "output": [
+        3,
+        2,
+        2,
+        3,
+        3
+      ]
+    },
+    {
+      "id": 10,
+      "input": {
+        "words": [
+          "prefix",
+          "preform",
+          "prevent",
+          "pretty",
+          "zoo"
+        ],
+        "k": 4
+      },
+      "output": [
+        0,
+        0,
+        0,
+        0,
+        3
       ]
     }
   ]
