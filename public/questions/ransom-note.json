@@ -1,0 +1,106 @@
+{
+  "index": 319,
+  "filename": "ransom-note",
+  "title": "Ransom Note",
+  "difficulty": "Easy",
+  "tags": [
+    "Hash Table"
+  ],
+  "keywords": [
+    "ransom",
+    "note",
+    "hash",
+    "table",
+    "string",
+    "counting"
+  ],
+  "description": "<h2>Ransom Note</h2><p>Given two strings <code>ransomNote</code> and <code>magazine</code>, return <code>true</code><em> if </em><code>ransomNote</code><em> can be constructed by using the letters from </em><code>magazine</code><em> and </em><code>false</code><em> otherwise</em>.</p>\n\n<p>Each letter in <code>magazine</code> can only be used once in <code>ransomNote</code>.</p>\n\n<h3>Examples:</h3><ul><li><strong>Input:</strong> ransomNote = \"a\", magazine = \"b\"<br><strong>Output:</strong> false</li><li><strong>Input:</strong> ransomNote = \"aa\", magazine = \"ab\"<br><strong>Output:</strong> false</li><li><strong>Input:</strong> ransomNote = \"aa\", magazine = \"aab\"<br><strong>Output:</strong> true</li></ul><h3>Constraints:</h3>\n\n<ul>\n\t<li><code>1 &lt;= ransomNote.length, magazine.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>ransomNote</code> and <code>magazine</code> consist of lowercase English letters.</li>\n</ul>\n",
+  "entry_function": "canConstruct",
+  "template": "def canConstruct(ransomNote, magazine):\n    ",
+  "solution_text": "<h3>Count the Available Letters</h3><p>A ransom note can be built only when the magazine contains every required letter enough times. For example, if the note needs two <code>a</code> characters, finding only one <code>a</code> in the magazine is not enough.</p><p><strong>Step 1:</strong> Read the magazine and store how many times each letter appears in a dictionary.</p><p><strong>Step 2:</strong> Read the ransom note one letter at a time. Before using a letter, check its remaining count. If the count is zero, return <code>False</code> immediately. Otherwise, subtract one because that copy has now been used.</p><p><strong>Step 3:</strong> If every letter in the note was available, return <code>True</code>.</p><p><strong>Why this works:</strong> the dictionary represents the exact supply of unused magazine letters. Each requested letter consumes one copy, so the algorithm succeeds exactly when the magazine has enough copies of every letter.</p><p><strong>Complexity:</strong> If the two strings contain <code>m</code> and <code>n</code> characters, the time complexity is <code>O(m + n)</code>. The dictionary uses <code>O(k)</code> space for <code>k</code> distinct letters; with lowercase English letters, <code>k</code> is at most 26.</p>",
+  "solution_code": "def canConstruct(ransomNote, magazine):\n    # Count every letter that the magazine can supply.\n    available = {}\n    for letter in magazine:\n        available[letter] = available.get(letter, 0) + 1\n\n    # Use one stored copy for every letter in the ransom note.\n    for letter in ransomNote:\n        if available.get(letter, 0) == 0:\n            return False\n        available[letter] -= 1\n\n    return True",
+  "prepare": "def prepare(test_case_input):\n    return (test_case_input['ransomNote'], test_case_input['magazine'])",
+  "verify": "def verify(actual_output, expected_output):\n    if isinstance(expected_output, str):\n        expected_output = expected_output.lower() == 'true'\n    passed = bool(actual_output) == bool(expected_output)\n    return [passed, 'true' if actual_output else 'false']",
+  "test_cases": [
+    {
+      "id": 1,
+      "input": {
+        "ransomNote": "a",
+        "magazine": "b"
+      },
+      "output": "false"
+    },
+    {
+      "id": 2,
+      "input": {
+        "ransomNote": "aa",
+        "magazine": "ab"
+      },
+      "output": "false"
+    },
+    {
+      "id": 3,
+      "input": {
+        "ransomNote": "aa",
+        "magazine": "aab"
+      },
+      "output": "true"
+    },
+    {
+      "id": 4,
+      "input": {
+        "ransomNote": "abc",
+        "magazine": "abc"
+      },
+      "output": "true"
+    },
+    {
+      "id": 5,
+      "input": {
+        "ransomNote": "abc",
+        "magazine": "ab"
+      },
+      "output": "false"
+    },
+    {
+      "id": 6,
+      "input": {
+        "ransomNote": "aab",
+        "magazine": "baa"
+      },
+      "output": "true"
+    },
+    {
+      "id": 7,
+      "input": {
+        "ransomNote": "aaab",
+        "magazine": "aabaa"
+      },
+      "output": "true"
+    },
+    {
+      "id": 8,
+      "input": {
+        "ransomNote": "aabbc",
+        "magazine": "ababc"
+      },
+      "output": "true"
+    },
+    {
+      "id": 9,
+      "input": {
+        "ransomNote": "zz",
+        "magazine": "z"
+      },
+      "output": "false"
+    },
+    {
+      "id": 10,
+      "input": {
+        "ransomNote": "aabc",
+        "magazine": "abcc"
+      },
+      "output": "false"
+    }
+  ]
+}

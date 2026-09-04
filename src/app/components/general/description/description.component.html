@@ -32,6 +32,14 @@
           <div *ngFor="let example of section.examples; let i = index" class="example-box">
             <div class="example-header">Example {{ i + 1 }}</div>
             <div class="example-content">
+              <div class="example-images" *ngIf="example.images && example.images.length > 0">
+                <img
+                  *ngFor="let image of example.images"
+                  [src]="image.src"
+                  [alt]="image.alt"
+                  loading="lazy"
+                />
+              </div>
               <div class="io-block" *ngIf="example.input">
                 <div class="io-label">Input:</div>
                 <div class="io-value"><code [innerHTML]="example.input"></code></div>

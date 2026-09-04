@@ -1,0 +1,118 @@
+{
+  "filename": "algotimefall2026",
+  "course_name": "Algotime Fall 2026",
+  "course_description": "Welcome to Algotime Fall 2026! Practice these key algorithm problems to sharpen your skills.",
+  "keywords": [
+    "algorithms",
+    "data structures",
+    "technical interviews",
+    "problem solving",
+    "fall",
+    "hash table",
+    "strings",
+    "arrays",
+    "simulation",
+    "two pointers",
+    "graph",
+    "bfs"
+  ],
+  "badge": "Fall 2026",
+  "units": {
+    "week1": {
+      "title": "Week 1",
+      "description": "Week 1 — Ransom Note, Two Sum, Group Anagrams, Candy Crush, Trapping Rain Water, Word Ladder.",
+      "questions": [
+        {
+          "filename": "ransom-note",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/ransom-note/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Easy",
+            "Hash Table"
+          ]
+        },
+        {
+          "filename": "two-sum",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/two-sum/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Easy",
+            "Arrays and Hashing"
+          ]
+        },
+        {
+          "filename": "group-anagrams",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/group-anagrams/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Medium",
+            "Array"
+          ]
+        },
+        {
+          "filename": "candy-crush",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/candy-crush/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Medium",
+            "Array"
+          ]
+        },
+        {
+          "filename": "trapping-rain-water",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/trapping-rain-water/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Hard",
+            "Two Pointers"
+          ]
+        },
+        {
+          "filename": "word-ladder",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/word-ladder/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Hard",
+            "Graph"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -166,6 +166,20 @@
   padding: 1.25rem;
 }
 
+.example-images {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+
+  img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: $radius-md;
+  }
+}
+
 .io-block {
   margin-bottom: 1rem;
 

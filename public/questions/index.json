@@ -5185,8 +5185,41 @@
         "greedy",
         "enumeration"
       ]
+    },
+    {
+      "index": 318,
+      "filename": "candy-crush",
+      "title": "Candy Crush",
+      "difficulty": "Medium",
+      "tags": [
+        "Array"
+      ],
+      "keywords": [
+        "candy",
+        "crush",
+        "array",
+        "matrix",
+        "simulation"
+      ]
+    },
+    {
+      "index": 319,
+      "filename": "ransom-note",
+      "title": "Ransom Note",
+      "difficulty": "Easy",
+      "tags": [
+        "Hash Table"
+      ],
+      "keywords": [
+        "ransom",
+        "note",
+        "hash",
+        "table",
+        "string",
+        "counting"
+      ]
     }
   ],
-  "lastUpdated": "2026-09-01T18:07:17.645Z",
-  "totalQuestions": 262
+  "lastUpdated": "2026-09-04T16:57:44.537Z",
+  "totalQuestions": 264
 }

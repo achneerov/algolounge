@@ -10,6 +10,10 @@ interface ParsedSection {
     input?: string | SafeHtml;
     output?: string;
     explanation?: string | SafeHtml;
+    images?: Array<{
+      src: string;
+      alt: string;
+    }>;
   }>;
   constraints?: string[];
 }
@@ -115,12 +119,33 @@ export class DescriptionComponent implements OnChanges {
 
     if (!listElement) return null;
 
-    const examples: Array<{ input?: string | SafeHtml; output?: string; explanation?: string | SafeHtml }> = [];
+    const examples: Array<{
+      input?: string | SafeHtml;
+      output?: string;
+      explanation?: string | SafeHtml;
+      images?: Array<{ src: string; alt: string }>;
+    }> = [];
     const items = Array.from(listElement.querySelectorAll('li'));
 
-    items.forEach(item => {
+    items.forEach((item, index) => {
       const text = item.innerHTML;
-      const example: { input?: string | SafeHtml; output?: string; explanation?: string | SafeHtml } = {};
+      const example: {
+        input?: string | SafeHtml;
+        output?: string;
+        explanation?: string | SafeHtml;
+        images?: Array<{ src: string; alt: string }>;
+      } = {};
+
+      const images = Array.from(item.querySelectorAll('img'))
+        .map(img => ({
+          src: img.getAttribute('src') || '',
+          alt: img.getAttribute('alt') || `Example ${index + 1} illustration`
+        }))
+        .filter(image => image.src);
+
+      if (images.length > 0) {
+        example.images = images;
+      }
 
       // Try to extract with <strong> tags first (newer format)
       // Only stop at <br> when followed by Output (allows multi-line inputs)
