@@ -113,6 +113,102 @@
           ]
         }
       ]
+    },
+    "week2": {
+      "title": "Week 2",
+      "description": "Week 2 — Reverse Linked List, Best Time to Buy and Sell Stock, Add Two Numbers, Number of Islands, Reverse Nodes in K-Group, Binary Tree Maximum Path Sum.",
+      "questions": [
+        {
+          "filename": "reverse-linked-list",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/reverse-linked-list/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Easy",
+            "Linked List"
+          ]
+        },
+        {
+          "filename": "best-time-to-buy-and-sell-stock",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Easy",
+            "Sliding Window"
+          ]
+        },
+        {
+          "filename": "add-two-numbers",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/add-two-numbers/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Medium",
+            "Linked List"
+          ]
+        },
+        {
+          "filename": "number-of-islands",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/number-of-islands/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Medium",
+            "Graph"
+          ]
+        },
+        {
+          "filename": "reverse-nodes-in-k-group",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/reverse-nodes-in-k-group/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Hard",
+            "Linked List"
+          ]
+        },
+        {
+          "filename": "binary-tree-maximum-path-sum",
+          "urls": [
+            {
+              "url": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+              "tooltip": "LeetCode Problem",
+              "color": "#f59e0b",
+              "visibleString": "LeetCode"
+            }
+          ],
+          "tags": [
+            "Hard",
+            "Trees"
+          ]
+        }
+      ]
     }
   }
 }

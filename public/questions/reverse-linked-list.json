@@ -18,10 +18,10 @@
     "head",
     "return"
   ],
-  "description": "<h2>Reverse Linked List</h2><p>Given the beginning of a singly linked list <code>head</code>, reverse the list, and return the new beginning of the list.</p><h3>Examples:</h3><ul><li>Input: head = [0,1,2,3]<br><br>Output: [3,2,1,0]</li><li>Input: head = []<br><br>Output: []</li></ul><h3>Constraints:</h3><ul><li><code>0 <= The length of the list <= 1000</code></li><li><code>-1000 <= Node.val <= 1000</code></li></ul>",
+  "description": "<h2>Reverse Linked List</h2><p>Given the <code>head</code> of a singly linked list, reverse the list, and return <em>the reversed list</em>.</p><h3>Examples:</h3><ul><li><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2021/02/19/rev1ex1.jpg\" style=\"width: 542px; height: 222px;\" /><strong>Input:</strong> head = [1,2,3,4,5]<br><strong>Output:</strong> [5,4,3,2,1]</li><li><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2021/02/19/rev1ex2.jpg\" style=\"width: 182px; height: 222px;\" /><strong>Input:</strong> head = [1,2]<br><strong>Output:</strong> [2,1]</li><li><strong>Input:</strong> head = []<br><strong>Output:</strong> []</li></ul><h3>Constraints:</h3><ul><li>The number of nodes in the list is the range <code>[0, 5000]</code>.</li><li><code>-5000 &lt;= Node.val &lt;= 5000</code></li></ul><p><strong>Follow up:</strong> A linked list can be reversed either iteratively or recursively. Could you implement both?</p>",
   "entry_function": "reverseLinkedList",
   "template": "# class ListNode:\n#     def __init__(self, val, next):\n#         self.val = val\n#         self.next = next\n\ndef reverseLinkedList(head):\n    ",
-  "solution_text": "<h3>Reverse Linked List</h3><p><strong>Algorithm:</strong></p><ol><li>Use three pointers: prev, curr, and next</li><li>Iterate through the list, reversing links</li><li>Move pointers forward in each iteration</li><li>Return the new head (prev pointer)</li></ol><p><strong>Time Complexity:</strong> O(n) - single pass through list</p><p><strong>Space Complexity:</strong> O(1) - only using constant extra space</p><p><strong>Key Insights:</strong></p><ul><li>Iterative approach using three pointers</li><li>Reverse the direction of each link</li><li>Handle null head edge case</li><li>Can also be solved recursively</li></ul>",
+  "solution_text": "<h3>Reverse Linked List</h3><p><strong>The idea:</strong> Right now every node points to the node <em>after</em> it. To reverse the list we simply flip each of those arrows so it points to the node <em>before</em> it. We walk through the list once and re-point one link at a time.</p><p><strong>Algorithm (three pointers):</strong></p><ol><li>Start with <code>prev = None</code> (there is nothing before the first node yet) and <code>curr = head</code>.</li><li>Before we break the current link, remember the next node: <code>next_temp = curr.next</code>.</li><li>Flip the arrow: <code>curr.next = prev</code>.</li><li>Slide both pointers forward: <code>prev = curr</code>, then <code>curr = next_temp</code>.</li><li>When <code>curr</code> becomes <code>None</code> we have walked off the end, and <code>prev</code> is now the new head, so return it.</li></ol><p><strong>Why it works (invariant):</strong> After processing each node, everything from the original head up to <code>prev</code> is already reversed, and <code>curr</code> is the first node of the not-yet-reversed part. Saving <code>next_temp</code> first is essential — once we overwrite <code>curr.next</code> we would otherwise lose the rest of the list.</p><p><strong>Complexity:</strong> Time <strong>O(n)</strong> where n is the number of nodes (one pass). Space <strong>O(1)</strong> — we only reuse three pointers, no extra list.</p><p><strong>Edge cases:</strong> An empty list (<code>head = None</code>) returns <code>None</code>, and a single node returns itself — both handled naturally because the loop simply does zero or one iteration.</p>",
   "solution_code": "def reverseLinkedList(head):\n    prev = None\n    curr = head\n    \n    while curr:\n        next_temp = curr.next\n        curr.next = prev\n        prev = curr\n        curr = next_temp\n    \n    return prev",
   "prepare": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n    \n    def __repr__(self):\n        return f'ListNode({self.val})'\n\ndef prepare(test_case_input):\n    \"\"\"Convert array representation to ListNode structure\"\"\"\n    head_array = test_case_input['head']\n    if not head_array:\n        return (None,)\n\n    def build_list(arr):\n        if not arr:\n            return None\n        \n        head = ListNode(arr[0])\n        current = head\n        \n        for i in range(1, len(arr)):\n            current.next = ListNode(arr[i])\n            current = current.next\n        \n        return head\n\n    return (build_list(head_array),)",
   "verify": "def verify(actual_output, expected_output):\n    \"\"\"Verify the reverse linked list result\"\"\"\n    def list_to_array(head):\n        result = []\n        current = head\n        while current:\n            result.append(current.val)\n            current = current.next\n        return result\n    \n    def list_to_string(lst):\n        if not lst:\n            return '[]'\n        return '[' + ', '.join(str(x) for x in lst) + ']'\n    \n    actual_array = list_to_array(actual_output)\n    passed = actual_array == expected_output\n    output_str = list_to_string(actual_array)\n    \n    return [passed, output_str]",
@@ -86,6 +86,113 @@
         ]
       },
       "output": [
+        5,
+        4,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "id": 6,
+      "input": {
+        "head": [
+          -5000,
+          5000,
+          0,
+          -1,
+          1
+        ]
+      },
+      "output": [
+        1,
+        -1,
+        0,
+        5000,
+        -5000
+      ]
+    },
+    {
+      "id": 7,
+      "input": {
+        "head": [
+          5,
+          5,
+          5,
+          5
+        ]
+      },
+      "output": [
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "id": 8,
+      "input": {
+        "head": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "output": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": 9,
+      "input": {
+        "head": [
+          100,
+          -100,
+          200,
+          -200
+        ]
+      },
+      "output": [
+        -200,
+        200,
+        -100,
+        100
+      ]
+    },
+    {
+      "id": 10,
+      "input": {
+        "head": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "output": [
+        8,
+        7,
+        6,
         5,
         4,
         3,
